@@ -1,0 +1,169 @@
+[17:11:39] UFFTYPER: Unrecognized charge state for atom: 1
+[17:11:39] UFFTYPER: Unrecognized charge state for atom: 1
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[17:11:40] UFFTYPER: Unrecognized charge state for atom: 24
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[17:11:45] UFFTYPER: Unrecognized charge state for atom: 24
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+[17:27:18] UFFTYPER: Unrecognized charge state for atom: 14
+[17:27:18] UFFTYPER: Unrecognized charge state for atom: 14
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[17:27:18] UFFTYPER: Unrecognized charge state for atom: 1
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[17:27:24] UFFTYPER: Unrecognized charge state for atom: 1
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[17:32:11] UFFTYPER: Unrecognized charge state for atom: 1
+[17:34:13] Explicit valence for atom # 30 O, 3, is greater than permitted
+ERROR:root:Cannot read PDB file /tmp/tmpuy953anl/docked_ligand.pdb
+ERROR:root:Best binding energy is >= 0
+ERROR:root:NaN values in 3D features
+[17:36:53] UFFTYPER: Unrecognized charge state for atom: 20
+[17:36:53] UFFTYPER: Unrecognized charge state for atom: 20
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[17:36:53] UFFTYPER: Unrecognized charge state for atom: 15
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[17:36:57] UFFTYPER: Unrecognized charge state for atom: 15
+ERROR:root:Could not assign bond orders: No matching found
+ERROR:root:NaN values in 3D features
+ERROR:root:Could not assign bond orders: No matching found
+[17:53:15] UFFTYPER: Unrecognized charge state for atom: 5
+[17:53:15] UFFTYPER: Unrecognized charge state for atom: 5
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[17:53:15] UFFTYPER: Unrecognized charge state for atom: 15
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[17:53:22] UFFTYPER: Unrecognized charge state for atom: 15
+[17:54:11] UFFTYPER: Unrecognized charge state for atom: 10
+[17:54:11] UFFTYPER: Unrecognized charge state for atom: 10
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[17:54:11] UFFTYPER: Unrecognized charge state for atom: 14
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[17:54:15] UFFTYPER: Unrecognized charge state for atom: 14
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Could not assign bond orders: No matching found
+[18:43:44] UFFTYPER: Unrecognized charge state for atom: 12
+[18:43:44] UFFTYPER: Unrecognized charge state for atom: 12
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[18:43:44] UFFTYPER: Unrecognized charge state for atom: 14
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[18:43:50] UFFTYPER: Unrecognized charge state for atom: 14
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:MMFF optimization of ligand failed
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+[19:20:12] UFFTYPER: Unrecognized charge state for atom: 4
+[19:20:12] UFFTYPER: Unrecognized charge state for atom: 4
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[19:20:12] UFFTYPER: Unrecognized charge state for atom: 4
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[19:20:16] UFFTYPER: Unrecognized charge state for atom: 4
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:NaN values in 3D features
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:MMFF optimization of ligand failed
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Could not assign bond orders: No matching found
+ERROR:root:Could not assign bond orders: No matching found
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+[20:06:15] UFFTYPER: Unrecognized charge state for atom: 8
+[20:06:16] UFFTYPER: Unrecognized charge state for atom: 8
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[20:06:16] UFFTYPER: Unrecognized charge state for atom: 11
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[20:06:22] UFFTYPER: Unrecognized charge state for atom: 11
+[20:06:28] UFFTYPER: Unrecognized charge state for atom: 8
+[20:06:28] UFFTYPER: Unrecognized charge state for atom: 8
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[20:06:28] UFFTYPER: Unrecognized charge state for atom: 11
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[20:06:32] UFFTYPER: Unrecognized charge state for atom: 11
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Best binding energy is >= 0
+ERROR:root:NaN values in 3D features
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Could not assign bond orders: No matching found
+ERROR:root:Best binding energy is >= 0
+ERROR:root:NaN values in 3D features
+ERROR:root:MMFF optimization of ligand failed
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Could not assign bond orders: No matching found
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:MMFF optimization of ligand failed
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[22:56:23] UFFTYPER: Unrecognized charge state for atom: 39
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed

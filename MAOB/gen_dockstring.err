@@ -1,0 +1,5 @@
+ERROR:root:NaN values in 3D features
+ERROR:root:Molecule cannot contain radicals
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+ERROR:root:Molecule cannot contain radicals
+ERROR:root:Molecule cannot contain radicals

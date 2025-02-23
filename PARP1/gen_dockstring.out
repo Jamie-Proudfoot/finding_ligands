@@ -1,0 +1,221 @@
+DataFrame shape: (1063, 898)
+Computing RDKit 3D features and docking scores ...
+Chunk number: 0
+Time taken (s): 109.79302835464478
+Chunk number: 1
+Time taken (s): 138.81360149383545
+Chunk number: 2
+Time taken (s): 163.07240629196167
+Chunk number: 3
+Time taken (s): 102.93138885498047
+Chunk number: 4
+Time taken (s): 115.00759863853455
+Chunk number: 5
+Docking failed for CC1(CCCCCC(=O)NCCOCCOCC(=O)N2CCN(C(=O)c3cc(Cc4n[nH]c(=O)c5ccccc45)ccc3F)CC2)C(/C=C/C=C/C=C2/N(CCCS(=O)(=O)O)c3ccc(S(=O)(=O)O)cc3C2(C)C)=[N+](CCCS(=O)(=O)[O-])c2ccc(S(=O)(=O)O)cc21
+Time taken (s): 134.34126377105713
+Chunk number: 6
+Time taken (s): 135.4248447418213
+Chunk number: 7
+Time taken (s): 147.5718605518341
+Chunk number: 8
+Docking failed for O=C1NCCn2ccc3cccc1c32
+Time taken (s): 118.67452144622803
+Chunk number: 9
+Time taken (s): 338.1278803348541
+Chunk number: 10
+Time taken (s): 141.17394709587097
+Chunk number: 11
+Time taken (s): 166.97662997245789
+Chunk number: 12
+Time taken (s): 171.7032492160797
+Chunk number: 13
+Time taken (s): 96.09616446495056
+Chunk number: 14
+Time taken (s): 133.41463780403137
+Chunk number: 15
+Time taken (s): 121.79802823066711
+Chunk number: 16
+Time taken (s): 139.18647074699402
+Chunk number: 17
+Time taken (s): 174.30981373786926
+Chunk number: 18
+Time taken (s): 112.11516785621643
+Chunk number: 19
+Time taken (s): 210.34507846832275
+Chunk number: 20
+Time taken (s): 166.30071759223938
+Chunk number: 21
+Time taken (s): 103.83639860153198
+Chunk number: 22
+Time taken (s): 99.20072627067566
+Chunk number: 23
+Docking failed for N=C(S)c1c(-c2ccc(F)cc2)n2c3c(cccc13)C(=O)NCC2
+Time taken (s): 105.93432641029358
+Chunk number: 24
+Time taken (s): 112.70820593833923
+Chunk number: 25
+Docking failed for O=C1NCCc2c[nH]c3cccc1c23
+Time taken (s): 146.1556327342987
+Chunk number: 26
+Time taken (s): 168.0981686115265
+Chunk number: 27
+Time taken (s): 118.45846939086914
+Chunk number: 28
+Time taken (s): 132.78791666030884
+Chunk number: 29
+Time taken (s): 126.08421850204468
+Chunk number: 30
+Time taken (s): 109.62478637695312
+Chunk number: 31
+Time taken (s): 152.17237973213196
+Chunk number: 32
+Time taken (s): 113.55206775665283
+Chunk number: 33
+Time taken (s): 143.0025532245636
+Chunk number: 34
+Time taken (s): 176.75988483428955
+Chunk number: 35
+Time taken (s): 116.0266273021698
+Chunk number: 36
+Time taken (s): 125.3025951385498
+Chunk number: 37
+Time taken (s): 129.41359853744507
+Chunk number: 38
+Time taken (s): 116.67933320999146
+Chunk number: 39
+Time taken (s): 114.46173930168152
+Chunk number: 40
+Time taken (s): 143.0452082157135
+Chunk number: 41
+Time taken (s): 158.5322549343109
+Chunk number: 42
+Time taken (s): 159.8557071685791
+Chunk number: 43
+Time taken (s): 162.6302251815796
+Chunk number: 44
+Time taken (s): 112.17357635498047
+Chunk number: 45
+Time taken (s): 100.95405721664429
+Chunk number: 46
+Time taken (s): 162.96220636367798
+Chunk number: 47
+Time taken (s): 149.1108365058899
+Chunk number: 48
+Time taken (s): 93.3661904335022
+Chunk number: 49
+Time taken (s): 140.2373914718628
+Chunk number: 50
+Time taken (s): 150.39083981513977
+Chunk number: 51
+Time taken (s): 138.62088298797607
+Chunk number: 52
+Time taken (s): 182.76388096809387
+Chunk number: 53
+Time taken (s): 197.56762623786926
+Chunk number: 54
+Time taken (s): 105.31664562225342
+Chunk number: 55
+Docking failed for NC(=O)c1cccc2[nH]c(-c3ccc(-c4nnn[nH]4)cc3)nc12
+Time taken (s): 97.03650546073914
+Chunk number: 56
+Time taken (s): 135.61924529075623
+Chunk number: 57
+Time taken (s): 151.03604984283447
+Chunk number: 58
+Time taken (s): 156.78716897964478
+Chunk number: 59
+Time taken (s): 128.41668248176575
+Chunk number: 60
+Time taken (s): 102.03330826759338
+Chunk number: 61
+Time taken (s): 95.4159824848175
+Chunk number: 62
+Docking failed for CC(C)[Si](OCc1ccc(-c2nc3c(C(N)=O)cccc3[nH]2)cc1)(C(C)C)C(C)C
+Time taken (s): 89.28746438026428
+Chunk number: 63
+Time taken (s): 143.36156344413757
+Chunk number: 64
+Docking failed for O=C1NCCn2cc(I)c3cccc1c32
+Time taken (s): 119.50381803512573
+Chunk number: 65
+Time taken (s): 138.54325032234192
+Chunk number: 66
+Time taken (s): 167.59241485595703
+Chunk number: 67
+Time taken (s): 133.37242984771729
+Chunk number: 68
+Time taken (s): 147.7048864364624
+Chunk number: 69
+Time taken (s): 179.42660999298096
+Chunk number: 70
+Time taken (s): 172.77924346923828
+Chunk number: 71
+Time taken (s): 159.2197253704071
+Chunk number: 72
+Time taken (s): 172.45344853401184
+Chunk number: 73
+Time taken (s): 201.1031403541565
+Chunk number: 74
+Time taken (s): 168.1451439857483
+Chunk number: 75
+Time taken (s): 166.50072073936462
+Chunk number: 76
+Time taken (s): 148.91784191131592
+Chunk number: 77
+Time taken (s): 129.958749294281
+Chunk number: 78
+Time taken (s): 133.3149971961975
+Chunk number: 79
+Time taken (s): 147.926007270813
+Chunk number: 80
+Time taken (s): 157.14594149589539
+Chunk number: 81
+Time taken (s): 182.56666135787964
+Chunk number: 82
+Time taken (s): 204.9266550540924
+Chunk number: 83
+Time taken (s): 218.23021340370178
+Chunk number: 84
+Time taken (s): 175.17122602462769
+Chunk number: 85
+Time taken (s): 158.19278979301453
+Chunk number: 86
+Time taken (s): 142.84141492843628
+Chunk number: 87
+Time taken (s): 126.69951820373535
+Chunk number: 88
+Time taken (s): 128.47965931892395
+Chunk number: 89
+Time taken (s): 151.81157898902893
+Chunk number: 90
+Time taken (s): 178.496027469635
+Chunk number: 91
+Time taken (s): 192.03533387184143
+Chunk number: 92
+Time taken (s): 178.63074851036072
+Chunk number: 93
+Time taken (s): 138.64079785346985
+Chunk number: 94
+Time taken (s): 105.15242052078247
+Chunk number: 95
+Time taken (s): 157.30714559555054
+Chunk number: 96
+Time taken (s): 81.96239376068115
+Total time taken (s): 13968.717239141464
+   molecule_chembl_id  ... score
+0        CHEMBL143949  ... -10.5
+1        CHEMBL133976  ...  -9.1
+2        CHEMBL133694  ...  -7.6
+3        CHEMBL517843  ...  -8.4
+4        CHEMBL479780  ...  -8.8
+..                ...  ...   ...
+2       CHEMBL3911789  ... -10.5
+3       CHEMBL3981758  ... -11.1
+4       CHEMBL3908116  ... -11.7
+5       CHEMBL3944563  ...  -9.9
+6       CHEMBL5284183  ... -10.9
+
+[1063 rows x 1811 columns]
+Shape before filtering NaN values: (1063, 1811)
+Shape after filtering NaN values: (1056, 1811)
+Shape after adding 3D descriptors: (1056, 1811)

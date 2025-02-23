@@ -1,0 +1,10 @@
+Model,Train MAE (log M),Test MAE (log M),Train STD (log M),Test STD (log M),Train Pearson's R,Test Pearson's R,Train Spearman's R,Test Spearman's R,Train Kendall's Tau,Test Kendall's Tau
+LR,0.0,0.093,0.0,0.004,,,,,,
+RR,0.109,0.097,0.133,0.003,,,,,,
+BRR,0.0,0.104,0.0,0.012,,,,,,
+lSVR,0.068,0.082,0.084,0.013,,,,,,
+SVR,0.097,0.112,0.119,0.022,,,,,,
+RFR,0.047,0.109,0.049,0.013,,,,,,
+KRR,0.0,0.093,0.0,0.004,,,,,,
+GPR,0.0,0.093,0.0,0.004,,,,,,
+XGB,0.066,0.116,0.085,0.032,,,,,,

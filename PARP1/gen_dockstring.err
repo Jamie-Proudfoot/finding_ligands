@@ -1,0 +1,14 @@
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:NaN values in 3D features
+ERROR:root:Could not assign bond orders: No matching found
+ERROR:root:NaN values in 3D features
+[20:22:35] UFFTYPER: Unrecognized charge state for atom: 1
+[20:22:35] UFFTYPER: Unrecognized charge state for atom: 1
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[20:22:35] UFFTYPER: Unrecognized charge state for atom: 1
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[20:22:42] UFFTYPER: Unrecognized charge state for atom: 1
+[21:01:54] Explicit valence for atom # 19 N, 4, is greater than permitted
+ERROR:root:Cannot read protonated SMILES: NC(=O)c1cccc2c1nc([nH]2)c1ccc(cc1)C1=[N-]N=NN1
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:NaN values in 3D features

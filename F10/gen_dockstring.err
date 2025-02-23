@@ -1,0 +1,128 @@
+ERROR:root:Could not assign bond orders: No matching found
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:MMFF optimization of ligand failed
+ERROR:root:Could not assign bond orders: No matching found
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+[00:34:02] Explicit valence for atom # 38 N, 4, is greater than permitted
+ERROR:root:Cannot read protonated SMILES: COc1ccc(cc1)n1nc(c2c1C(=O)N(CC2)c1ccc(cc1)c1ccccc1C[NH+]1CC[C@H](C1)O)C1=[N-]N=NN1
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+[03:04:36] Explicit valence for atom # 9 N, 4, is greater than permitted
+ERROR:root:Cannot read protonated SMILES: Brc1cc(CC2=NNN=[N-]2)cc(c1O)c1[nH]c2c(c1Cc1ccccc1)cc(cc2)C(=[NH2+])N
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Could not assign bond orders: No matching found
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:MMFF optimization of ligand failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+[04:30:11] UFFTYPER: Unrecognized charge state for atom: 1
+[04:30:12] UFFTYPER: Unrecognized charge state for atom: 1
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[04:30:12] UFFTYPER: Unrecognized charge state for atom: 36
+[04:30:12] UFFTYPER: Unrecognized charge state for atom: 36
+[04:30:12] UFFTYPER: Unrecognized charge state for atom: 36
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[04:30:12] UFFTYPER: Unrecognized charge state for atom: 36
+[04:30:13] UFFTYPER: Unrecognized charge state for atom: 36
+[04:30:13] UFFTYPER: Unrecognized charge state for atom: 36
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+[04:43:16] Explicit valence for atom # 12 N, 4, is greater than permitted
+ERROR:root:Cannot read protonated SMILES: Cc1ccc2c(c1)c(C1=NNN=[N-]1)c1n2C[C@@](CC1)(NC(=O)c1c(Cl)cc(cc1Cl)n1cnnc1)c1ccccc1
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+[05:15:52] Explicit valence for atom # 31 N, 4, is greater than permitted
+ERROR:root:Cannot read protonated SMILES: COc1ccc(cc1)n1nc(c2c1C(=O)N(CC2)c1ccc(cc1)C1(CC1)C(=O)NC1=[N-]N=NN1)C(F)(F)F
+ERROR:root:Could not assign bond orders: No matching found
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+[06:03:37] UFFTYPER: Unrecognized charge state for atom: 23
+[06:03:37] UFFTYPER: Unrecognized charge state for atom: 23
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[06:03:37] UFFTYPER: Unrecognized charge state for atom: 10
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[06:03:47] UFFTYPER: Unrecognized charge state for atom: 10
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Generation of ligand conformation failed
+[08:26:06] Explicit valence for atom # 31 N, 4, is greater than permitted
+ERROR:root:Cannot read protonated SMILES: Brc1cc(cc(c1O)c1[nH]c2c(c1Cc1ccccc1)cc(cc2)C(=[NH2+])N)C1=NNN=[N-]1
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Could not assign bond orders: No matching found
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:MMFF optimization of ligand failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Could not assign bond orders: No matching found
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:MMFF optimization of ligand failed
+ERROR:root:MMFF optimization of ligand failed
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Conversion from MOL to PDBQT failed
+[15:29:25] UFFTYPER: Unrecognized charge state for atom: 1
+[15:29:25] UFFTYPER: Unrecognized charge state for atom: 1
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[15:29:26] UFFTYPER: Unrecognized charge state for atom: 27
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[15:29:34] UFFTYPER: Unrecognized charge state for atom: 27
+ERROR:root:MMFF optimization of ligand failed
+ERROR:root:MMFF optimization of ligand failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:MMFF optimization of ligand failed
+ERROR:root:MMFF optimization of ligand failed
+[16:22:24] Explicit valence for atom # 29 N, 4, is greater than permitted
+ERROR:root:Cannot read protonated SMILES: O=C1OC[C@H](C)c2ccc(cc2C)[C@H](C(=O)N(Cc2cc(N1)ccc2C1(CC1)C1=[N-]N=NN1)C)Nc1ccc2c(c1)c(F)cnc2N
+ERROR:root:MMFF optimization of ligand failed
+ERROR:root:MMFF optimization of ligand failed
+ERROR:root:MMFF optimization of ligand failed
+ERROR:root:MMFF optimization of ligand failed

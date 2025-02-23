@@ -1,0 +1,196 @@
+DataFrame shape: (513, 898)
+Computing RDKit 3D features and docking scores ...
+Chunk number: 0
+Time taken (s): 77.19450998306274
+Chunk number: 1
+Time taken (s): 80.87015223503113
+Chunk number: 2
+Time taken (s): 83.69472765922546
+Chunk number: 3
+Time taken (s): 94.5698173046112
+Chunk number: 4
+Time taken (s): 131.7952172756195
+Chunk number: 5
+Time taken (s): 143.7583405971527
+Chunk number: 6
+Time taken (s): 163.99549412727356
+Chunk number: 7
+Docking failed for Cn1c(=O)c2c(ncn2C)n(C)c1=O
+Time taken (s): 74.91337275505066
+Chunk number: 8
+Time taken (s): 62.78211045265198
+Chunk number: 9
+Time taken (s): 70.54609322547913
+Chunk number: 10
+Time taken (s): 133.7928717136383
+Chunk number: 11
+Time taken (s): 139.10904550552368
+Chunk number: 12
+Time taken (s): 98.65216016769409
+Chunk number: 13
+Time taken (s): 104.67431139945984
+Chunk number: 14
+Time taken (s): 184.81074261665344
+Chunk number: 15
+Time taken (s): 129.95871996879578
+Chunk number: 16
+Time taken (s): 155.3005838394165
+Chunk number: 17
+Time taken (s): 161.4761257171631
+Chunk number: 18
+Time taken (s): 118.58128762245178
+Chunk number: 19
+Time taken (s): 68.24691653251648
+Chunk number: 20
+Time taken (s): 147.052227973938
+Chunk number: 21
+Time taken (s): 99.39161539077759
+Chunk number: 22
+Time taken (s): 72.77611207962036
+Chunk number: 23
+Time taken (s): 126.36090564727783
+Chunk number: 24
+Time taken (s): 60.75206661224365
+Chunk number: 25
+Time taken (s): 88.3711884021759
+Chunk number: 26
+Time taken (s): 121.72162532806396
+Chunk number: 27
+Time taken (s): 169.44215655326843
+Chunk number: 28
+Time taken (s): 133.34984755516052
+Chunk number: 29
+Time taken (s): 108.12017011642456
+Chunk number: 30
+Time taken (s): 181.0030162334442
+Chunk number: 31
+Time taken (s): 76.6152331829071
+Chunk number: 32
+Docking failed for C#CCN(C)Cc1ccc(C(=O)NC2CC(C)(C)N([O])C(C)(C)C2)cc1
+Time taken (s): 191.13128185272217
+Chunk number: 33
+Time taken (s): 161.54244756698608
+Chunk number: 34
+Time taken (s): 73.63140821456909
+Chunk number: 35
+Time taken (s): 310.1563911437988
+Chunk number: 36
+Time taken (s): 120.43025279045105
+Chunk number: 37
+Time taken (s): 128.6830632686615
+Chunk number: 38
+Time taken (s): 91.54982852935791
+Chunk number: 39
+Time taken (s): 55.95452284812927
+Chunk number: 40
+Time taken (s): 227.73032689094543
+Chunk number: 41
+Time taken (s): 90.35111618041992
+Chunk number: 42
+Time taken (s): 109.92344450950623
+Chunk number: 43
+Time taken (s): 90.15568995475769
+Chunk number: 44
+Docking failed for C#CN(C)Cc1ccc(C(=O)NC2CC(C)(C)N([O])C(C)(C)C2)cc1
+Time taken (s): 63.330466508865356
+Chunk number: 45
+Time taken (s): 80.76037669181824
+Chunk number: 46
+Time taken (s): 296.1256728172302
+Chunk number: 47
+Time taken (s): 100.3840868473053
+Chunk number: 48
+Time taken (s): 112.11601066589355
+Chunk number: 49
+Time taken (s): 147.32847237586975
+Chunk number: 50
+Time taken (s): 64.10721707344055
+Chunk number: 51
+Time taken (s): 86.17234396934509
+Chunk number: 52
+Time taken (s): 94.41198348999023
+Chunk number: 53
+Time taken (s): 135.57751655578613
+Chunk number: 54
+Time taken (s): 77.72749209403992
+Chunk number: 55
+Time taken (s): 112.77140474319458
+Chunk number: 56
+Time taken (s): 228.18009567260742
+Chunk number: 57
+Time taken (s): 203.9429919719696
+Chunk number: 58
+Time taken (s): 256.0772907733917
+Chunk number: 59
+Time taken (s): 198.12950205802917
+Chunk number: 60
+Time taken (s): 74.26248216629028
+Chunk number: 61
+Time taken (s): 87.24782872200012
+Chunk number: 62
+Time taken (s): 91.9691870212555
+Chunk number: 63
+Time taken (s): 60.802207469940186
+Chunk number: 64
+Time taken (s): 146.75915598869324
+Chunk number: 65
+Time taken (s): 137.05897855758667
+Chunk number: 66
+Time taken (s): 230.32389450073242
+Chunk number: 67
+Time taken (s): 189.58542203903198
+Chunk number: 68
+Time taken (s): 188.1932852268219
+Chunk number: 69
+Time taken (s): 256.52322244644165
+Chunk number: 70
+Time taken (s): 196.0496006011963
+Chunk number: 71
+Docking failed for C#CN(C)Cc1ccc(CC(=O)NC2CC(C)(C)N([O])C(C)(C)C2)cc1
+Time taken (s): 100.91333794593811
+Chunk number: 72
+Time taken (s): 236.95518517494202
+Chunk number: 73
+Time taken (s): 106.77774238586426
+Chunk number: 74
+Time taken (s): 102.01140451431274
+Chunk number: 75
+Time taken (s): 70.97200751304626
+Chunk number: 76
+Time taken (s): 79.20856928825378
+Chunk number: 77
+Time taken (s): 256.1068465709686
+Chunk number: 78
+Time taken (s): 149.8439919948578
+Chunk number: 79
+Time taken (s): 132.28866052627563
+Chunk number: 80
+Time taken (s): 150.43791699409485
+Chunk number: 81
+Time taken (s): 106.38763213157654
+Chunk number: 82
+Time taken (s): 227.05871319770813
+Chunk number: 83
+Time taken (s): 104.86481857299805
+Chunk number: 84
+Time taken (s): 96.93622875213623
+Chunk number: 85
+Time taken (s): 62.812352657318115
+Total time taken (s): 11214.41737294197
+   molecule_chembl_id  ... score
+0        CHEMBL545413  ...  -6.7
+1        CHEMBL555559  ...  -5.1
+2       CHEMBL3651596  ...  -6.6
+3       CHEMBL3651587  ...  -6.8
+4        CHEMBL326294  ...  -7.3
+..                ...  ...   ...
+4       CHEMBL4757484  ...  -9.7
+5       CHEMBL5268003  ... -10.4
+0       CHEMBL5218579  ... -10.2
+1       CHEMBL5271774  ...  -6.8
+2       CHEMBL5284128  ...  -6.3
+
+[513 rows x 1811 columns]
+Shape before filtering NaN values: (513, 1811)
+Shape after filtering NaN values: (509, 1811)
+Shape after adding 3D descriptors: (509, 1811)

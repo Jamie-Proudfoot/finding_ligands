@@ -1,0 +1,89 @@
+ERROR:root:MMFF optimization of ligand failed
+[12:43:15] Explicit valence for atom # 1 O, 3, is greater than permitted
+ERROR:root:Cannot read protonated SMILES: C[O-]C1=CC(=O)C[C@H]([C@@]21Oc1c(C2=O)c(OC)cc(c1Cl)OC)C
+ERROR:root:NaN values in 3D features
+ERROR:root:Could not assign bond orders: No matching found
+ERROR:root:Could not assign bond orders: No matching found
+ERROR:root:Generation of ligand conformation failed
+[13:14:49] UFFTYPER: Unrecognized charge state for atom: 12
+[13:14:49] UFFTYPER: Unrecognized charge state for atom: 12
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[13:14:49] UFFTYPER: Unrecognized charge state for atom: 14
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[13:14:56] UFFTYPER: Unrecognized charge state for atom: 14
+[13:24:36] Explicit valence for atom # 23 N, 4, is greater than permitted
+ERROR:root:Cannot read protonated SMILES: CCCCc1nc(c(n1Cc1ccc(cc1)c1ccccc1C1=[N-]N=NN1)CO)Cl
+[13:28:38] UFFTYPER: Unrecognized charge state for atom: 10
+[13:28:38] UFFTYPER: Unrecognized charge state for atom: 10
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[13:28:39] UFFTYPER: Unrecognized charge state for atom: 14
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[13:28:43] UFFTYPER: Unrecognized charge state for atom: 14
+ERROR:root:MMFF optimization of ligand failed
+[13:38:12] UFFTYPER: Unrecognized charge state for atom: 8
+[13:38:12] UFFTYPER: Unrecognized charge state for atom: 8
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[13:38:12] UFFTYPER: Unrecognized charge state for atom: 11
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[13:38:19] UFFTYPER: Unrecognized charge state for atom: 11
+[13:39:42] Explicit valence for atom # 22 N, 4, is greater than permitted
+ERROR:root:Cannot read protonated SMILES: CCOc1nc2c(n1Cc1ccc(cc1)c1ccccc1C1=[N-]N=NN1)c(ccc2)C(=O)[O-]
+[13:45:46] UFFTYPER: Unrecognized charge state for atom: 8
+[13:45:46] UFFTYPER: Unrecognized charge state for atom: 8
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[13:45:46] UFFTYPER: Unrecognized charge state for atom: 11
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[13:45:52] UFFTYPER: Unrecognized charge state for atom: 11
+ERROR:root:Could not assign bond orders: No matching found
+ERROR:root:NaN values in 3D features
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[13:55:36] UFFTYPER: Unrecognized charge state for atom: 1
+ERROR:root:Could not assign bond orders: No matching found
+[13:56:35] UFFTYPER: Unrecognized charge state for atom: 4
+[13:56:35] UFFTYPER: Unrecognized charge state for atom: 4
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[13:56:35] UFFTYPER: Unrecognized charge state for atom: 4
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[13:56:39] UFFTYPER: Unrecognized charge state for atom: 4
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[14:00:41] UFFTYPER: Unrecognized charge state for atom: 39
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:NaN values in 3D features
+[14:20:30] UFFTYPER: Unrecognized charge state for atom: 14
+[14:20:30] UFFTYPER: Unrecognized charge state for atom: 14
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[14:20:30] UFFTYPER: Unrecognized charge state for atom: 1
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[14:20:36] UFFTYPER: Unrecognized charge state for atom: 1
+[14:24:17] UFFTYPER: Unrecognized charge state for atom: 20
+[14:24:17] UFFTYPER: Unrecognized charge state for atom: 20
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[14:24:17] UFFTYPER: Unrecognized charge state for atom: 15
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[14:24:22] UFFTYPER: Unrecognized charge state for atom: 15
+[14:39:24] UFFTYPER: Unrecognized charge state for atom: 5
+[14:39:24] UFFTYPER: Unrecognized charge state for atom: 5
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[14:39:24] UFFTYPER: Unrecognized charge state for atom: 15
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[14:39:35] UFFTYPER: Unrecognized charge state for atom: 15
+ERROR:root:Could not assign bond orders: No matching found
+[14:57:21] Explicit valence for atom # 24 N, 4, is greater than permitted
+ERROR:root:Cannot read protonated SMILES: CCCCC1=[NH+]C2(C(=O)N1Cc1ccc(cc1)c1ccccc1C1=[N-]N=NN1)CCCC2
+ERROR:root:NaN values in 3D features
+[15:00:34] Explicit valence for atom # 7 O, 3, is greater than permitted
+[15:00:34] Explicit valence for atom # 7 O, 3, is greater than permitted
+ERROR:root:Cannot read protonated SMILES: CCOC(=O)O[C@H]([O-]C1=C(C(=O)Nc2ccccn2)N(C)S(=O)(=O)c2c1cccc2)C
+ERROR:root:Generation of ligand conformation failed
+[15:03:02] Explicit valence for atom # 1 O, 3, is greater than permitted
+[15:03:02] Explicit valence for atom # 1 O, 3, is greater than permitted
+ERROR:root:Cannot read protonated SMILES: C[O-]C1=CC(=O)O[C@]1(O)C(=C)C
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Could not assign bond orders: No matching found
+ERROR:root:Could not assign bond orders: No matching found
+[15:09:58] Explicit valence for atom # 20 O, 3, is greater than permitted
+ERROR:root:Cannot read protonated SMILES: OCCCCCCCCCCC1=C(C)C(=O)C(=C(C1=O)[O-]C)[O-]C
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:NaN values in 3D features
+[15:20:54] Explicit valence for atom # 28 N, 4, is greater than permitted
+ERROR:root:Cannot read protonated SMILES: CCCCC(=O)N([C@H](C(=O)[O-])C(C)C)Cc1ccc(cc1)c1ccccc1C1=[N-]N=NN1

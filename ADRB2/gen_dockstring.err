@@ -1,0 +1,91 @@
+[20:38:56] UFFTYPER: Unrecognized charge state for atom: 1
+[20:38:56] UFFTYPER: Unrecognized charge state for atom: 1
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[20:38:56] UFFTYPER: Unrecognized charge state for atom: 24
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[20:39:11] UFFTYPER: Unrecognized charge state for atom: 24
+ERROR:root:Best binding energy is >= 0
+[21:09:48] UFFTYPER: Unrecognized charge state for atom: 14
+[21:09:48] UFFTYPER: Unrecognized charge state for atom: 14
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[21:09:48] UFFTYPER: Unrecognized charge state for atom: 1
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[21:10:04] UFFTYPER: Unrecognized charge state for atom: 1
+ERROR:root:Best binding energy is >= 0
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[21:27:01] UFFTYPER: Unrecognized charge state for atom: 1
+[21:44:06] UFFTYPER: Unrecognized charge state for atom: 20
+[21:44:06] UFFTYPER: Unrecognized charge state for atom: 20
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[21:44:06] UFFTYPER: Unrecognized charge state for atom: 15
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[21:44:20] UFFTYPER: Unrecognized charge state for atom: 15
+ERROR:root:Could not assign bond orders: No matching found
+ERROR:root:Could not assign bond orders: No matching found
+ERROR:root:Could not assign bond orders: No matching found
+[22:48:35] UFFTYPER: Unrecognized charge state for atom: 5
+[22:48:35] UFFTYPER: Unrecognized charge state for atom: 5
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[22:48:35] UFFTYPER: Unrecognized charge state for atom: 15
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[22:49:03] UFFTYPER: Unrecognized charge state for atom: 15
+[22:52:28] UFFTYPER: Unrecognized charge state for atom: 10
+[22:52:28] UFFTYPER: Unrecognized charge state for atom: 10
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[22:52:28] UFFTYPER: Unrecognized charge state for atom: 14
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[22:52:37] UFFTYPER: Unrecognized charge state for atom: 14
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Could not assign bond orders: No matching found
+[01:03:18] UFFTYPER: Unrecognized charge state for atom: 12
+[01:03:18] UFFTYPER: Unrecognized charge state for atom: 12
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[01:03:18] UFFTYPER: Unrecognized charge state for atom: 14
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[01:03:40] UFFTYPER: Unrecognized charge state for atom: 14
+[01:51:29] UFFTYPER: Unrecognized charge state for atom: 4
+[01:51:30] UFFTYPER: Unrecognized charge state for atom: 4
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[01:51:30] UFFTYPER: Unrecognized charge state for atom: 4
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[01:51:39] UFFTYPER: Unrecognized charge state for atom: 4
+ERROR:root:Could not assign bond orders: No matching found
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+[03:33:24] UFFTYPER: Unrecognized charge state for atom: 8
+[03:33:24] UFFTYPER: Unrecognized charge state for atom: 8
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[03:33:24] UFFTYPER: Unrecognized charge state for atom: 11
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[03:33:45] UFFTYPER: Unrecognized charge state for atom: 11
+[03:34:08] UFFTYPER: Unrecognized charge state for atom: 8
+[03:34:08] UFFTYPER: Unrecognized charge state for atom: 8
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[03:34:08] UFFTYPER: Unrecognized charge state for atom: 11
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[03:34:20] UFFTYPER: Unrecognized charge state for atom: 11
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Best binding energy is >= 0
+ERROR:root:MMFF optimization of ligand failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Best binding energy is >= 0
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+ERROR:root:Conversion from MOL to PDBQT failed
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:Best binding energy is >= 0
+ERROR:root:MMFF optimization of ligand failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:MMFF optimization of ligand failed
+ERROR:root:Generation of ligand conformation failed
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[15:13:44] UFFTYPER: Unrecognized charge state for atom: 39
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:MMFF optimization of ligand failed
+ERROR:root:Generation of ligand conformation failed

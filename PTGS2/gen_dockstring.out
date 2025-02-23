@@ -1,0 +1,233 @@
+DataFrame shape: (823, 2434)
+Computing RDKit 3D features and docking scores ...
+Chunk number: 0
+Time taken (s): 109.82027673721313
+Chunk number: 1
+Docking failed for OC[C@H]1O[C@@H]2O[C@H]3[C@H](O)[C@@H](O)[C@@H](O[C@H]4[C@H](O)[C@@H](O)[C@@H](O[C@H]5[C@H](O)[C@@H](O)[C@@H](O[C@H]6[C@H](O)[C@@H](O)[C@@H](O[C@H]7[C@H](O)[C@@H](O)[C@@H](O[C@H]8[C@H](O)[C@@H](O)[C@@H](O[C@H]1[C@H](O)[C@H]2O)O[C@@H]8CO)O[C@@H]7CO)O[C@@H]6CO)O[C@@H]5CO)O[C@@H]4CO)O[C@@H]3CO
+Docking failed for CC(C)(S)[C@@H](N)C(=O)O
+Time taken (s): 185.8753640651703
+Chunk number: 2
+Time taken (s): 170.75191259384155
+Chunk number: 3
+Docking failed for O=[N+]([O-])c1ccc(O)c2ncccc12
+Time taken (s): 47.52216649055481
+Chunk number: 4
+Time taken (s): 98.86517453193665
+Chunk number: 5
+Docking failed for C[C@@H]1CC[C@H]2[C@@H](C)C(=O)O[C@@H]3O[C@]4(C)CC[C@@H]1[C@]32OO4
+Time taken (s): 513.1330690383911
+Chunk number: 6
+Time taken (s): 75.76184844970703
+Chunk number: 7
+Time taken (s): 52.14607214927673
+Chunk number: 8
+Docking failed for COC1=CC(=O)C[C@@H](C)[C@]12Oc1c(Cl)c(OC)cc(OC)c1C2=O
+Time taken (s): 115.76839709281921
+Chunk number: 9
+Time taken (s): 50.89743638038635
+Chunk number: 10
+Docking failed for CCCCC(=O)N(Cc1ccc(-c2ccccc2-c2nnn[nH]2)cc1)[C@H](C(=O)O)C(C)C
+Time taken (s): 60.77393174171448
+Chunk number: 11
+Docking failed for C/C=C1\[C@H]2C=C(C)C[C@@]1(N)c1ccc(=O)[nH]c1C2
+Time taken (s): 83.03059697151184
+Chunk number: 12
+Time taken (s): 174.02425408363342
+Chunk number: 13
+Docking failed for CC(=O)N[C@@H]1[C@H](Oc2c3cc4cc2Oc2ccc(cc2Cl)[C@@H](O[C@@H]2O[C@@H](CO)[C@@H](O)[C@H](O)[C@@H]2NC(C)=O)[C@@H]2NC(=O)[C@H](NC(=O)[C@@H]4NC(=O)[C@H]4NC(=O)[C@@H](Cc5ccc(c(Cl)c5)O3)NC(=O)[C@H](N)c3ccc(O)c(c3)Oc3cc(O)cc4c3)c3ccc(O)c(c3)-c3c(O[C@H]4O[C@H](CO)[C@@H](O)[C@@H](O)[C@@H]4O)cc(O)cc3[C@@H](C(=O)O)NC2=O)O[C@@H](CO)[C@@H](O)[C@@H]1O
+Time taken (s): 656.6106805801392
+Chunk number: 14
+Time taken (s): 71.63526487350464
+Chunk number: 15
+Time taken (s): 95.42008018493652
+Chunk number: 16
+Time taken (s): 75.14137029647827
+Chunk number: 17
+Time taken (s): 98.78994941711426
+Chunk number: 18
+Time taken (s): 54.07109713554382
+Chunk number: 19
+Time taken (s): 77.80902123451233
+Chunk number: 20
+Time taken (s): 79.39557194709778
+Chunk number: 21
+Time taken (s): 112.41947770118713
+Chunk number: 22
+Time taken (s): 48.99065804481506
+Chunk number: 23
+Time taken (s): 59.11909222602844
+Chunk number: 24
+Docking failed for CC[C@H](C)[C@H](N)C1=N[C@H](C(=O)N[C@@H](CC(C)C)C(=O)N[C@H](CCC(=O)O)C(=O)N[C@H](C(=O)N[C@H]2CCCCNC(=O)[C@H](CC(N)=O)NC(=O)[C@@H](CC(=O)O)NC(=O)[C@H](Cc3cnc[nH]3)NC(=O)[C@@H](Cc3ccccc3)NC(=O)[C@H]([C@@H](C)CC)NC(=O)[C@@H](CCCN)NC2=O)[C@@H](C)CC)CS1
+Time taken (s): 72.2077271938324
+Chunk number: 25
+Docking failed for CCCCC1=NC2(CCCC2)C(=O)N1Cc1ccc(-c2ccccc2-c2nnn[nH]2)cc1
+Time taken (s): 86.51294922828674
+Chunk number: 26
+Time taken (s): 51.55488181114197
+Chunk number: 27
+Time taken (s): 124.0610568523407
+Chunk number: 28
+Time taken (s): 104.67192220687866
+Chunk number: 29
+Time taken (s): 75.84991765022278
+Chunk number: 30
+Time taken (s): 557.6696848869324
+Chunk number: 31
+Time taken (s): 58.43714213371277
+Chunk number: 32
+Docking failed for CCOC(=O)OC(C)OC1=C(C(=O)Nc2ccccn2)N(C)S(=O)(=O)c2ccccc21
+Time taken (s): 65.80410385131836
+Chunk number: 33
+Time taken (s): 89.77515363693237
+Chunk number: 34
+Docking failed for CCOc1nc2cccc(C(=O)O)c2n1Cc1ccc(-c2ccccc2-c2nnn[nH]2)cc1
+Time taken (s): 46.040233850479126
+Chunk number: 35
+Docking failed for OC[C@H]1OC2C3[C@@H](CO)OC(O[C@H]4[C@H](O)[C@@H](O)[C@@H](O[C@H]5[C@H](O)[C@@H](O)[C@@H](O[C@H]6[C@H](O)[C@@H](O)[C@@H](O[C@H]7[C@H](O)[C@@H](O)[C@@H](O[C@H]8[C@H](O)[C@@H](O)[C@@H](O[C@H]9[C@H](O)[C@@H](O)C(OC1[C@H](O)[C@H]2O)O[C@@H]9CO)O[C@@H]8CO)O[C@@H]7CO)O[C@@H]6CO)O[C@@H]5CO)O[C@@H]4CO)[C@H](O)[C@H]3O
+Time taken (s): 124.75593972206116
+Chunk number: 36
+Time taken (s): 221.08778047561646
+Chunk number: 37
+Time taken (s): 131.0729329586029
+Chunk number: 38
+Time taken (s): 107.56489896774292
+Chunk number: 39
+Time taken (s): 106.55110716819763
+Chunk number: 40
+Docking failed for CC[C@H]1[C@@H]2C[C@H]3[C@@H]4N(C)c5ccccc5[C@]45C[C@@H]([C@@H]2[C@H]5O)N3[C@@H]1O
+Time taken (s): 69.9900529384613
+Chunk number: 41
+Time taken (s): 191.3251302242279
+Chunk number: 42
+Time taken (s): 132.37798166275024
+Chunk number: 43
+Time taken (s): 110.01316404342651
+Chunk number: 44
+Time taken (s): 91.42247724533081
+Chunk number: 45
+Time taken (s): 59.03842091560364
+Chunk number: 46
+Time taken (s): 387.13772559165955
+Chunk number: 47
+Docking failed for CCCCc1nc(Cl)c(CO)n1Cc1ccc(-c2ccccc2-c2nnn[nH]2)cc1
+Time taken (s): 101.4037356376648
+Chunk number: 48
+Time taken (s): 85.0316731929779
+Chunk number: 49
+Time taken (s): 230.46420335769653
+Chunk number: 50
+Docking failed for CC(=N)S
+Docking failed for COC1=C(OC)C(=O)C(CCCCCCCCCCO)=C(C)C1=O
+Time taken (s): 46.14778995513916
+Chunk number: 51
+Time taken (s): 96.66576766967773
+Chunk number: 52
+Time taken (s): 58.72682523727417
+Chunk number: 53
+Time taken (s): 107.99173927307129
+Chunk number: 54
+Docking failed for CC(O)COC[C@H]1O[C@@H]2O[C@H]3[C@H](O)[C@@H](O)[C@@H](O[C@H]4[C@H](O)[C@@H](O)[C@@H](O[C@H]5[C@H](O)[C@@H](O)[C@@H](O[C@H]6[C@H](O)[C@@H](O)[C@@H](O[C@H]7[C@H](O)[C@@H](O)[C@@H](O[C@H]8[C@H](O)[C@@H](O)[C@@H](O[C@H]1[C@H](O)[C@H]2O)O[C@@H]8COCC(C)O)O[C@@H]7COCC(C)O)O[C@@H]6COCC(C)O)O[C@@H]5COCC(C)O)O[C@@H]4COCC(C)O)O[C@@H]3COCC(C)O
+Time taken (s): 748.1647934913635
+Chunk number: 55
+Time taken (s): 102.93740653991699
+Chunk number: 56
+Time taken (s): 94.92620706558228
+Chunk number: 57
+Time taken (s): 50.42974805831909
+Chunk number: 58
+Time taken (s): 91.06118822097778
+Chunk number: 59
+Time taken (s): 152.74874877929688
+Chunk number: 60
+Docking failed for NC(=O)CN1CCCC1=O
+Time taken (s): 72.27173328399658
+Chunk number: 61
+Time taken (s): 840.8449304103851
+Chunk number: 62
+Docking failed for C[N+]1(C)[C@H]2C[C@H](OC(=O)[C@H](CO)c3ccccc3)C[C@H]1[C@H]1O[C@H]12
+Time taken (s): 72.42579674720764
+Chunk number: 63
+Time taken (s): 113.20708656311035
+Chunk number: 64
+Time taken (s): 91.31028199195862
+Chunk number: 65
+Time taken (s): 45.521700382232666
+Chunk number: 66
+Time taken (s): 108.71955990791321
+Chunk number: 67
+Time taken (s): 79.14928007125854
+Chunk number: 68
+Time taken (s): 106.5153751373291
+Chunk number: 69
+Docking failed for NC(CO)(CO)CO
+Time taken (s): 87.82399535179138
+Chunk number: 70
+Docking failed for O=C(O)P(=O)(O)O
+Time taken (s): 150.201566696167
+Chunk number: 71
+Docking failed for Cn1c(=O)c2c(ncn2C)n(C)c1=O
+Time taken (s): 67.87092781066895
+Chunk number: 72
+Time taken (s): 82.50805997848511
+Chunk number: 73
+Docking failed for Cc1ncc([N+](=O)[O-])n1CC(C)O
+Time taken (s): 85.69203543663025
+Chunk number: 74
+Time taken (s): 58.98014998435974
+Chunk number: 75
+Time taken (s): 80.26910018920898
+Chunk number: 76
+Docking failed for OC[C@H]1O[C@@H]2O[C@H]3[C@H](O)[C@@H](O)[C@@H](O[C@H]4[C@H](O)[C@@H](O)[C@@H](O[C@H]5[C@H](O)[C@@H](O)[C@@H](O[C@H]6[C@H](O)[C@@H](O)[C@@H](O[C@H]7[C@H](O)[C@@H](O)[C@@H](O[C@H]1[C@H](O)[C@H]2O)O[C@@H]7CO)O[C@@H]6CO)O[C@@H]5CO)O[C@@H]4CO)O[C@@H]3CO
+Time taken (s): 130.82377409934998
+Chunk number: 77
+Time taken (s): 137.00334286689758
+Chunk number: 78
+Time taken (s): 81.20833921432495
+Chunk number: 79
+Docking failed for O=C(OC[C@H]1O[C@@H](OC(=O)c2cc(O)c(O)c(OC(=O)c3cc(O)c(O)c(O)c3)c2)[C@H](OC(=O)c2cc(O)c(O)c(OC(=O)c3cc(O)c(O)c(O)c3)c2)[C@@H](OC(=O)c2cc(O)c(O)c(OC(=O)c3cc(O)c(O)c(O)c3)c2)[C@@H]1OC(=O)c1cc(O)c(O)c(OC(=O)c2cc(O)c(O)c(O)c2)c1)c1cc(O)c(O)c(OC(=O)c2cc(O)c(O)c(O)c2)c1
+Time taken (s): 106.6051664352417
+Chunk number: 80
+Time taken (s): 120.92700600624084
+Chunk number: 81
+Docking failed for O=C(O)CNCP(=O)(O)O
+Time taken (s): 49.262409925460815
+Chunk number: 82
+Time taken (s): 204.71530771255493
+Chunk number: 83
+Time taken (s): 110.36583924293518
+Chunk number: 84
+Docking failed for C=C(C)C1(O)OC(=O)C=C1OC
+Time taken (s): 120.74558448791504
+Chunk number: 85
+Time taken (s): 108.1422688961029
+Chunk number: 86
+Time taken (s): 126.54296278953552
+Chunk number: 87
+Time taken (s): 81.55893230438232
+Chunk number: 88
+Docking failed for Cc1c(N)nc([C@H](CC(N)=O)NC[C@H](N)C(N)=O)nc1C(=O)N[C@H](C(=O)N[C@H](C)[C@@H](O)[C@H](C)C(=O)N[C@H](C(=O)NCCc1nc(-c2nc(C(=O)NCCC[S+](C)C)cs2)cs1)[C@@H](C)O)[C@@H](O[C@@H]1O[C@@H](CO)[C@@H](O)[C@H](O)[C@@H]1O[C@H]1O[C@H](CO)[C@@H](O)[C@H](OC(N)=O)[C@@H]1O)c1c[nH]cn1
+Time taken (s): 105.25320672988892
+Chunk number: 89
+Time taken (s): 69.73614025115967
+Chunk number: 90
+Time taken (s): 41.780938386917114
+Chunk number: 91
+Docking failed for C[C@@H](O)[C@H](CO)NC(=O)[C@@H]1CSSC[C@H](NC(=O)[C@H](N)Cc2ccccc2)C(=O)N[C@@H](Cc2ccccc2)C(=O)N[C@H](Cc2c[nH]c3ccccc23)C(=O)N[C@@H](CCCCN)C(=O)N[C@@H]([C@@H](C)O)C(=O)N1
+Time taken (s): 31.40987801551819
+Total time taken (s): 11968.791325569153
+   molecule_chembl_id  ...  score
+0       CHEMBL1200623  ... -8.136
+1       CHEMBL1618305  ... -9.004
+2       CHEMBL1231107  ... -6.274
+3        CHEMBL269732  ... -6.261
+4          CHEMBL1521  ... -7.676
+..                ...  ...    ...
+8          CHEMBL1370  ... -7.932
+0       CHEMBL3350037  ...    NaN
+1          CHEMBL1009  ... -6.902
+2          CHEMBL1727  ... -7.515
+3       CHEMBL4868446  ... -8.939
+
+[821 rows x 3347 columns]
+Shape before filtering NaN values: (821, 3347)
+Shape after filtering NaN values: (791, 3347)

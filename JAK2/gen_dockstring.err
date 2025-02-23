@@ -1,0 +1,15 @@
+ERROR:root:NaN values in 3D features
+ERROR:root:NaN values in 3D features
+ERROR:root:Cannot process molecule: hydrogen atoms couldn't be removed
+ERROR:root:Could not assign bond orders: No matching found
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[18:11:56] UFFTYPER: Unrecognized charge state for atom: 1
+ERROR:root:Conversion from MOL to PDBQT failed
+[18:58:01] UFFTYPER: Unrecognized charge state for atom: 1
+[18:58:01] UFFTYPER: Unrecognized charge state for atom: 1
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[18:58:01] UFFTYPER: Unrecognized charge state for atom: 24
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[18:58:10] UFFTYPER: Unrecognized charge state for atom: 24
+[20:13:52] Explicit valence for atom # 24 N, 4, is greater than permitted
+ERROR:root:Cannot read protonated SMILES: Fc1cnc2c(c1)c(c[nH]2)c1ncc(c(n1)N[C@H]1C2CCC([C@@H]1C1=[N-]N=NN1)CC2)F

@@ -1,0 +1,50 @@
+ERROR:root:Generation of ligand conformation failed
+[20:02:10] UFFTYPER: Unrecognized charge state for atom: 1
+[20:02:10] UFFTYPER: Unrecognized charge state for atom: 1
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[20:02:10] UFFTYPER: Unrecognized charge state for atom: 1
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[20:02:15] UFFTYPER: Unrecognized charge state for atom: 1
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+[21:05:06] SMILES Parse Error: unclosed ring for input: 'C[C@]12O[C@](C)(C[C@H]1NS(=O)(=O)c1ccccc1F)[C@H]1C(=O)N(c3ccc(C#N)c(C(F)(F)F)c3)C(=O)[C@H]1'
+ERROR:root:Python argument types in
+    rdkit.Chem.rdmolops.AssignStereochemistry(NoneType)
+did not match C++ signature:
+    AssignStereochemistry(RDKit::ROMol {lvalue} mol, bool cleanIt=False, bool force=False, bool flagPossibleStereoCenters=False)
+ERROR:root:MMFF optimization of ligand failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+[22:38:32] UFFTYPER: Unrecognized charge state for atom: 4
+[22:38:32] UFFTYPER: Unrecognized charge state for atom: 4
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[22:38:32] UFFTYPER: Unrecognized charge state for atom: 4
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[22:38:41] UFFTYPER: Unrecognized charge state for atom: 4
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
