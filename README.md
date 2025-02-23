@@ -9,7 +9,7 @@
 
 ##### 1. Create the python environments used in this work
 
-In envs/, you can find YAML files for two environments.
+In `envs/`, you can find YAML files for two environments.
 
 py3env is the main python3 environment used.
 
@@ -88,19 +88,19 @@ target = "EGFR"
 
 1. (py3env) Use `gen_chembl.py` to download $K_i$ activity data from ChEMBL via the chembl-webresource-api and generate molecular features using RDKit
 
-2. (py3env) Use `cluster.py` to cluster the ligand library using k-means clustering on PCA-reduced molecular fingerprints
+2. Move the `{target}_data_pKi.csv` file to the `{target}/ folder`
 
-3. Move the `{target}_data_pKi.csv` file to the {target}/ folder
-
-4. Move the desired PDBQT file from `dockstring/resources/targets` to the `{target}/` folder and convert to PDB using 
+3. Move the desired PDBQT file from `dockstring/resources/targets` to the `{target}/` folder and convert to PDB using 
 
 ```
 cut -c-66 ${target}.pdbqt > ${target}.pdb
 ```
 
-5. (py3env) Use the `gen_dockstring.py` script to dock the ligands contained in `{target}_data_pKi.csv` to the target PDB file
+4. (py3env) Use the `gen_dockstring.py` script to dock the ligands contained in `{target}_data_pKi.csv` to the target PDB file
 
-6. (DXGB) Use the `gen_delta.py` script to re-score the docked ligand poses contained in `{target}/conformers`
+5. (DXGB) Use the `gen_delta.py` script to re-score the docked ligand poses contained in `{target}/conformers`  
+
+6. (py3env) Use `cluster.py` to cluster the ligand library using k-means clustering on PCA-reduced molecular fingerprints
 
 
 ### Run supervised / active learning
