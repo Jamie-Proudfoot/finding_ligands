@@ -127,7 +127,7 @@ data_file = os.path.join(f"{target_name}_data_pKi.csv")
 dockstring_target = target_name
 CPUs = 12 # number of CPUs to use
 data = pd.read_csv(data_file)
-data = data.iloc[:5]
+data = data.iloc[:]
 
 #%%
 
