@@ -129,7 +129,11 @@ target = "EGFR"
 
    [DOCKSTRING: easy molecular docking yields better benchmarks for ligand design.](http://dx.doi.org/10.1021/acs.jcim.1c01334)
 
-3. Lewis-Atwell, Toby, et al. *ACS Catalysis*, **13**, 13506 - 13515., (2023). 
+3. Lacour, Antoine, et al. *ChemRxiv*, (2024).
+
+   [DockM8: An All-in-One Open-Source Platform for Consensus Virtual Screening in Drug Design.](https://chemrxiv.org/engage/chemrxiv/article-details/669e53ee01103d79c5324046)
+
+5. Lewis-Atwell, Toby, et al. *ACS Catalysis*, **13**, 13506 - 13515., (2023). 
 
    [Reformulating Reactivity Design for Data-Efficient Machine Learning.](http://dx.doi.org/10.1021/acscatal.3c02513)
 
