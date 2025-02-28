@@ -90,7 +90,9 @@ target = "EGFR"
 
 2. Move the `{target}_data_pKi.csv` file to the `{target}/ folder`
 
-3. Move the desired PDBQT file from `dockstring/resources/targets` to the `{target}/` folder and convert to PDB using 
+3. Move the desired PDBQT file from `dockstring/resources/targets` to the `{target}/` folder and convert to PDB using
+
+Note: the ChEMBL database is a continuously-updated repository. Therefore using the current script to collect ChEMBL ligands and activities from the Python ChEMBL webresource client API will not necessarily reproduce the `{target}_data_pKi.csv` files. For the purposes of replicating the results of this project, start with the `{target}_data_pKi.csv`. The original data was collected from ChEMBL v34, March 2024.
 
 ```
 cut -c-66 ${target}.pdbqt > ${target}.pdb
