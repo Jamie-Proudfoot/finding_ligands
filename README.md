@@ -102,10 +102,12 @@ cut -c-66 ${target}.pdbqt > ${target}.pdb
 
 6. (py3env) Use `cluster.py` to cluster the ligand library using k-means clustering on PCA-reduced molecular fingerprints
 
+Note: the column `XGB` in the files `{target}_data_3d_delta_pKi.csv` refers to the delta_LinF9_XGB re-scored docking scores.
 
 ### Run supervised / active learning
 
 Modify scripts where necessary by specifying the protein target using its gene name (e.g. EGFR, ACHE, PTGS2) as found in DUD-E or dockstring
+
 e.g.
 ```python
 target = "EGFR"
