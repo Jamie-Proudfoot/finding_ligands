@@ -89,8 +89,8 @@ for eof,config in zip(eofs,configs):
     else: file = f"{target}{l}_{eof}.csv"
     df = pd.read_csv(os.path.join(folder,file))
     dfs.append(df)
-    if mode == "litpcba": data = pd.read_csv(os.path.join("data",f"{target}_data_full.csv"))
-    else: data = pd.read_csv(os.path.join("data",f"{target}{l}_data_3d_{mode}_pKi.csv"))
+    if mode == "litpcba": data = pd.read_csv(os.path.join("LIT-PCBA","DockM8",target,f"{target}_data_full.csv"))
+    else: data = pd.read_csv(os.path.join(target,f"{target}{l}_data_3d_{mode}_pKi.csv"))
 
 
 #%%
@@ -149,7 +149,7 @@ for eof,config in zip(eofs,configs):
     folder = os.path.join(results,config)
     if config != "baseline": file = f"{target}{l}_{config.split('_')[0]}_{eof}_ID.csv"
     else: file = f"{target}{l}_{eof}_ID.csv"
-    df = os.path.join(folder,file)
+    df = pd.read_csv(os.path.join(folder,file))
     if mode == "litpcba": data = pd.read_csv(f"{target}_data_full.csv")
     else: data = pd.read_csv(f"{target}{l}_data_3d_{mode}_pKi.csv")
     # avg_tanimoto = TS(data.index,data)
@@ -225,11 +225,11 @@ minval = min(Y)
 maxval = max(Y)
 plt.xticks(fontsize=15)
 plt.yticks(fontsize=15)
-plt.plot(np.arange(1,best_random.shape[-1]+1,1),best_random,c="y",label=names[0],marker="o",ms="1.5")
+# plt.plot(np.arange(1,best_random.shape[-1]+1,1),best_random,c="y",label=names[0],marker="o",ms="1.5")
 # plt.fill_between(x=np.arange(1,best_random.shape[-1]+1,1),y1=np.clip(best_random-best_random_std,minval,maxval),y2=np.clip(best_random+best_random_std,minval,maxval),color="y",alpha=0.2)
 # plt.fill_between(x=np.arange(1,best_random.shape[-1]+1,1),y1=(best_random_q1),y2=(best_random_q3),color="y",alpha=0.2)
 plt.plot(np.arange(1,best_nodocking.shape[-1]+1,1),best_nodocking,c="m",label=names[-2],marker="o",ms="1.5")
-# plt.fill_between(x=np.arange(1,best_nodocking.shape[-1]+1,1),y1=np.clip(best_nodocking-best_nodocking_std,minval,maxval),y2=np.clip(best_nodocking+best_nodocking_std,minval,maxval),color="m",alpha=0.1)
+plt.fill_between(x=np.arange(1,best_nodocking.shape[-1]+1,1),y1=np.clip(best_nodocking-best_nodocking_std,minval,maxval),y2=np.clip(best_nodocking+best_nodocking_std,minval,maxval),color="m",alpha=0.1)
 # plt.fill_between(x=np.arange(1,best_nodocking.shape[-1]+1,1),y1=(best_nodocking_q1),y2=(best_nodocking_q3),color="m",alpha=0.1)
 plt.plot(np.arange(1,best_docking.shape[-1]+1,1),best_docking,c="c",label=names[-1],marker="o",ms="1.5")
 plt.fill_between(x=np.arange(1,best_docking.shape[-1]+1,1),y1=np.clip(best_docking-best_docking_std,minval,maxval),y2=np.clip(best_docking+best_docking_std,minval,maxval),color="c",alpha=0.1)
@@ -237,11 +237,12 @@ plt.fill_between(x=np.arange(1,best_docking.shape[-1]+1,1),y1=np.clip(best_docki
 # plt.ylabel(f"Mean of best {ylabel}")
 if mode == "litpcba": yscale = 2 
 else: yscale = 4
-plt.xlim(-10,400)
-plt.ylim(9,np.max(Y)+0.2)
+# plt.xlim(-10,500)
+plt.ylim(7,np.max(Y)+0.2)
 # plt.xlabel("Steps")
 # plt.legend(loc="lower right")
 plt.grid(True)
 # plt.title(f"{target} {' '.join(config.split('_'))}")
 plt.tight_layout()
 plt.show()
+#%%
