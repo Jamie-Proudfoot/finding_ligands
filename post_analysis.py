@@ -4,6 +4,9 @@ import os
 import random
 import time
 
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
+
 import numpy as np
 import pandas as pd
 import scipy as sp
@@ -37,6 +40,7 @@ from tqdm import tqdm
 from rdkit import DataStructs
 from rdkit.DataManip.Metric.rdMetricMatrixCalc import GetTanimotoSimMat
 
+
 #%%
 
 def np_to_bv(fp):
@@ -59,8 +63,12 @@ def TS(ids,df,i=None,l=2048):
 
 #%%
 
+
 target = "EGFR"
-mode = "delta"
+CHEMBL = ["EGFR","JAK2","LCK","MAOB","NOS1","ACHE","PARP1","PTGS2","PDE5A","ESR1","NR3C1","AR","ADRB2","F10"]
+LITPCBA = ["ESR1ago","ESR1ant","PPARG","TP53"]
+if target in CHEMBL: mode = "delta"
+elif target in LITPCBA: mode = "litpcba"
 config = "BRR_greedy"
 
 if mode == "delta":
@@ -68,6 +76,19 @@ if mode == "delta":
     l = "-2048"
     lowlevel = "XGB"
     results = "results"
+    y = "pKi"
+    hit = 9.0
+    eofs = ["random_10","tanimoto_morgan3_10","morgan3_rdkit2d_10","morgan3_rdkit2d_10_cpca",f"morgan3_rdkit2d_rdkit3d_delta_docking_10_top_{lowlevel}_P90"]
+    configs = ["baseline","baseline",config,config,config]
+    names = ["random", "similarity search", "morgan3_rdkit2d\n(random)", "morgan3_rdkit2d\n(diverse)", "morgan3_rdkit2d_rdkit3d_delta_docking\n(docking)"]
+    pal = {"random": "r", "similarity search": "brown", "morgan3_rdkit2d\n(random)": "orange","morgan3_rdkit2d\n(diverse)": "b", "morgan3_rdkit2d_rdkit3d_delta_docking\n(docking)": "g"}
+    ticks = 50
+    ylabel="$pK_i$"
+elif mode == "gnina":
+    Nreps = 25
+    l = "-2048"
+    lowlevel = "CNNaffinity"
+    results = "results_gnina"
     y = "pKi"
     hit = 9.0
     eofs = ["random_10","tanimoto_morgan3_10","morgan3_rdkit2d_10","morgan3_rdkit2d_10_cpca",f"morgan3_rdkit2d_rdkit3d_delta_docking_10_top_{lowlevel}_P90"]
@@ -276,3 +297,5 @@ plt.yticks(0.1*np.arange(0, 11, 1))
 plt.errorbar(x, y, yerr, fmt='.', color='Black', elinewidth=2, capthick=10, errorevery=1, alpha=0.5, ms=4, capsize=2)
 ax.set(xlabel=None,xticklabels=[])
 ax.tick_params(bottom=False)
+
+#%%

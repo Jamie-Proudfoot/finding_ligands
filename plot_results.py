@@ -5,16 +5,20 @@ import seaborn as sns
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import cm
+import matplotlib.patches as mpatches
 import pandas as pd
 from scipy import stats
-from scipy.stats import pearsonr 
+from scipy.stats import pearsonr, gaussian_kde
 
 mpl.rcParams['figure.dpi'] = 600
 
 #%%
 
 target = "EGFR"
-mode = "delta"
+CHEMBL = ["EGFR","JAK2","LCK","MAOB","NOS1","ACHE","PARP1","PTGS2","PDE5A","ESR1","NR3C1","AR","ADRB2","F10"]
+LITPCBA = ["ESR1ago","ESR1ant","PPARG","TP53"]
+if target in CHEMBL: mode = "delta"
+elif target in LITPCBA: mode = "litpcba"
 config = "BRR_greedy"
 
 if mode == "delta":
@@ -29,7 +33,7 @@ if mode == "delta":
     names = ["random", "similarity search", "morgan3_rdkit2d // random", "morgan3_rdkit2d // diverse", "morgan3_rdkit2d_rdkit3d_delta_docking // docking"]
     pal = {"random": "r", "similarity search": "brown", "morgan3_rdkit2d // random": "orange","morgan3_rdkit2d // diverse": "b", "morgan3_rdkit2d_rdkit3d_delta_docking // docking": "g"}
     ticks = 50
-    ylabel="$pK_i$"
+    ylabel="\\text{p}K_i"
 elif mode == "litpcba":
     Nreps = 25
     l = ""
@@ -42,7 +46,7 @@ elif mode == "litpcba":
     names = ["random", "similarity search", "morgan3_rdkit2d // random", "morgan3_rdkit2d // diverse", "morgan3_rdkit2d_rdkit3d_docking // docking"]
     pal = {"random": "r", "similarity search": "brown", "morgan3_rdkit2d // random": "orange","morgan3_rdkit2d // diverse": "b", "morgan3_rdkit2d_rdkit3d_docking // docking": "g"}
     ticks = 200
-    ylabel="$pEC_{50}$"
+    ylabel="\\text{p}EC_{50}"
 
 #%%
 
@@ -89,8 +93,8 @@ for eof,config in zip(eofs,configs):
     else: file = f"{target}{l}_{eof}.csv"
     df = pd.read_csv(os.path.join(folder,file))
     dfs.append(df)
-    if mode == "litpcba": data = pd.read_csv(os.path.join("LIT-PCBA","DockM8",target,f"{target}_data_full.csv"))
-    else: data = pd.read_csv(os.path.join(target,f"{target}{l}_data_3d_{mode}_pKi.csv"))
+    if mode == "litpcba": data = pd.read_csv(os.path.join("data",f"{target}_data_full.csv"))
+    else: data = pd.read_csv(os.path.join("data",f"{target}{l}_data_3d_{mode}_pKi.csv"))
 
 
 #%%
@@ -128,7 +132,7 @@ plt.xticks(np.arange(0,max(random[-1],nodocking[-1])+1.5*ticks,ticks),rotation=6
 plt.yticks(np.arange(min(targets)-0.2,max(targets)+0.2,0.2)+0.2)
 plt.xlim(0,max(random[-1],nodocking[-1])+1.5*ticks)
 plt.ylim(bottom=min(targets)-0.1,top=max(targets)+0.2)
-plt.ylabel(ylabel)
+plt.ylabel("$"+ylabel+"$")
 plt.xlabel("Mean steps")
 plt.legend(loc="lower right")
 plt.grid(True)
@@ -150,8 +154,8 @@ for eof,config in zip(eofs,configs):
     if config != "baseline": file = f"{target}{l}_{config.split('_')[0]}_{eof}_ID.csv"
     else: file = f"{target}{l}_{eof}_ID.csv"
     df = pd.read_csv(os.path.join(folder,file))
-    if mode == "litpcba": data = pd.read_csv(f"{target}_data_full.csv")
-    else: data = pd.read_csv(f"{target}{l}_data_3d_{mode}_pKi.csv")
+    # if mode == "litpcba": data = pd.read_csv(os.path.join(target,f"{target}_data_full.csv"))
+    # else: data = pd.read_csv(os.path.join(target,f"{target}{l}_data_3d_{mode}_pKi.csv"))
     # avg_tanimoto = TS(data.index,data)
     all_ids = [df[column].values for column in df.columns]
     all_ids = [ids[~np.isnan(ids)].astype(int).tolist() for ids in all_ids]
@@ -203,7 +207,7 @@ plt.fill_between(x=np.arange(1,best_nodocking.shape[-1]+1,1),y1=np.clip(best_nod
 plt.plot(np.arange(1,best_docking.shape[-1]+1,1),best_docking,c="c",label=names[-1])
 plt.fill_between(x=np.arange(1,best_docking.shape[-1]+1,1),y1=np.clip(best_docking-best_docking_std,minval,maxval),y2=np.clip(best_docking+best_docking_std,minval,maxval),color="c",alpha=0.1)
 # plt.fill_between(x=np.arange(1,best_docking.shape[-1]+1,1),y1=(best_docking_q1),y2=(best_docking_q3),color="c",alpha=0.1)
-plt.ylabel(f"Mean of best {ylabel}")
+plt.ylabel(f"Mean of best ${ylabel}$")
 if mode == "litpcba": yscale = 2 
 else: yscale = 4
 plt.xlim(-10,max(200,len(Y)/yscale))
@@ -217,10 +221,13 @@ plt.show()
 
 #%%
 
-# TOC-style diagram
+
+# TOC-style diagram -- mean of best activity
+# mpl.rcParams['axes.spines.right'] = False
+# mpl.rcParams['axes.spines.top'] = False
 # plt.style.use("default")
-# plt.figure(figsize=(5,8)) 
-plt.figure(figsize=(4.2,4))
+plt.figure(figsize=(5.4,6)) 
+# plt.figure(figsize=(6.8,4))
 minval = min(Y)
 maxval = max(Y)
 plt.xticks(fontsize=15)
@@ -234,15 +241,70 @@ plt.fill_between(x=np.arange(1,best_nodocking.shape[-1]+1,1),y1=np.clip(best_nod
 plt.plot(np.arange(1,best_docking.shape[-1]+1,1),best_docking,c="c",label=names[-1],marker="o",ms="1.5")
 plt.fill_between(x=np.arange(1,best_docking.shape[-1]+1,1),y1=np.clip(best_docking-best_docking_std,minval,maxval),y2=np.clip(best_docking+best_docking_std,minval,maxval),color="c",alpha=0.1)
 # plt.fill_between(x=np.arange(1,best_docking.shape[-1]+1,1),y1=(best_docking_q1),y2=(best_docking_q3),color="c",alpha=0.1)
-# plt.ylabel(f"Mean of best {ylabel}")
+# plt.ylabel(f"Mean of best ${ylabel}$")
 if mode == "litpcba": yscale = 2 
 else: yscale = 4
-# plt.xlim(-10,500)
-plt.ylim(7,np.max(Y)+0.2)
-# plt.xlabel("Steps")
+plt.xlim(-10,best_nodocking.shape[-1]+100)
+plt.ylim(np.mean(Y)+0.5,np.max(Y)+0.1)
+plt.xlabel("Compounds sampled", fontsize=15)
+plt.ylabel(f"$\mathrm{{\mathbb{{E}}}} \\hspace{{0.2}}\max({ylabel})$", fontsize=15)
+c_patch = mpatches.Patch(color='c', label='Active Learning + Docking')
+m_patch = mpatches.Patch(color='m', label='Active Learning')
+plt.legend(handles=[m_patch,c_patch], fontsize=15, loc="lower right")
 # plt.legend(loc="lower right")
-plt.grid(True)
+# plt.grid(True)
 # plt.title(f"{target} {' '.join(config.split('_'))}")
 plt.tight_layout()
 plt.show()
+
+#%%
+
+# TOC-style diagram -- mean steps to target
+# mpl.rcParams['axes.spines.right'] = False
+# mpl.rcParams['axes.spines.top'] = False
+# plt.style.use("default")
+plt.figure(figsize=(5.4,6)) 
+# plt.figure(figsize=(6.8,4))
+plt.plot(nodocking,targets,c="m",marker=".",label=names[-2])
+plt.fill_betweenx(y=targets,x1=nodocking-nodocking_std,x2=nodocking+nodocking_std,color="m",alpha=0.1)
+plt.plot(docking,targets,c="c",marker=".",label=names[-1])
+plt.fill_betweenx(y=targets,x1=docking-docking_std,x2=docking+docking_std,color="c",alpha=0.1)
+plt.ylabel("$"+ylabel+"$", fontsize=15) # or $\\text{p}EC_{50}$
+plt.xlabel("$\mathrm{\mathbb{E}} \left[\\text{steps to target}\\right]$", fontsize=15)
+plt.xlim(-5,nodocking[-1]+20)
+plt.ylim(targets[0]-0.1,targets[-1]+0.1)
+c_patch = mpatches.Patch(color='c', label='Active Learning + Docking')
+m_patch = mpatches.Patch(color='m', label='Active Learning')
+plt.legend(handles=[m_patch,c_patch], fontsize=15, loc="lower right")
+# plt.grid(True)
+plt.tight_layout()
+plt.show()
+
+#%%
+
+# delta_LinF9_XGB score
+# mpl.rcParams['axes.spines.right'] = False
+# mpl.rcParams['axes.spines.top'] = False
+plt.figure(figsize=(5,6)) 
+plt.xticks(fontsize=15)
+plt.yticks(fontsize=15)
+x = data[lowlevel].values
+yp = data[y].values
+xtop = (x[x > np.percentile(x,90)])
+ytop = (yp[x > np.percentile(x,90)])
+R = round(pearsonr(x,yp).statistic**2,3)
+xy = np.vstack([x,yp])
+z = gaussian_kde(xy)(xy)
+idx = z.argsort()
+x, yp, z = x[idx], yp[idx], z[idx]
+plt.scatter(x,yp,c=z,cmap="viridis",alpha=0.8,s=20)
+# plt.plot(np.unique(x), np.poly1d(np.polyfit(x, yp, 1))(np.unique(x)),c="black")
+# plt.scatter(xtop,ytop,c="orange",s=20,label="top 10%")
+# plt.xlim(0,15)
+# plt.xlim(0,150)
+# plt.ylim(0,15)
+plt.xlabel("Docking score", fontsize=15)
+plt.ylabel("$"+ylabel+"$", fontsize=15)
+# plt.title(f"{target} ($R^2$: {R})", fontsize=15)
+
 #%%
