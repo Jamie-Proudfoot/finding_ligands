@@ -49,7 +49,7 @@ tar -xvzf msms_i86_64Linux2_2.6.1.tar.gz -C msms
 cd msms
 cp msms.x86_64Linux2.2.6.1 msms
 ```  
-If you encounter ModuleNotFoundError: No module named 'MolKit' when running `gen_delta.py`, run `export PYTHONPATH={AbsPathTo}/mgltools_x86_64Linux2_1.5.6/MGLToolsPckgs/:$PYTHONPATH` in a bash shell (where `AbsPathTo` is defined by the user; may add this to a .bashrc file to automatically add to PYTHONPATH on shell startup).  
+If you encounter ModuleNotFoundError: No module named 'MolKit' when running `gen_delta.py`, run `export PYTHONPATH={AbsPathTo}/mgltools_x86_64Linux2_1.5.6/MGLToolsPckgs/:$PYTHONPATH` in a bash shell (where `AbsPathTo` is defined by the user; may add this to a `.bashrc` file to automatically add to PYTHONPATH on shell startup).  
 
 Install AlphaSpace manually to the DXGB environment using the following commands:
 
