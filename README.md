@@ -63,9 +63,9 @@ pip install -e ./
 If there are any additional problems in setting up delta_LinF9_XGB, follow the setup tutorial in `delta_LinF9_XGB/README.md`, but ensure you are still using the modified scripts supplied here
 
 
-##### 3. Set up dockstring
+##### 3. Set up DOCKSTRING
 
-The folder dockstring/ contains a copy of the repository https://github.com/dockstring/dockstring.git
+The folder DOCKSTRING/ contains a copy of the repository https://github.com/DOCKSTRING/DOCKSTRING.git
 
 The software has been slightly modified:
 
@@ -73,14 +73,14 @@ a. The `--log` option for vina has been commented out in the `_dock_pdbq` functi
 
 b. A function that attempts to correct OpenBabel protonation errors has been added to the `protonate_mol` function of the `utils.py` script
 
-c. The latest AutoDock Vina release (`vina_1.2.6_linux_x86_64`) was downloaded from https://github.com/ccsb-scripps/AutoDock-Vina/releases and placed in `dockstring/resources/bin/vina_linux_new` and this is pointed to by the `get_vina_filename` function of the `utils.py` script
+c. The latest AutoDock Vina release (`vina_1.2.6_linux_x86_64`) was downloaded from https://github.com/ccsb-scripps/AutoDock-Vina/releases and placed in `DOCKSTRING/resources/bin/vina_linux_new` and this is pointed to by the `get_vina_filename` function of the `utils.py` script
 
-This package should not require any further installation steps (there is no need to `pip`/`conda` install dockstring)
+This package should not require any further installation steps (there is no need to `pip`/`conda` install DOCKSTRING)
 
 
 ### Create datasets
 
-Modify scripts where necessary by specifying the protein target using its gene name (e.g. EGFR, ACHE, PTGS2) as found in DUD-E or dockstring
+Modify scripts where necessary by specifying the protein target using its gene name (e.g. EGFR, ACHE, PTGS2) as found in DUD-E or DOCKSTRING
 e.g.
 ```python
 target = "EGFR"
@@ -90,7 +90,7 @@ target = "EGFR"
 
 2. Move the `{target}_data_pKi.csv` file to the `{target}` folder
 
-3. Move the desired PDBQT file from `dockstring/resources/targets` to the `{target}` folder and convert to PDB using
+3. Move the desired PDBQT file from `DOCKSTRING/resources/targets` to the `{target}` folder and convert to PDB using
 
 Note: the ChEMBL database is a continuously-updated repository. Therefore using the current script to collect ChEMBL ligands and activities from the Python ChEMBL webresource client API will not necessarily reproduce the `{target}_data_pKi.csv` files. For the purposes of replicating the results of this project, start with the `{target}_data_pKi.csv` provided here. The original data was collected from ChEMBL v34, March 2024.
 
@@ -98,7 +98,7 @@ Note: the ChEMBL database is a continuously-updated repository. Therefore using 
 cut -c-66 ${target}.pdbqt > ${target}.pdb
 ```
 
-4. (py3env) Use the `gen_dockstring.py` script to dock the ligands contained in `{target}_data_pKi.csv` to the target PDB file
+4. (py3env) Use the `gen_DOCKSTRING.py` script to dock the ligands contained in `{target}_data_pKi.csv` to the target PDB file
 
 5. (DXGB) Use the `gen_delta.py` script to re-score the docked ligand poses contained in `{target}/conformers`  
 
@@ -108,7 +108,7 @@ Note: the column `XGB` in the files `{target}_data_3d_delta_pKi.csv` refers to t
 
 ### Run supervised / active learning
 
-Modify scripts where necessary by specifying the protein target using its gene name (e.g. EGFR, ACHE, PTGS2) as found in DUD-E or dockstring
+Modify scripts where necessary by specifying the protein target using its gene name (e.g. EGFR, ACHE, PTGS2) as found in DUD-E or DOCKSTRING
 
 e.g.
 ```python
