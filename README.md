@@ -42,8 +42,7 @@ tar -xvzf mgltools_x86_64Linux2_1.5.6.tar.gz
 cd mgltools_x86_64Linux2_1.5.6
 tar -xvzf MGLToolsPckgs.tar.gz
 export PYTHONPATH=$(pwd)/MGLToolsPckgs/:$PYTHONPATH
-cd ..
-cd delta_LinF9_XGB/software/
+cd ../delta_LinF9_XGB/software/
 tar -xvzf AlphaSpace2_2021.tar.gz
 mkdir msms
 tar -xvzf msms_i86_64Linux2_2.6.1.tar.gz -C msms
