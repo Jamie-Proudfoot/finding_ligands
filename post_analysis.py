@@ -22,7 +22,7 @@ import matplotlib as mpl
 
 import seaborn as sns
 
-from scipy.stats import tukey_hsd, f_oneway, friedmanchisquare, ttest_ind, kstest
+from scipy.stats import tukey_hsd, f_oneway, friedmanchisquare, ttest_ind, kstest, wilcoxon
 from statsmodels.stats.anova import AnovaRM
 from statsmodels.sandbox.stats.multicomp import multipletests
 
@@ -211,9 +211,11 @@ plt.show()
 #%%
 
 # Statistical tests
+anova_df = df[df["config"].isin(names[-2:])].reset_index(drop=True)
+anova_df["run"] = [i for i in range(Nreps)]+[i for i in range(Nreps)]
+anova_df["config"] = [0]*Nreps+[1]*Nreps
 
 # steps_to_maximum
-# df["run"] = [i for i in range(Nreps)]*len(names)
 y = "steps_to_maximum"
 grouped = [df[y][df["config"]==name].values for name in names]
 grouped = [arr[~np.isnan(arr)] for arr in grouped]
@@ -221,22 +223,18 @@ print(names)
 # Tukey HSD
 tukey = tukey_hsd(*grouped[-2:])
 print(tukey)
-# ANOVA
-anova = f_oneway(*grouped[-2:])
-print(anova)
 # ANOVA repeated measurements
-# anovaRM = AnovaRM(data=df[df["config"].isin(names[-2:])], depvar='steps_to_maximum',  subject='run', within=['config']).fit() 
-# print(anovaRM)
+anovaRM = AnovaRM(data=anova_df, depvar='steps_to_maximum', subject='run', within=['config']).fit() 
+print(anovaRM)
 # Two-sample one-way Welch's t-test
 welch = ttest_ind(grouped[-1],grouped[-2],equal_var=False,alternative='less')
 print(welch)
-# Kolmogorov-Smirnov test
-ks = kstest(grouped[-1],grouped[-2])
-print(ks)
+# Paired Wilcoxon signed rank test
+wx = wilcoxon(grouped[-1],grouped[-2],alternative='less')
+print(wx)
 
 print()
 # Enrichment factor
-# df["run"] = [i for i in range(Nreps)]*len(names)
 y = "EF"
 grouped = [df[y][df["config"]==name].values for name in names]
 grouped = [arr[~np.isnan(arr)] for arr in grouped]
@@ -244,18 +242,15 @@ print(names)
 # Tukey HSD
 tukey = tukey_hsd(*grouped[-2:])
 print(tukey)
-# ANOVA
-anova = f_oneway(*grouped[-2:])
-print(anova)
 # ANOVA repeated measurements
-# anovaRM = AnovaRM(data=df[df["config"].isin(names[-2:])], depvar='steps_to_maximum',  subject='run', within=['config']).fit() 
-# print(anovaRM)
+anovaRM = AnovaRM(data=anova_df, depvar='EF', subject='run', within=['config']).fit() 
+print(anovaRM)
 # Two-sample one-way Welch's t-test
 welch = ttest_ind(grouped[-1],grouped[-2],equal_var=False,alternative='greater')
 print(welch)
-# Kolmogorov-Smirnov test
-ks = kstest(grouped[-1],grouped[-2])
-print(ks)
+# Paired Wilcoxon signed rank test
+wx = wilcoxon(grouped[-1],grouped[-2],alternative='greater')
+print(wx)
 
 #%%
 
