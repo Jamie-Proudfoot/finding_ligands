@@ -2,7 +2,7 @@
 
 *Workflow combining docking and active learning / Bayesian optimization for searching small-to-medium ligand libraries*
 
-<img src="plot.png" alt="plot" style="zoom:15;" />
+<img src="summary_fig.png" alt="summary" style="zoom:15;" />
 
 ### Setup
 
