@@ -458,8 +458,8 @@ parameter_ranges = [
      "degree": [1,2,3],
      "epsilon": [1.0,0.1,0.001,0.0001],
     },
-    {"n_estimators": [50, 100, 200],
-     "max_depth": [5, 10, 50, 100]
+    {"max_features": ["sqrt","log2"],
+     "max_depth": [5, 50, 100]
     },
     {"kernel": ["poly"],
      "alpha": [1e-3,1e-2,1e-1,1],
@@ -552,7 +552,7 @@ configs =[
 for config in configs:
 
     # Determine data, model, descriptors and active learning configuration
-    Nrep = 25
+    Nrep = 10 #25
     datafile = f"{config['dataset']}_data_full.csv"
     mol_data = pd.read_csv(os.path.join("data",datafile))
     mol_label = [config["label"]]
