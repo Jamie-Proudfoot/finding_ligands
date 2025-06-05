@@ -118,7 +118,7 @@ target = "EGFR"
 
 2. (py3env) Use the `supervised_learning.py` script to perform supervised_learning on the `{target}_data_3d_delta_pKi.csv` data
 
-3. (py3env) Use the `optimization.py` script to perform active learning optimization on the `{target}_data_3d_delta_pKi.csv` data to find the ligand with the highest $pK_i$
+3. (py3env) Use the `optimization.py` script to perform machine learning optimization on the `{target}_data_3d_delta_pKi.csv` data to find the ligand with the highest $pK_i$
 
 4. (py3env) Analyze the results of optimization with the scripts `plot_results.py` and `post_analysis.py`
 
