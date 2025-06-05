@@ -105,7 +105,7 @@ cut -c-66 ${target}.pdbqt > ${target}.pdb
 
 Note: the column `XGB` in the files `{target}_data_3d_delta_pKi.csv` refers to the delta_LinF9_XGB re-scored docking scores.
 
-### Run supervised / active learning
+### Run supervised learning / Bayesian optimization
 
 Modify scripts where necessary by specifying the protein target using its gene name (e.g. EGFR, ACHE, PTGS2) as found in DUD-E or DOCKSTRING
 
@@ -118,9 +118,9 @@ target = "EGFR"
 
 2. (py3env) Use the `supervised_learning.py` script to perform supervised_learning on the `{target}_data_3d_delta_pKi.csv` data
 
-3. (py3env) Use the `active_learning.py` script to perform active learning optimization on the `{target}_data_3d_delta_pKi.csv` data to find the ligand with the highest $pK_i$
+3. (py3env) Use the `optimization.py` script to perform active learning optimization on the `{target}_data_3d_delta_pKi.csv` data to find the ligand with the highest $pK_i$
 
-4. (py3env) Analyze the results of active learning with the scripts `plot_results.py` and `post_analysis.py`
+4. (py3env) Analyze the results of optimization with the scripts `plot_results.py` and `post_analysis.py`
 
 ### References
 
