@@ -1,6 +1,6 @@
 # finding_ligands
 
-*Workflow combining docking and active learning / Bayesian optimization for searching small-to-medium ligand libraries*
+*Workflow combining docking and Bayesian optimization for searching small-to-medium ligand libraries*
 
 <img src="summary_fig.png" alt="summary" style="zoom:15;" />
 
