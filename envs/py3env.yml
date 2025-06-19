@@ -233,7 +233,7 @@ dependencies:
     - tqdm==4.66.2
     - uc-micro-py==1.0.3
     - umap-learn==0.5.7
-    - unidock-tools==0.0.1
+    - unidock-tools==1.1.2
     - unipressed==1.4.0
     - url-normalize==1.4.3
     - urllib3==2.3.0
