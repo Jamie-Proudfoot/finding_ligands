@@ -120,7 +120,7 @@ target = "EGFR"
 
 4. (py3env) Analyze the results of optimization with the scripts `plot_results.py` and `post_analysis.py`
 
-Note: the most important results files are the `{target}_{config}_ID.csv`, which store the numerical indexes (zero-based numbering) of the sampled compounds corresponding to the `{target}.csv` data file. Using these files you can easily determine the mean steps-to-maximum and the mean EF (enrichment factor) values.
+Note: the most important results files are the `{target}_{config}_ID.csv` files, which store the numerical indexes (zero-based numbering) of the sampled compounds corresponding to the `{target}.csv` data file. Using these files you can easily determine the mean steps-to-maximum and the mean EF (enrichment factor) values.
 
 ### References
 
@@ -139,6 +139,7 @@ Note: the most important results files are the `{target}_{config}_ID.csv`, which
 5. Lewis-Atwell, Toby, et al. *ACS Catalysis*, **13**, 13506 - 13515., (2023). 
 
    [Reformulating Reactivity Design for Data-Efficient Machine Learning.](http://dx.doi.org/10.1021/acscatal.3c02513)
+
 
 
 
