@@ -2,7 +2,7 @@
 
 *Workflow combining docking and Bayesian optimization for searching small-to-medium ligand libraries*
 
-<img src="summary_fig.png" alt="summary" style="zoom:15;" />
+<img src="plot.png" alt="summary" style="zoom:15;" />
 
 ### Setup
 
@@ -139,4 +139,5 @@ target = "EGFR"
 5. Lewis-Atwell, Toby, et al. *ACS Catalysis*, **13**, 13506 - 13515., (2023). 
 
    [Reformulating Reactivity Design for Data-Efficient Machine Learning.](http://dx.doi.org/10.1021/acscatal.3c02513)
+
 
