@@ -72,7 +72,7 @@ a. The `--log` option for vina has been commented out in the `_dock_pdbq` functi
 
 b. A function that attempts to correct OpenBabel protonation errors has been added to the `protonate_mol` function of the `utils.py` script
 
-c. The latest AutoDock Vina release (`vina_1.2.6_linux_x86_64`) was downloaded from https://github.com/ccsb-scripps/AutoDock-Vina/releases and placed in `DOCKSTRING/resources/bin/vina_linux_new` and this is pointed to by the `get_vina_filename` function of the `utils.py` script
+c. The AutoDock Vina 1.2.6 release (`vina_1.2.6_linux_x86_64`) was downloaded from https://github.com/ccsb-scripps/AutoDock-Vina/releases and placed in `DOCKSTRING/resources/bin/vina_linux_new` and this is pointed to by the `get_vina_filename` function of the `utils.py` script
 
 This package should not require any further installation steps (there is no need to `pip`/`conda` install DOCKSTRING)
 
@@ -139,6 +139,7 @@ target = "EGFR"
 5. Lewis-Atwell, Toby, et al. *ACS Catalysis*, **13**, 13506 - 13515., (2023). 
 
    [Reformulating Reactivity Design for Data-Efficient Machine Learning.](http://dx.doi.org/10.1021/acscatal.3c02513)
+
 
 
 
