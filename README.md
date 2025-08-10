@@ -91,11 +91,11 @@ target = "EGFR"
 
 3. Move the desired PDBQT file from `dockstring/resources/targets` to the `{target}` folder and convert to PDB using
 
-Note: the ChEMBL database is a continuously-updated repository. Therefore using the current script to collect ChEMBL ligands and activities from the Python ChEMBL webresource client API will not necessarily reproduce the `{target}_data_pKi.csv` files. For the purposes of replicating the results of this project, start with the `{target}_data_pKi.csv` provided here. The original data was collected from ChEMBL v34, March 2024.
-
 ```
 cut -c-66 ${target}.pdbqt > ${target}.pdb
 ```
+
+Note: the ChEMBL database is a continuously-updated repository. Therefore using the current script to collect ChEMBL ligands and activities from the Python ChEMBL webresource client API will not necessarily reproduce the `{target}_data_pKi.csv` files. For the purposes of replicating the results of this project, start with the `{target}_data_pKi.csv` provided here. The original data was collected from ChEMBL v34, March 2024.
 
 4. (py3env) Use the `gen_dockstring.py` script to dock the ligands contained in `{target}_data_pKi.csv` to the target PDB file
 
@@ -139,5 +139,6 @@ target = "EGFR"
 5. Lewis-Atwell, Toby, et al. *ACS Catalysis*, **13**, 13506 - 13515., (2023). 
 
    [Reformulating Reactivity Design for Data-Efficient Machine Learning.](http://dx.doi.org/10.1021/acscatal.3c02513)
+
 
 
