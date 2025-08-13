@@ -110,8 +110,8 @@ def fit_predict(model,parameter_ranges,Xtrain,Ytrain,Xtest,sd=False):
     if sd and "return_std" in inspect.getfullargspec(model.predict)[0]:
         Ypred, Upred =  trained_model.predict(Xtest,return_std=True)
     else: Ypred, Upred = trained_model.predict(Xtest), np.zeros_like(Xtest)
-    Ypred = Ypred.reshape(-1,1)
-    Upred = Upred.reshape(-1,1)
+    Ypred = Ypred #.reshape(-1,1)
+    Upred = Upred #.reshape(-1,1)
     return trained_model, Ypred, Upred
 
 def make_plot(model, Ypred, Y):
@@ -125,10 +125,10 @@ def make_plot(model, Ypred, Y):
 def evaluate_model(model, parameter_ranges, Xtrain, Ytrain, Xtest, Ytest, plot=False):
 	train_scaler = StandardScaler().fit(Ytrain.reshape(-1,1))
 	train_scale = train_scaler.scale_
-	Ytrain = train_scaler.transform(Ytrain.reshape(-1,1))
+	Ytrain = train_scaler.transform(Ytrain.reshape(-1,1)).ravel() #
 	test_scaler = StandardScaler().fit(Ytest.reshape(-1,1))
 	test_scale = test_scaler.scale_
-	Ytest = test_scaler.transform(Ytest.reshape(-1,1))
+	Ytest = test_scaler.transform(Ytest.reshape(-1,1)).ravel() #
 	trained_model = fit_model(model, parameter_ranges, Xtrain, Ytrain)
 	Ytrain_pred = trained_model.predict(Xtrain)
 	Ytest_pred = trained_model.predict(Xtest)
