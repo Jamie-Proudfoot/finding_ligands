@@ -78,7 +78,7 @@ This package should not require any further installation steps (there is no need
 
 ### Create datasets
 
-Modify scripts where necessary by specifying the protein target using its gene name (e.g. EGFR, ACHE, PTGS2) as found in DUD-E or DOCKSTRING
+Modify scripts where necessary by manually specifying the protein target using its gene name (e.g. EGFR, ACHE, PTGS2) as found in DUD-E or DOCKSTRING
 e.g.
 ```python
 target = "EGFR"
@@ -140,6 +140,7 @@ Note: the most important results files are the `{target}_{config}_ID.csv` files,
 5. Lewis-Atwell, Toby, et al. *ACS Catalysis*, **13**, 13506 - 13515., (2023). 
 
    [Reformulating Reactivity Design for Data-Efficient Machine Learning.](http://dx.doi.org/10.1021/acscatal.3c02513)
+
 
 
 
