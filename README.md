@@ -44,8 +44,7 @@ tar -xvzf MGLToolsPckgs.tar.gz
 export PYTHONPATH=$(pwd)/MGLToolsPckgs/:$PYTHONPATH
 cd ../delta_LinF9_XGB/software/
 tar -xvzf AlphaSpace2_2021.tar.gz
-mkdir msms
-tar -xvzf msms_i86_64Linux2_2.6.1.tar.gz -C msms
+tar -xvzf msms_i86_64Linux2_2.6.1.tar.gz
 cd msms
 cp msms.x86_64Linux2.2.6.1 msms
 ```  
@@ -139,6 +138,7 @@ Note: the most important results files are the `{target}_{config}_ID.csv` files,
 5. Lewis-Atwell, Toby, et al. *ACS Catalysis*, **13**, 13506 - 13515., (2023). 
 
    [Reformulating Reactivity Design for Data-Efficient Machine Learning.](http://dx.doi.org/10.1021/acscatal.3c02513)
+
 
 
 
