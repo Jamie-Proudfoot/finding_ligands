@@ -99,4 +99,3 @@ dependencies:
     - natsort==8.4.0
     - python-dateutil==2.9.0.post0
     - setuptools==68.0.0
-prefix: /u/h/jp2658/.conda/envs/DXGB
