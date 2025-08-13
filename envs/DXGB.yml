@@ -2,9 +2,6 @@ name: DXGB
 channels:
   - openbabel
   - rdkit
-  - openeye
-  - plotly
-  - omnia
   - conda-forge
   - defaults
 dependencies:
