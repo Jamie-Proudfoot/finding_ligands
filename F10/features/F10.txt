@@ -1,2 +1,0 @@
-Good features
-GETAWAY, MORSE, rdkit2d, sasaF
