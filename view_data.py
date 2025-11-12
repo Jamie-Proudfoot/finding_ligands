@@ -6,6 +6,7 @@ import seaborn as sns
 import numpy as np
 from IPython.display import display
 from scipy.stats import pearsonr
+from sklearn.metrics import roc_auc_score
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 from scipy.stats import gaussian_kde
@@ -20,8 +21,8 @@ from rdkit.Chem.rdMolDescriptors import CalcAUTOCORR3D, CalcRDF, CalcMORSE, Calc
 # from mordred._base.result import Result
 from tqdm import tqdm
 
-params = {'mathtext.default': 'regular' }          
-plt.rcParams.update(params)
+# params = {'mathtext.default': 'regular' }          
+# plt.rcParams.update(params)
 mpl.rcParams['figure.dpi'] = 300
 
 #%%
@@ -76,10 +77,10 @@ fsets = {
 }
 #%%
 
+# Plot correlation heatmaps of different variables
+
 outdir = os.path.join(target,"features")
 if not os.path.exists(outdir): os.mkdir(outdir)
-
-# Plot correlation heatmaps of different variables
 for (name, varlist) in tqdm(fsets.items()):
     Y = "pKi"
     N = len(varlist)
@@ -127,7 +128,7 @@ plt.xlim(0,15)
 # plt.xlim(0,150)
 plt.ylim(0,15)
 plt.xlabel("Docking score", fontsize=15)
-plt.ylabel("$pK_i$", fontsize=15)
+plt.ylabel("$\\text{p}K_i$", fontsize=15)
 plt.title(f"{target} ($R^2$: {R})", fontsize=15)
 plt.legend(fontsize=12)
 
@@ -150,7 +151,7 @@ plt.xlim(0,15)
 # plt.xlim(0,150)
 plt.ylim(0,15)
 plt.xlabel("Docking score", fontsize=15)
-plt.ylabel("$pK_i$", fontsize=15)
+plt.ylabel("$\\text{p}K_i$", fontsize=15)
 plt.title(f"{target} ($R^2$: {R})", fontsize=15)
 plt.legend(fontsize=12)
 
@@ -173,7 +174,7 @@ plt.xlim(0,15)
 # plt.xlim(0,150)
 plt.ylim(0,15)
 plt.xlabel("Docking score", fontsize=15)
-plt.ylabel("$pK_i$", fontsize=15)
+plt.ylabel("$\\text{p}K_i$", fontsize=15)
 plt.title(f"{target} ($R^2$: {R})", fontsize=15)
 plt.legend(fontsize=12)
 
@@ -186,30 +187,7 @@ y = df["pKi"].values
 xtop = (x[x > np.percentile(x,90)])
 ytop = (y[x > np.percentile(x,90)])
 R = round(pearsonr(x,y).statistic**2,3)
-xy = np.vstack([x,y])
-z = gaussian_kde(xy)(xy)
-idx = z.argsort()
-x, y, z = x[idx], y[idx], z[idx]
-plt.scatter(x,y,c=z,cmap="viridis",alpha=0.8,s=20)
-plt.plot(np.unique(x), np.poly1d(np.polyfit(x, y, 1))(np.unique(x)),c="black")
-plt.scatter(xtop,ytop,c="orange",s=20,label="top 10%")
-plt.xlim(0,15)
-# plt.xlim(0,150)
-plt.ylim(0,15)
-plt.xlabel("Docking score", fontsize=15)
-plt.ylabel("$pK_i$", fontsize=15)
-plt.title(f"{target} ($R^2$: {R})", fontsize=15)
-plt.legend(fontsize=12)
-
-#%%
-
-# delta_LinF9_XGB score (actives only)
-# x = -df["score"].values
-x = df["XGB"][df["active"]==1].values
-y = df["pKi"][df["active"]==1].values
-xtop = (x[x > np.percentile(x,90)])
-ytop = (y[x > np.percentile(x,90)])
-R = round(pearsonr(x,y).statistic**2,3)
+auc = round(roc_auc_score(y >= 9, x),3)
 xy = np.vstack([x,y])
 z = gaussian_kde(xy)(xy)
 idx = z.argsort()
@@ -221,6 +199,81 @@ plt.xlim(0,15)
 # plt.xlim(0,150)
 plt.ylim(0,15)
 plt.xlabel("Docking score", fontsize=15)
-plt.ylabel("$pK_i$", fontsize=15)
-plt.title(f"{target} ($R^2$: {R})", fontsize=15)
+plt.ylabel("$\\text{p}K_i$", fontsize=15)
+plt.title(f"{target} ($R^2$: {R}, AUC: {auc})", fontsize=15)
 plt.legend(fontsize=12)
+
+print(np.mean(y))
+print(np.max(y))
+print(np.sum(df["active"])/len(df) * 100)
+
+#%%
+
+# delta_LinF9_XGB score (actives only)
+# x = -df["score"].values
+x = df["XGB"][df["active"]==1].values
+y = df["pKi"][df["active"]==1].values
+xtop = (x[x > np.percentile(x,90)])
+ytop = (y[x > np.percentile(x,90)])
+R = round(pearsonr(x,y).statistic**2,3)
+auc = round(roc_auc_score(y >= 9, x),3)
+xy = np.vstack([x,y])
+z = gaussian_kde(xy)(xy)
+idx = z.argsort()
+x, y, z = x[idx], y[idx], z[idx]
+plt.scatter(x,y,c=z,cmap="viridis",alpha=0.8,s=20)
+plt.plot(np.unique(x), np.poly1d(np.polyfit(x, y, 1))(np.unique(x)),c="black")
+plt.scatter(xtop,ytop,c="orange",s=20,label="top 10%")
+plt.xlim(0,15)
+# plt.xlim(0,150)
+plt.ylim(0,15)
+plt.xlabel("Docking score", fontsize=15)
+plt.ylabel("$\\text{p}K_i$", fontsize=15)
+plt.title(f"{target} ($R^2$: {R}, AUC: {auc})", fontsize=15)
+plt.legend(fontsize=12)
+
+
+#%%
+
+#################################
+# Plot all scatter plots at once
+
+import matplotlib as mpl
+mpl.rcParams['axes.spines.right'] = False
+mpl.rcParams['axes.spines.top'] = False
+targets = ["EGFR","JAK2","LCK","MAOB","NOS1","PARP1","ACHE","PDE5A","PTGS2","ESR1","NR3C1","AR","F10","ADRB2"]#
+cols = 3
+rows = 5
+fig, axes = plt.subplots(nrows=rows, ncols=cols, figsize=(cols*4, rows*4.5))
+for i, target in enumerate(targets[:]):
+    l = 2048
+    df = pd.read_csv(os.path.join("data",f"{target}-{l}_data_3d_delta_pKi.csv"))  
+    a, b = i//cols, i%cols
+    ax = axes[a,b]
+    x = df["XGB"].values
+    y = df["pKi"].values
+    xtop = (x[x > np.percentile(x,90)])
+    ytop = (y[x > np.percentile(x,90)])
+    R = round(pearsonr(x,y).statistic**2,3)
+    auc = round(roc_auc_score(y >= 9, x), 3)
+    xy = np.vstack([x,y])
+    z = gaussian_kde(xy)(xy)
+    idx = z.argsort()
+    x, y, z = x[idx], y[idx], z[idx]
+    ax.scatter(x,y,c=z,cmap="viridis",alpha=0.8,s=20)
+    ax.set_xlim(0,12)
+    ax.set_ylim(0,12)
+    ax.tick_params(axis='both', which='major', labelsize=16)
+    ax.set_title(f"{target}, $R^2$: {R}, AUC: {auc}", size=16)
+    # ax.plot(np.unique(x), np.poly1d(np.polyfit(x, y, 1))(np.unique(x)),c="red",linestyle='--')
+    # plt.scatter(xtop,ytop,c="orange",s=20,label="top 10%")
+    # ax.xlim(0,14)
+    # ax.ylim(0,14)
+    # ax.xlabel("Docking score", fontsize=15)
+    # ax.ylabel("$\\text{p}K_i$", fontsize=15)
+    # ax.title(f"{target} ($R^2$: {R})", fontsize=15)
+axes[-1,-1].axis("off")
+fig.tight_layout()
+plt.show()
+
+# %%

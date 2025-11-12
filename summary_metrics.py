@@ -11,10 +11,10 @@ data_suffix = "data_3d_delta_pKi" #"data_full" for LIT-PCBA
 w = 1   # batch size
 m = 10  # initial pool size
 M = 10_000 # budget, e.g. 10_000: arbitrarily high for target termination
-EF_target = 9.0 #4.0 for LIT-PCBA
-dir = "results"
+EF_target = 9.0 # 4.0 + 1e-3 for LIT-PCBA
+dir = "results/BRR_greedy"
 suffix = "" # e.g "10%" or "100" for fixed budgets
-p = None # proportion of budget (M) to consider (None => 100%)
+p = None # % proportion of budget (M) to consider (leave as None: 100%)
 
 def random_analytic(D,v):
     """
@@ -75,8 +75,8 @@ for file in tqdm(glob.glob(os.path.join(dir,"*ID.csv"))):
         recall.append(found)
 
         # Collect enrichment factor
-        rate = np.sum(target_data > EF_target) / len(target_data)
-        sampled_rate = np.sum(Ytrain > EF_target) / len(Ytrain)
+        rate = np.sum(target_data >= EF_target) / len(target_data)
+        sampled_rate = np.sum(Ytrain >= EF_target) / len(Ytrain)
         ef = sampled_rate / rate
         enrichment_factor.append(ef)
 

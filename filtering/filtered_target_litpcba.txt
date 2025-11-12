@@ -1,0 +1,11 @@
+ESR1ago 0 0.0
+[]
+
+ESR1ant 7 0.1783893985728848
+['C[C@H]1CCC[C@H](O)CCCCCc2cc(O)cc(O)c2C(=O)O1', 'C[C@]12CC[C@@H]3c4ccc(O)cc4CC[C@H]3[C@@H]1CC[C@@H]2O', 'C[C@]12CC[C@@H]3c4ccc(O)cc4CC[C@H]3[C@@H]1CCC2=O', 'Oc1ccc(C(=C(Cl)Cl)c2ccc(O)cc2)cc1', 'Oc1ccc(C(c2ccc(O)cc2)C(Cl)(Cl)Cl)cc1', 'O=C(c1ccc(O)cc1O)c1ccc(O)cc1O', 'CC(C)(c1ccc(O)cc1)c1ccc(O)cc1']
+
+PPARG 4 0.09739469198928659
+['Oc1ccc(/C=C/c2cc(O)cc(O)c2)cc1', 'CCCCCCCCCC(=O)O', 'CCCCCCCCC(=O)O', 'O=C(Nc1ccccc1)c1cc([N+](=O)[O-])ccc1Cl']
+
+TP53 0 0.0
+[]

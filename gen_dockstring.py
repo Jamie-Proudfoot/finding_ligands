@@ -87,7 +87,7 @@ def dock_ligand(target,smi,CPUs):
     n_centers = len(chiral_centers)
     isosmiles = []
     # Do not enumerate if there are too many centers
-    if n_centers <= 6:
+    if n_centers > 1 and n_centers <= 6:
         opts = StereoEnumerationOptions(tryEmbedding=True)
         isomers = tuple(EnumerateStereoisomers(mol,options=opts))
         isosmiles = [Chem.MolToSmiles(x,isomericSmiles=True) for x in isomers]
@@ -119,11 +119,15 @@ def dock_ligand(target,smi,CPUs):
 
 #%%
 
-target_name = "EGFR"
+target_name = "USP7"
+id_column = "LigandId" #"molecule_chembl_id"
+filename = f"{target_name}_data.csv" # f"{target_name}_data_pKi.csv"
+output_filename = f"{target_name}_data_3d.csv" # f"{target_name}_data_3d_pKi.csv"
 confdir = os.path.join(target_name, "conformers")
 if not os.path.exists(confdir): os.makedirs(confdir)
 os.chdir(target_name)
-data_file = os.path.join(f"{target_name}_data_pKi.csv")
+#data_file = os.path.join(f"{target_name}_data_pKi.csv")
+data_file = os.path.join(filename)
 dockstring_target = target_name
 CPUs = 12 # number of CPUs to use
 data = pd.read_csv(data_file)
@@ -148,7 +152,7 @@ for i, df in enumerate(chunks):
     print(f"Chunk number: {i}")
     t0 = time.time()
     temp = []
-    for smi, id in zip(df["smiles"].values,df["molecule_chembl_id"].values):
+    for smi, id in zip(df["smiles"].values,df[id_column].values):
         try:
             ligand, scores = dock_ligand(target,smi,CPUs)
             features = get_features(ConfToMol(ligand,0))
@@ -181,5 +185,5 @@ print(f"Shape before filtering NaN values: {output.shape}")
 output.dropna(axis=0, how="any", inplace=True)
 print(f"Shape after filtering NaN values: {output.shape}")
 output.reset_index(drop=True, inplace=True)
-output.to_csv(os.path.join(f"{target_name}_data_3d_pKi.csv"),index=False)
+output.to_csv(os.path.join(output_filename),index=False)
 

@@ -28,6 +28,9 @@ from runXGB_all import run_XGB # importing from local folder
 #%%
 
 target_name = "EGFR"
+id_col = "molecule_chembl_id"
+filename = f"{target_name}_data_3d_pKi.csv"
+output_filename = f"{target_name}_data_3d_pKi.csv"
 fpLen = 2048
 
 #%%
@@ -36,7 +39,7 @@ os.chdir(f"{target_name}")
 cwd = os.getcwd()
 path_to_ligands = os.path.join(cwd,"conformers")
 path_to_protein = os.path.join(cwd,f"{target_name}.pdb")
-data_file = f"{target_name}_data_3d_pKi.csv"
+data_file = filename
 l = 2048 # 2048-bit Morgan FP
 data = pd.read_csv(data_file)
 data = data.iloc[:]
@@ -59,7 +62,7 @@ temp = []
 t0_0 = time.time()
 pro = path_to_protein
 os.chdir(path_to_ligands)
-for molec in data["molecule_chembl_id"].values:
+for molec in data[id_col].values:
     lig = f"{molec}.sdf"
     try:
         delta = {}
@@ -85,4 +88,4 @@ print(f"Shape after filtering NaN values: {output.shape}")
 output.reset_index(drop=True, inplace=True)
 print(f"Shape after adding delta descriptors: {output.shape}")
 os.chdir(cwd)
-output.to_csv(f"{target_name}-{l}_data_3d_delta_pKi.csv",index=False)
+output.to_csv(output_filename,index=False)

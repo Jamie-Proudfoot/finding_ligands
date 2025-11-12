@@ -13,7 +13,7 @@ import inspect
 from IPython.display import display
 
 import warnings
-warnings.filterwarnings('ignore') 
+warnings.filterwarnings('ignore')
 
 from sklearn.linear_model import LinearRegression
 from sklearn.linear_model import Ridge, RidgeCV
@@ -418,4 +418,3 @@ if __name__ == "__main__":
 			savedir = os.path.join(target,"supervised_learning")
 			if not os.path.exists(savedir): os.makedirs(savedir)
 			dataframe.to_csv(os.path.join(savedir,savefile),index=False)
-			

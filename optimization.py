@@ -113,7 +113,8 @@ def maximise(Ypred,Upred,Ytrain,test_idx,batch_size=1):
     return idx that maximises a(x)
     """
     a = Ypred
-    idx = (-a.flatten()).argsort(kind="stable")[:batch_size]
+    if batch_size == 1: idx = [np.argmax(a)]
+    else: idx = (-a.flatten()).argsort(kind="stable")[:batch_size]
     return idx
 
 def UCB(Ypred,Upred,Ytrain,test_idx,l=1,batch_size=1):
@@ -123,7 +124,8 @@ def UCB(Ypred,Upred,Ytrain,test_idx,l=1,batch_size=1):
     return idx that maximises a(x)
     """
     a = Ypred + l * Upred
-    idx = (-a.flatten()).argsort(kind="stable")[:batch_size]
+    if batch_size == 1: idx = [np.argmax(a)]
+    else: idx = (-a.flatten()).argsort(kind="stable")[:batch_size]
     return idx
 
 def PI(Ypred,Upred,Ytrain,test_idx,batch_size=1):
@@ -135,7 +137,8 @@ def PI(Ypred,Upred,Ytrain,test_idx,batch_size=1):
     Ytrain = StandardScaler().fit_transform(Ytrain.reshape(-1,1))
     Ybest = np.max(Ytrain)
     a = sp.stats.norm.cdf((Ypred - Ybest) / Upred)
-    idx = (-a.flatten()).argsort(kind="stable")[:batch_size]
+    if batch_size == 1: idx = [np.argmax(a)]
+    else: idx = (-a.flatten()).argsort(kind="stable")[:batch_size]
     return idx
 
 def EI(Ypred,Upred,Ytrain,test_idx,batch_size=1):
@@ -148,7 +151,8 @@ def EI(Ypred,Upred,Ytrain,test_idx,batch_size=1):
     Ybest = np.max(Ytrain)
     a = (Ypred - Ybest) * sp.stats.norm.cdf((Ypred - Ybest) / Upred) + \
        Upred * sp.stats.norm.pdf((Ypred - Ybest) / Upred)
-    idx = (-a.flatten()).argsort(kind="stable")[:batch_size]
+    if batch_size == 1: idx = [np.argmax(a)]
+    else: idx = (-a.flatten()).argsort(kind="stable")[:batch_size]
     return idx
 
 def random_sampling(Ytrain,Xtrain,Xtest,test_idx,batch_size=1):
@@ -168,7 +172,8 @@ def tanimoto(Ytrain,Xtrain,Xtest,test_idx,batch_size=1):
     """
     Xbest = Xtrain[np.argmax(Ytrain)]
     distances = cdist([Xbest],Xtest,"jaccard")
-    idx = (distances.flatten()).argsort(kind="stable")[:batch_size]
+    if batch_size == 1: idx = [np.argmin(distances)]
+    else: idx = (distances.flatten()).argsort(kind="stable")[:batch_size]
     return idx
 
 def cycle_limit(cycle,cycles,Ytrain,target):
@@ -309,7 +314,7 @@ def optimization(data,descriptors,label,
 
         train_idx += [test_idx[i] for i in idx]
         test_idx = [test_idx[i] for i in range(len(test_idx)) if i not in idx]
-       	Xtrain += [Xtest[i] for i in idx]
+        Xtrain += [Xtest[i] for i in idx]
         Xtest = [Xtest[i] for i in range(len(Xtest)) if i not in idx]
 
         # Query oracle for selected data point(s)
@@ -447,113 +452,99 @@ configs = [
     {"dataset":"EGFR-2048","label":"pKi","model":"BRR","acquisition":"tanimoto","batch":w,"descriptors":["morgan3",],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"EGFR-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"EGFR-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"EGFR-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"EGFR-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","docking",],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"EGFR-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
+    # {"dataset":"EGFR-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
+    # {"dataset":"EGFR-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
     {"dataset":"EGFR-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
     {"dataset":"LCK-2048","label":"pKi","model":"BRR","acquisition":"random","batch":w,"descriptors":["morgan3"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"LCK-2048","label":"pKi","model":"BRR","acquisition":"tanimoto","batch":w,"descriptors":["morgan3",],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"LCK-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d",],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"LCK-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"LCK-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"LCK-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","docking",],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"LCK-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
+    # {"dataset":"LCK-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
+    # {"dataset":"LCK-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
     {"dataset":"LCK-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
     {"dataset":"JAK2-2048","label":"pKi","model":"BRR","acquisition":"random","batch":w,"descriptors":["morgan3"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"JAK2-2048","label":"pKi","model":"BRR","acquisition":"tanimoto","batch":w,"descriptors":["morgan3"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"JAK2-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"JAK2-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"JAK2-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"JAK2-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","docking",],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"JAK2-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
+    # {"dataset":"JAK2-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
+    # {"dataset":"JAK2-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
     {"dataset":"JAK2-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
     {"dataset":"MAOB-2048","label":"pKi","model":"BRR","acquisition":"random","batch":w,"descriptors":["morgan3"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"MAOB-2048","label":"pKi","model":"BRR","acquisition":"tanimoto","batch":w,"descriptors":["morgan3"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"MAOB-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"MAOB-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"MAOB-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"MAOB-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","docking",],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"MAOB-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
+    # {"dataset":"MAOB-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
+    # {"dataset":"MAOB-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
     {"dataset":"MAOB-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
     {"dataset":"NOS1-2048","label":"pKi","model":"BRR","acquisition":"random","batch":w,"descriptors":["morgan3"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"NOS1-2048","label":"pKi","model":"BRR","acquisition":"tanimoto","batch":w,"descriptors":["morgan3"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"NOS1-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"NOS1-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"NOS1-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"NOS1-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","docking",],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"NOS1-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
+    # {"dataset":"NOS1-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
+    # {"dataset":"NOS1-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
     {"dataset":"NOS1-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
     {"dataset":"PARP1-2048","label":"pKi","model":"BRR","acquisition":"random","batch":w,"descriptors":["morgan3"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"PARP1-2048","label":"pKi","model":"BRR","acquisition":"tanimoto","batch":w,"descriptors":["morgan3"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"PARP1-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"PARP1-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"PARP1-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"PARP1-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","docking",],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"PARP1-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
+    # {"dataset":"PARP1-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
+    # {"dataset":"PARP1-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
     {"dataset":"PARP1-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
     {"dataset":"ACHE-2048","label":"pKi","model":"BRR","acquisition":"random","batch":w,"descriptors":["morgan3"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"ACHE-2048","label":"pKi","model":"BRR","acquisition":"tanimoto","batch":w,"descriptors":["morgan3"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"ACHE-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"ACHE-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"ACHE-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"ACHE-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","docking",],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"ACHE-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
+    # {"dataset":"ACHE-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
+    # {"dataset":"ACHE-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
     {"dataset":"ACHE-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
     {"dataset":"PDE5A-2048","label":"pKi","model":"BRR","acquisition":"random","batch":w,"descriptors":["morgan3"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"PDE5A-2048","label":"pKi","model":"BRR","acquisition":"tanimoto","batch":w,"descriptors":["morgan3"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"PDE5A-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"PDE5A-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"PDE5A-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"PDE5A-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","docking",],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"PDE5A-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
+    # {"dataset":"PDE5A-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
+    # {"dataset":"PDE5A-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
     {"dataset":"PDE5A-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
     {"dataset":"PTGS2-2048","label":"pKi","model":"BRR","acquisition":"random","batch":w,"descriptors":["morgan3"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"PTGS2-2048","label":"pKi","model":"BRR","acquisition":"tanimoto","batch":w,"descriptors":["morgan3"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"PTGS2-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"PTGS2-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"PTGS2-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"PTGS2-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","docking",],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"PTGS2-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
+    # {"dataset":"PTGS2-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
+    # {"dataset":"PTGS2-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
     {"dataset":"PTGS2-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
     {"dataset":"ESR1-2048","label":"pKi","model":"BRR","acquisition":"random","batch":w,"descriptors":["morgan3"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"ESR1-2048","label":"pKi","model":"BRR","acquisition":"tanimoto","batch":w,"descriptors":["morgan3"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"ESR1-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"ESR1-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"ESR1-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"ESR1-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","docking",],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"ESR1-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
+    # {"dataset":"ESR1-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
+    # {"dataset":"ESR1-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
     {"dataset":"ESR1-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
     {"dataset":"NR3C1-2048","label":"pKi","model":"BRR","acquisition":"random","batch":w,"descriptors":["morgan3"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"NR3C1-2048","label":"pKi","model":"BRR","acquisition":"tanimoto","batch":w,"descriptors":["morgan3"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"NR3C1-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"NR3C1-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"NR3C1-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"NR3C1-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","docking",],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"NR3C1-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
+    # {"dataset":"NR3C1-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
+    # {"dataset":"NR3C1-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
     {"dataset":"NR3C1-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
     {"dataset":"AR-2048","label":"pKi","model":"BRR","acquisition":"random","batch":w,"descriptors":["morgan3"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"AR-2048","label":"pKi","model":"BRR","acquisition":"tanimoto","batch":w,"descriptors":["morgan3",],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"AR-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"AR-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"AR-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"AR-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","docking",],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"AR-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
+    # {"dataset":"AR-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
+    # {"dataset":"AR-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
     {"dataset":"AR-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
     {"dataset":"F10-2048","label":"pKi","model":"BRR","acquisition":"random","batch":w,"descriptors":["morgan3"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"F10-2048","label":"pKi","model":"BRR","acquisition":"tanimoto","batch":w,"descriptors":["morgan3"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"F10-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"F10-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"F10-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"F10-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","docking",],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"F10-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
+    # {"dataset":"F10-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
+    # {"dataset":"F10-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
     {"dataset":"F10-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
     {"dataset":"ADRB2-2048","label":"pKi","model":"BRR","acquisition":"random","batch":w,"descriptors":["morgan3"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"ADRB2-2048","label":"pKi","model":"BRR","acquisition":"tanimoto","batch":w,"descriptors":["morgan3"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"ADRB2-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"random","lowlevel":"XGB","termination":"target"},
     {"dataset":"ADRB2-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"ADRB2-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"ADRB2-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","docking",],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
-    #{"dataset":"ADRB2-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
+    # {"dataset":"ADRB2-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
+    # {"dataset":"ADRB2-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"cpca","lowlevel":"XGB","termination":"target"},
     {"dataset":"ADRB2-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
 ]
 
@@ -729,4 +720,3 @@ for config in configs:
     results_df = pd.DataFrame.from_dict(results,orient="index").transpose()
     results_df.to_csv(os.path.join(outdir,f"{job}.csv"),index=False)
 #%%
-

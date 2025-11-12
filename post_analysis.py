@@ -26,6 +26,10 @@ from scipy.stats import tukey_hsd, f_oneway, friedmanchisquare, ttest_ind, kstes
 from statsmodels.stats.anova import AnovaRM
 from statsmodels.sandbox.stats.multicomp import multipletests
 
+from tqdm import tqdm
+from rdkit import DataStructs
+from rdkit.DataManip.Metric.rdMetricMatrixCalc import GetTanimotoSimMat
+
 seed=42
 random.seed(seed)
 os.environ["PYTHONHASHSEED"] = str(seed)
@@ -35,11 +39,6 @@ sns.set_theme()
 # plt.style.use("seaborn-v0_8")
 plt.rcParams.update({'font.size': 18})
 mpl.rcParams['figure.dpi'] = 600
-
-from tqdm import tqdm
-from rdkit import DataStructs
-from rdkit.DataManip.Metric.rdMetricMatrixCalc import GetTanimotoSimMat
-
 
 #%%
 
@@ -63,8 +62,8 @@ def TS(ids,df,i=None,l=2048):
 
 #%%
 
-
 target = "EGFR"
+
 CHEMBL = ["EGFR","JAK2","LCK","MAOB","NOS1","ACHE","PARP1","PTGS2","PDE5A","ESR1","NR3C1","AR","ADRB2","F10"]
 LITPCBA = ["ESR1ago","ESR1ant","PPARG","TP53"]
 if target in CHEMBL: mode = "delta"
@@ -80,8 +79,8 @@ if mode == "delta":
     hit = 9.0
     eofs = ["random_10","tanimoto_morgan3_10","morgan3_rdkit2d_10","morgan3_rdkit2d_10_cpca",f"morgan3_rdkit2d_rdkit3d_delta_docking_10_top_{lowlevel}_P90"]
     configs = ["baseline","baseline",config,config,config]
-    names = ["random", "similarity search", "morgan3_rdkit2d\n(random)", "morgan3_rdkit2d\n(diverse)", "morgan3_rdkit2d_rdkit3d_delta_docking\n(docking)"]
-    pal = {"random": "r", "similarity search": "brown", "morgan3_rdkit2d\n(random)": "orange","morgan3_rdkit2d\n(diverse)": "b", "morgan3_rdkit2d_rdkit3d_delta_docking\n(docking)": "g"}
+    names = ["random", "similarity", "BO (B1)", "BO (B2)", "BO + docking (D)"]
+    pal = {"random": "r", "similarity": "brown", "BO (B1)": "orange", "BO (B2)": "b", "BO + docking (D)": "g"}
     ticks = 50
     ylabel="$pK_i$"
 elif mode == "gnina":
@@ -93,8 +92,8 @@ elif mode == "gnina":
     hit = 9.0
     eofs = ["random_10","tanimoto_morgan3_10","morgan3_rdkit2d_10","morgan3_rdkit2d_10_cpca",f"morgan3_rdkit2d_rdkit3d_delta_docking_10_top_{lowlevel}_P90"]
     configs = ["baseline","baseline",config,config,config]
-    names = ["random", "similarity search", "morgan3_rdkit2d\n(random)", "morgan3_rdkit2d\n(diverse)", "morgan3_rdkit2d_rdkit3d_delta_docking\n(docking)"]
-    pal = {"random": "r", "similarity search": "brown", "morgan3_rdkit2d\n(random)": "orange","morgan3_rdkit2d\n(diverse)": "b", "morgan3_rdkit2d_rdkit3d_delta_docking\n(docking)": "g"}
+    names = ["random", "similarity", "BO (B1)", "morgan3_rdkit2d\n(diverse)", "BO + docking (D)"]
+    pal = {"random": "r", "similarity": "brown", "BO (B1)": "orange", "BO (B2)": "b", "BO + docking (D)": "g"}
     ticks = 50
     ylabel="$pK_i$"
 elif mode == "litpcba":
@@ -106,8 +105,8 @@ elif mode == "litpcba":
     hit = 4.0 + 1e-3 # > 4.0 instead of >= 4.0
     eofs = ["random_10","tanimoto_morgan3_10","morgan3_rdkit2d_10","morgan3_rdkit2d_10_cpca",f"morgan3_rdkit2d_rdkit3d_docking_10_top_{lowlevel}_P90"]
     configs = ["baseline","baseline",config,config,config]
-    names = ["random", "similarity search", "morgan3_rdkit2d\n(random)", "morgan3_rdkit2d\n(diverse)", "morgan3_rdkit2d_rdkit3d_docking\n(docking)"]
-    pal = {"random": "r", "similarity search": "brown", "morgan3_rdkit2d\n(random)": "orange","morgan3_rdkit2d\n(diverse)": "b", "morgan3_rdkit2d_rdkit3d_docking\n(docking)": "g"}
+    names = ["random", "similarity", "BO (B1)", "BO (B2)", "BO + docking (D)"]
+    pal = {"random": "r", "similarity": "brown", "BO (B1)": "orange", "BO (B2)": "b", "BO + docking (D)": "g"}
     ticks = 200
     ylabel="$pEC_{50}$"
 
@@ -120,6 +119,9 @@ avg_tanimoto = TS(data.index,data)
 #%%
 
 # Data collection
+
+# NEW: hit = P99 (99th percentile of activities) i.e. EF_1%
+# hit = np.percentile(data[y].values,99) 
 
 y_EF = []
 y_EF_err = []
@@ -175,6 +177,7 @@ print(means)
 stds = [np.std(df["steps_to_maximum"][df["config"]==name]) for name in names]
 print(stds)
 ax = sns.boxplot(x="config", y="steps_to_maximum", data=df, palette=pal, hue="config", legend=legend, linewidth=1.2)
+plt.ylabel("Steps to maximum")
 if not legend:
     ax.xaxis.tick_top()
     ax.tick_params(axis='x', labelrotation = 40)
@@ -262,18 +265,18 @@ yerr = [i for ij in zip(y_TS_start_err, y_TS_end_err) for i in ij]
 width = 10
 height = 8
 fig, ax = plt.subplots(figsize=(width, height))
-colors = ['lightcoral','firebrick','sandybrown','saddlebrown','salmon','tomato','lightblue','darkblue','lightgreen','darkgreen',]
+colors = ['red','darkred','lightcoral','firebrick','gold','goldenrod','cornflowerblue','darkblue','limegreen','darkgreen',]
 labels = [
     "random (initial)",
     "random (end)",
-    "similarity search (initial)",
-    "similarity search (end)",
-    "morgan3_rdkit2d // random (initial)",
-    "morgan3_rdkit2d // random (end)",
-    "morgan3_rdkit2d // diverse (initial)",
-    "morgan3_rdkit2d // diverse (end)",
-    "morgan3_rdkit2d_rdkit3d_delta_docking // docking (initial)",
-    "morgan3_rdkit2d_rdkit3d_delta_docking // docking (end)",
+    "similarity (initial)",
+    "similarity (end)",
+    "B1 (initial)",
+    "B1 (end)",
+    "B2 (initial)",
+    "B2 (end)",
+    "D (initial)",
+    "D (end)",
 ]
 y = y
 yerr = yerr
@@ -283,12 +286,12 @@ x = [i for i in range(len(y))]
 lab = [mpatches.Patch(color=c,label=l) for c,l in zip(colors,labels)]
 plt.hlines(y=avg_tanimoto, xmin=-0.5, xmax=len(x), colors='red', linestyles='--', lw=2, label='dataset average')
 plt.bar(x, y, color=colors, label=labels)
-plt.title(f'{target} Tanimoto similarity')
-plt.legend(handles=lab, prop={'size': 14})
-plt.ylabel('Mean Tanimoto similarity')
+plt.title(f'{target} Tanimoto similarity', fontsize=20)
+plt.legend(handles=lab, prop={'size': 16})
+plt.ylabel('Mean Tanimoto similarity', fontsize=18)
 plt.xticks(x)
 plt.ylim(0,1)
-plt.yticks(0.1*np.arange(0, 11, 1)) 
+plt.yticks(0.1*np.arange(0, 11, 1), fontsize=16) 
 plt.errorbar(x, y, yerr, fmt='.', color='Black', elinewidth=2, capthick=10, errorevery=1, alpha=0.5, ms=4, capsize=2)
 ax.set(xlabel=None,xticklabels=[])
 ax.tick_params(bottom=False)
