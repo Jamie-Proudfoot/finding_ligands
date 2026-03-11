@@ -112,7 +112,7 @@ def cluster(data,cutoff,fp,get_fp,label,smiles):
 	print("Clustering complete.")
 	return data, cluster_data
 
-def cluster_pca(data,desc,n=2):
+def cluster_pca(data,desc,n=2,label="cpca"):
 	"""
 	Cluster molecules by fingerprint PCA distance with the K-Means algorithm
 	"""
@@ -120,16 +120,16 @@ def cluster_pca(data,desc,n=2):
 	features = data[sum(desc,[])].values
 	pca = PCA(n_components=n)
 	pca_crds = pca.fit_transform(features)
-	print(f"PCA variance explained: {round(np.sum(pca.explained_variance_ratio_),2)}")
+	# print(f"PCA variance explained: {round(np.sum(pca.explained_variance_ratio_),2)}")
 	print(f"Clustering molecules ...")
 	for k in tqdm([5,10,20,30,50,100]):
 		clustering = KMeans(n_clusters=k,n_init="auto").fit(pca_crds)
 		cluster_vals = clustering.labels_
-		data[f"cpca_{k}"] = cluster_vals
+		data[f"{label}_{k}"] = cluster_vals
 	print("Clustering complete.")
 	return data
 
-def cluster_tsne(data,desc,n=2):
+def cluster_tsne(data,desc,n=2,label="ctsne"):
 	"""
 	Cluster molecules by fingerprint tSNE distance with the K-Means algorithm
 	"""
@@ -137,7 +137,7 @@ def cluster_tsne(data,desc,n=2):
 	features = data[sum(desc,[])].values
 	pca = PCA(n_components=50)
 	crds = pca.fit_transform(features)
-	print(f"PCA variance explained: {round(np.sum(pca.explained_variance_ratio_),2)}")
+	# print(f"PCA variance explained: {round(np.sum(pca.explained_variance_ratio_),2)}")
 	print(f"Calculating tSNE features ...")
 	tsne = TSNE(n_components=n)
 	tsne_crds = tsne.fit_transform(crds)
@@ -145,7 +145,7 @@ def cluster_tsne(data,desc,n=2):
 	for k in tqdm([5,10,20,30,50,100]):
 		clustering = KMeans(n_clusters=k,n_init="auto").fit(tsne_crds)
 		cluster_vals = clustering.labels_
-		data[f"ctsne_{k}"] = cluster_vals
+		data[f"{label}_{k}"] = cluster_vals
 	print("Clustering complete.")
 	return data
 
