@@ -1,0 +1,1 @@
+This folder contains numerical results for BO experiments with the E3FP (3D molecular fingerprint) descriptors
