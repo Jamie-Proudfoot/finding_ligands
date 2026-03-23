@@ -70,7 +70,7 @@ def fit_model(model,Xtrain,Ytrain,parameter_ranges):
         scoring="neg_mean_absolute_error",
         cv=5,
         refit=True,
-        n_jobs=5, #-1
+        n_jobs=10, #-1
         verbose=0
     )
     grid_search.fit(Xtrain, Ytrain)
@@ -401,8 +401,8 @@ parameter_ranges = [
 ]
 
 
-good_rdkit3d = ["PMI1", "PMI2", "RadiusOfGyration", "PBF"]
-good_rdkit2d = ['MaxEStateIndex','MinEStateIndex','qed','MolWt','MaxPartialCharge','MinPartialCharge',
+rdkit3d = ["PMI1", "PMI2", "RadiusOfGyration", "PBF"]
+rdkit2d = ['MaxEStateIndex','MinEStateIndex','qed','MolWt','MaxPartialCharge','MinPartialCharge',
     'FpDensityMorgan3','BCUT2D_CHGHI','BCUT2D_CHGLO','BCUT2D_LOGPHI','BCUT2D_LOGPLOW','BalabanJ',
     'BertzCT','Chi0n','Chi0v','Chi1n','Chi1v','Chi2n','Chi2v','Chi3n','Chi3v','Chi4n','Chi4v',
     'HallKierAlpha','Ipc','Kappa1','Kappa2','Kappa3','LabuteASA',
@@ -417,10 +417,10 @@ good_rdkit2d = ['MaxEStateIndex','MinEStateIndex','qed','MolWt','MaxPartialCharg
 
 # Descriptor constants
 descriptors = {
-    "rdkit2d":good_rdkit2d,
+    "rdkit2d":rdkit2d,
     "maccs":[f"maccs_{i}" for i in range(167)],
     "morgan3":[f"morgan3_{i}" for i in range(2048)], #2048
-    "rdkit3d":good_rdkit3d,
+    "rdkit3d":rdkit3d,
     "autocorr3d":[f"AUTOCORR3D_{i}" for i in range(80)],
     "rdf":[f"RDF_{i}" for i in range(210)],
     "getaway":[f"GETAWAY_{i}" for i in range(273)],
@@ -548,11 +548,13 @@ configs = [
     {"dataset":"ADRB2-2048","label":"pKi","model":"BRR","acquisition":"maximise","batch":w,"descriptors":["morgan3","rdkit2d","rdkit3d","delta","docking"],"m":10,"M":10000,"initial":"top","lowlevel":"XGB","termination":"target"},
 ]
 
+#%%
+
 for config in configs:
 
     # Determine data, model, descriptors and optimization configuration
     Nrep = 25 # number of repeats (random seeds)
-    datafile = f"{config['dataset']}_data_3d_delta_pKi.csv"
+    datafile = f"{config['dataset']}_data_3d_delta_pKi.csv.tar.gz"
     mol_data = pd.read_csv(os.path.join("data",datafile))
     mol_label = [config["label"]]
     label_values = mol_data[mol_label].values
@@ -697,7 +699,7 @@ for config in configs:
 
     # Collect results as csv
     outdir = "results" #f"batch_{w}" #f"batch_{w}_budget_{int(M*w+m)}"
-    if not os.path.exists(outdir): os.mkdir(outdir)
+    if not os.path.exists(outdir): os.makedirs(outdir)
     queries = np.array(queries)
     id_df = pd.DataFrame(ids).transpose()
     id_df.columns = [f"run_{i}" for i in range(len(ids))]
@@ -719,4 +721,5 @@ for config in configs:
     }
     results_df = pd.DataFrame.from_dict(results,orient="index").transpose()
     results_df.to_csv(os.path.join(outdir,f"{job}.csv"),index=False)
+
 #%%

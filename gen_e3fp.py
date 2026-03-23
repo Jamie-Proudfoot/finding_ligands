@@ -3,54 +3,57 @@
 import os 
 import tarfile
 
+from tqdm import tqdm
+
 from rdkit import Chem
 
 from python_utilities.parallel import Parallelizer
-from e3fp.pipeline import fprints_from_mol
+from e3fp.pipeline import fprints_from_mol, fprints_from_smiles
 from e3fp.conformer.util import smiles_to_dict
 
 import pandas as pd
 
 #%%
 
+# targets = ["EGFR","LCK","JAK2","MAOB","NOS1","ACHE","PARP1","PDE5A","PTGS2","ESR1","NR3C1","AR","F10","ADRB2"]
 target = "EGFR"
+
+print(target)
 bits = 2048 # FP bit length
 cores = 10 # cpu cores
 
 #%%
 
-# Load all SDF files into RDKit mols
-conf_tar = os.path.join(target,"conformers.tar.gz")
-tar = tarfile.open(conf_tar, "r:gz")
 
-# generator of (mol, ID), top-ranked pose only
-# updated to just load mols directly from tar.gz archive now
-# (no need to unzip the tar file currently :>)
-mols = {}
-for file in tar.getmembers():
-    if file.name.endswith("sdf"):
-        name = os.path.basename(file.name).split(".")[0]
-        f = tar.extractfile(file)
-        if not f: continue 
-        # ForwardSDMolsupplier is not iterable like SDMolSupplier so we use next(x, None)
-        mol = next(Chem.ForwardSDMolSupplier(f, removeHs=False), None)
-        assert mol != None
-        mols[name] = mol
-mols_iter = ((mol, name) for name, mol in mols.items())
+# Load all SMILES strings
+
+# Load data csv file
+path_to_data = os.path.join("data",f"{target}-2048_data_3d_delta_pKi.csv.tar.gz")
+with tarfile.open(path_to_data, "r:gz") as tar:
+    # assume only one CSV in the archive
+    csv_member = [m for m in tar.getmembers() if m.name.endswith(".csv")][0]
+    f = tar.extractfile(csv_member)
+    data = pd.read_csv(f)
+
+smiles_dict = dict(zip(data["molecule_chembl_id"],data["smiles"]))
+smiles_iter = ((smiles, name) for name, smiles in smiles_dict.items())
+
 
 #%%
 
 # Generate all E3FP fingerprints
 
-def fp_wrapper(mol, name, fprint_params=None):
-    fps = fprints_from_mol(mol, fprint_params=fprint_params)
-    return name, fps
+# def fp_wrapper(mol, name, fprint_params=None, confgen_params=None):
+#     fps = fprints_from_smiles(mol, fprint_params=fprint_params, confgen_params=confgen_params)
+#     return name, fps
 
 # 2048-bit E3FP fingerprints
+confgen_params = {'max_energy_diff': 20.0, 'first': 3, 'seed':42}
 fprint_params = {'bits': bits, 'radius_multiplier': 1.5, 'rdkit_invariants': True}
-kwargs = {"fprint_params": fprint_params} # parallel implementation
-parallelizer = Parallelizer(parallel_mode="processes", num_proc=cores)
-fprints_list = parallelizer.run(fp_wrapper, mols_iter, kwargs=kwargs)
+kwargs = {"confgen_params": confgen_params, "fprint_params": fprint_params}
+parallelizer = Parallelizer(parallel_mode="processes")
+fprints_list = parallelizer.run(fprints_from_smiles, smiles_iter, kwargs=kwargs) 
+len(fprints_list) 
 
 #%%
 
@@ -61,8 +64,8 @@ def fp_to_dict(fp, nbits=2048):
     return {f"e3fp_{i}": int(bits[i]) for i in range(nbits)}
 
 fingerprint_dict = {}
-for name, fps in zip(mols.keys(), fprints_list):
-    fp = fps[0][1][0]
+for name, fps in zip(smiles_dict.keys(), fprints_list):
+    fp = fps[0][0]
     fingerprint_dict[name] = fp_to_dict(fp, bits)
 
 df_fp = pd.DataFrame.from_dict(fingerprint_dict, orient="index")

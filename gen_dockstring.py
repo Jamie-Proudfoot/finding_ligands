@@ -119,10 +119,10 @@ def dock_ligand(target,smi,CPUs):
 
 #%%
 
-target_name = "USP7"
-id_column = "LigandId" #"molecule_chembl_id"
-filename = f"{target_name}_data.csv" # f"{target_name}_data_pKi.csv"
-output_filename = f"{target_name}_data_3d.csv" # f"{target_name}_data_3d_pKi.csv"
+target_name = "EGFR"
+id_column = "molecule_chembl_id"
+filename = f"{target_name}_data_pKi.csv"
+output_filename = f"{target_name}_data_3d_pKi.csv"
 confdir = os.path.join(target_name, "conformers")
 if not os.path.exists(confdir): os.makedirs(confdir)
 os.chdir(target_name)
@@ -187,3 +187,4 @@ print(f"Shape after filtering NaN values: {output.shape}")
 output.reset_index(drop=True, inplace=True)
 output.to_csv(os.path.join(output_filename),index=False)
 
+#%%

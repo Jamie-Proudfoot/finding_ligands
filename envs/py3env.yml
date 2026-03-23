@@ -1,6 +1,5 @@
 name: py3env
 channels:
-  - anaconda
   - conda-forge
   - salilab
   - rdkit
@@ -12,141 +11,186 @@ dependencies:
   - _libgcc_mutex=0.1
   - _openmp_mutex=4.5
   - _py-xgboost-mutex=2.0
-  - asttokens=2.4.1
-  - blas=1.0
-  - boost=1.74.0
-  - boost-cpp=1.74.0
+  - aom=3.9.1
+  - asttokens=3.0.1
+  - blas=2.305
+  - blas-devel=3.11.0
+  - boost=1.84.0
+  - boost-cpp=1.84.0
+  - brotli-bin=1.2.0
   - bzip2=1.0.8
-  - ca-certificates=2024.12.14
-  - cairo=1.16.0
-  - certifi=2024.12.14
-  - cffi=1.16.0
+  - ca-certificates=2026.2.25
+  - cairo=1.18.4
+  - certifi=2026.2.25
+  - cffi=2.0.0
   - colorama=0.4.6
-  - comm=0.2.2
-  - crest=2.12
+  - comm=0.2.3
+  - contourpy=1.3.2
+  - crest=3.0.2
   - cudatoolkit=11.8.0
   - cycler=0.12.1
-  - debugpy=1.8.2
-  - decorator=5.1.1
-  - dftd4=3.6.0
-  - dockstring=0.3.2
-  - exceptiongroup=1.2.0
-  - executing=2.0.1
-  - fontconfig=2.14.1
-  - freetype=2.10.4
-  - glib=2.80.0
-  - glib-tools=2.80.0
-  - greenlet=3.0.3
-  - icu=70.1
-  - importlib-metadata=8.0.0
-  - importlib_metadata=8.0.0
-  - iniconfig=2.0.0
-  - ipykernel=6.29.5
-  - ipython=8.26.0
-  - jedi=0.19.1
-  - joblib=1.4.2
+  - dav1d=1.2.1
+  - debugpy=1.8.20
+  - decorator=5.2.1
+  - dftd4=3.7.0
+  - exceptiongroup=1.3.1
+  - executing=2.2.1
+  - fontconfig=2.17.1
+  - fonttools=4.62.0
+  - freetype=2.14.2
+  - freetype-py=2.3.0
+  - fribidi=1.0.16
+  - glib=2.86.4
+  - glib-tools=2.86.4
+  - graphite2=1.3.14
+  - greenlet=3.3.2
+  - harfbuzz=12.3.0
+  - icu=73.2
+  - importlib-metadata=8.8.0
+  - importlib_metadata=8.8.0
+  - iniconfig=2.3.0
+  - ipykernel=7.2.0
+  - ipython=8.37.0
+  - jedi=0.19.2
+  - joblib=1.5.3
+  - jonquil=0.3.0
   - jpeg=9e
-  - jupyter_client=8.6.2
-  - jupyter_core=5.7.2
-  - keyutils=1.6.1
-  - kiwisolver=1.4.5
-  - krb5=1.21.3
-  - lcms2=2.12
-  - ld_impl_linux-64=2.40
-  - lerc=3.0
-  - libblas=3.9.0
-  - libcblas=3.9.0
-  - libdeflate=1.17
-  - libedit=3.1.20191231
-  - libffi=3.4.2
-  - libgcc-ng=13.2.0
-  - libgfortran-ng=13.2.0
-  - libgfortran5=13.2.0
-  - libglib=2.80.0
-  - libgomp=13.2.0
-  - libiconv=1.17
-  - liblapack=3.9.0
+  - jupyter_client=8.8.0
+  - jupyter_core=5.9.1
+  - keyutils=1.6.3
+  - kiwisolver=1.5.0
+  - krb5=1.22.2
+  - lcms2=2.17
+  - ld_impl_linux-64=2.45.1
+  - lerc=4.1.0
+  - libavif=1.4.0
+  - libavif16=1.4.0
+  - libblas=3.11.0
+  - libboost=1.84.0
+  - libboost-devel=1.84.0
+  - libboost-headers=1.84.0
+  - libboost-python=1.84.0
+  - libboost-python-devel=1.84.0
+  - libbrotlicommon=1.2.0
+  - libbrotlidec=1.2.0
+  - libbrotlienc=1.2.0
+  - libcblas=3.11.0
+  - libdeflate=1.22
+  - libedit=3.1.20250104
+  - libexpat=2.7.4
+  - libffi=3.5.2
+  - libfreetype=2.14.2
+  - libfreetype6=2.14.2
+  - libgcc=15.2.0
+  - libgcc-ng=15.2.0
+  - libgfortran=15.2.0
+  - libgfortran-ng=15.2.0
+  - libgfortran5=15.2.0
+  - libglib=2.86.4
+  - libgomp=15.2.0
+  - libiconv=1.18
+  - liblapack=3.11.0
+  - liblapacke=3.11.0
+  - liblzma=5.8.2
+  - liblzma-devel=5.8.2
   - libnsl=2.0.1
-  - libopenblas=0.3.26
-  - libpng=1.6.43
-  - libsodium=1.0.18
-  - libsqlite=3.45.2
-  - libstdcxx-ng=13.2.0
-  - libtiff=4.5.1
-  - libuuid=2.38.1
-  - libwebp-base=1.3.2
-  - libxcb=1.16
+  - libopenblas=0.3.30
+  - libopenjpeg=2.5.4
+  - libpng=1.6.55
+  - libsodium=1.0.21
+  - libsqlite=3.52.0
+  - libstdcxx=15.2.0
+  - libstdcxx-ng=15.2.0
+  - libtiff=4.7.1
+  - libuuid=2.41.3
+  - libwebp-base=1.6.0
+  - libxcb=1.17.0
   - libxcrypt=4.4.36
-  - libxgboost=2.0.3
-  - libxml2=2.9.14
-  - libzlib=1.2.13
-  - lz4-c=1.9.4
-  - matplotlib-inline=0.1.7
-  - mctc-lib=0.3.1
-  - ncurses=6.4.20240210
+  - libxgboost=3.2.0
+  - libxml2=2.12.7
+  - libzlib=1.3.1
+  - lz4-c=1.10.0
+  - matplotlib-base=3.10.8
+  - matplotlib-inline=0.2.1
+  - mctc-lib=0.4.2
+  - multicharge=0.3.0
+  - munkres=1.1.4
+  - ncurses=6.5
   - nest-asyncio=1.6.0
   - numpy=1.26.4
-  - ocl-icd=2.3.2
+  - ocl-icd=2.3.3
   - ocl-icd-system=1.0.0
   - openbabel=3.1.1
-  - openeye-toolkits=2024.1.1
-  - openjpeg=2.4.0
-  - openssl=3.3.1
-  - packaging=24.0
-  - pandas=2.2.1
-  - parso=0.8.4
-  - pcre2=10.43
+  - openblas=0.3.30
+  - opencl-headers=2025.06.13
+  - openeye-toolkits=2025.2.2
+  - openjpeg=2.5.4
+  - openssl=3.6.1
+  - packaging=26.0
+  - pandas=2.1.4
+  - parso=0.8.6
+  - pcre2=10.47
   - pexpect=4.9.0
   - pickleshare=0.7.5
-  - pillow=10.2.0
-  - pip=24.0
-  - pixman=0.43.2
-  - platformdirs=4.2.2
-  - pluggy=1.4.0
-  - prompt-toolkit=3.0.47
-  - psutil=6.0.0
+  - pillow=12.1.1
+  - pip=26.0.1
+  - pixman=0.46.4
+  - platformdirs=4.9.4
+  - pluggy=1.6.0
+  - prompt-toolkit=3.0.52
+  - psutil=7.2.2
   - pthread-stubs=0.4
   - ptyprocess=0.7.0
-  - pure_eval=0.2.2
-  - py-xgboost=2.0.3
-  - pycairo=1.23.0
+  - pure_eval=0.2.3
+  - py-xgboost=3.2.0
+  - pycairo=1.29.0
   - pycparser=2.22
-  - pyparsing=3.1.2
-  - pytest=8.1.1
-  - python=3.10.14
-  - python-dateutil=2.9.0
-  - python-tzdata=2024.1
+  - pyparsing=3.3.2
+  - pytest=9.0.2
+  - python=3.10.20
+  - python-dateutil=2.9.0.post0
+  - python-tzdata=2025.3
   - python_abi=3.10
-  - pytz=2024.1
-  - pyzmq=26.0.3
-  - readline=8.2
-  - reportlab=3.6.13
-  - scikit-learn=1.5.1
-  - setuptools=69.2.0
-  - simple-dftd3=1.0.0
-  - six=1.16.0
-  - sqlalchemy=2.0.29
-  - stack_data=0.6.2
-  - tblite=0.3.0
-  - threadpoolctl=3.5.0
+  - pytz=2026.1.post1
+  - pyzmq=27.1.0
+  - qhull=2020.2
+  - rav1e=0.8.1
+  - rdkit=2023.09.6
+  - readline=8.3
+  - reportlab=4.4.10
+  - rlpycairo=0.4.0
+  - scikit-learn=1.7.2
+  - simple-dftd3=1.2.1
+  - six=1.17.0
+  - sqlalchemy=2.0.48
+  - stack_data=0.6.3
+  - svt-av1=4.0.1
+  - tblite=0.5.0
+  - threadpoolctl=3.6.0
   - tk=8.6.13
-  - toml-f=0.4.2
-  - tomli=2.0.1
-  - tornado=6.4.1
+  - toml-f=0.4.3
+  - tomli=2.4.0
+  - tornado=6.5.4
   - traitlets=5.14.3
-  - typing-extensions=4.11.0
-  - typing_extensions=4.11.0
-  - tzdata=2024a
-  - wcwidth=0.2.13
-  - wheel=0.43.0
-  - xorg-libxau=1.0.11
-  - xorg-libxdmcp=1.1.3
-  - xtb=6.5.1
-  - xtb-python=22.1
-  - xz=5.4.6
+  - typing-extensions=4.15.0
+  - typing_extensions=4.15.0
+  - tzdata=2025c
+  - unicodedata2=17.0.1
+  - wcwidth=0.6.0
+  - wheel=0.46.3
+  - xorg-libx11=1.8.13
+  - xorg-libxau=1.0.12
+  - xorg-libxdmcp=1.1.5
+  - xorg-libxext=1.3.7
+  - xorg-libxrender=0.9.12
+  - xtb=6.4.1
+  - xtb-python=20.2
+  - xz=5.8.2
+  - xz-gpl-tools=5.8.2
+  - xz-tools=5.8.2
   - zeromq=4.3.5
-  - zipp=3.19.2
-  - zlib=1.2.13
+  - zipp=3.23.0
+  - zlib=1.3.1
   - pip:
       - alphaspace2==0.1.2
       - annotated-types==0.7.0
@@ -169,12 +213,12 @@ dependencies:
       - click-plugins==1.1.1
       - cloudpathlib==0.21.1
       - configargparser==0.0.2
-      - contourpy==1.3.2
       - curies==0.10.4
       - cython==3.0.12
       - dill==0.3.8
       - dimorphite-dl==1.2.5
       - dnspython==2.7.0
+      - docutils==0.17.1
       - e3fp==1.2.7
       - easydict==1.13
       - einops==0.8.1
@@ -183,7 +227,6 @@ dependencies:
       - fasteners==0.19
       - fastjsonschema==2.21.1
       - filelock==3.18.0
-      - fonttools==4.62.0
       - fsspec==2025.7.0
       - future==1.0.0
       - griddataformats==1.0.2
@@ -207,12 +250,12 @@ dependencies:
       - loguru==0.7.3
       - markdown-it-py==3.0.0
       - markupsafe==3.0.2
-      - matplotlib==3.10.8
       - mda-xdrlib==0.2.0
       - mdanalysis==2.9.0
       - mdit-py-plugins==0.4.0
       - mdtraj==1.10.3
       - mdurl==0.1.2
+      - mmcif-pdbx==2.0.1
       - mmh3==5.2.1
       - mmtf-python==1.1.3
       - more-click==0.1.2
@@ -246,10 +289,12 @@ dependencies:
       - pathos==0.3.2
       - patsy==1.0.1
       - pdb-tools==2.5.0
+      - pdb2pqr==3.6.2
       - periodictable==1.7.0
       - pox==0.3.4
       - ppft==1.7.6.8
       - prolif==2.1.0
+      - propka==3.5.1
       - psycopg2-binary==2.9.10
       - py3dmol==2.5.4
       - pybel==0.15.5
@@ -262,8 +307,6 @@ dependencies:
       - pyyaml==6.0.2
       - qbatch==2.3
       - ratelimit==2.2.1
-      - rdkit==2022.3.3
-      - rdkit-pypi==2022.9.5
       - recoverpy==2.1.6
       - referencing==0.35.1
       - regex==2024.11.6
@@ -276,6 +319,7 @@ dependencies:
       - scipy==1.13.0
       - sdaxen-python-utilities==0.1.5
       - seaborn==0.13.2
+      - setuptools==81.0.0
       - smart-open==7.5.1
       - sniffio==1.3.1
       - sortedcontainers==2.4.0
@@ -301,4 +345,3 @@ dependencies:
       - widgetsnbextension==4.0.15
       - wrapt==2.1.2
       - zstd==1.5.7.2
-prefix: /home/jp2658/.conda/envs/py3env

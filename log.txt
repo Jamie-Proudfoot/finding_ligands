@@ -1,0 +1,551 @@
+commit 37d06bbc7f5b9f1c3e63b03aaf234e22612018a9
+Author: Jamie-Proudfoot <jamieproudfoot1@gmail.com>
+Date:   Mon Mar 23 15:06:05 2026 +0000
+
+    Update repo
+
+commit d064768cfd5877227122453831bb94b1236282f5
+Author: Jamie-Proudfoot <jamieproudfoot1@gmail.com>
+Date:   Mon Mar 23 14:52:01 2026 +0000
+
+    Update repo
+
+commit ee61aad2c2bad88d9e60408e397e618046a972cb
+Author: Jamie-Proudfoot <jamieproudfoot1@gmail.com>
+Date:   Mon Mar 23 14:46:21 2026 +0000
+
+    Update repo
+
+commit 5fdec667f82a2c1eb27013a51daf22d0a3fafb99
+Author: Jamie-Proudfoot <jamieproudfoot1@gmail.com>
+Date:   Thu Mar 12 11:50:39 2026 +0000
+
+    Update repo
+
+commit 0a6834933087e4ea01dd01dffbab1ccbdc33cf30
+Author: Jamie-Proudfoot <jamieproudfoot1@gmail.com>
+Date:   Thu Mar 12 11:48:04 2026 +0000
+
+    Update repo
+
+commit f92f3f91f6b5c1c93fe5606b180aa6d76693797d
+Author: Jamie-Proudfoot <jamieproudfoot1@gmail.com>
+Date:   Wed Mar 11 17:50:26 2026 +0000
+
+    Update envs
+
+commit 06a8f359b3c4ad25d3677fa60f41e627f35c9bb2
+Author: Jamie-Proudfoot <jamieproudfoot1@gmail.com>
+Date:   Wed Mar 11 17:45:28 2026 +0000
+
+    Added E3FP and PLIF fingerprints
+
+commit 7da21bc3919aed9ac18ec96acff666ae678fc8db
+Author: Jamie-Proudfoot <jamieproudfoot1@gmail.com>
+Date:   Wed Nov 12 12:39:32 2025 +0000
+
+    Update repo
+
+commit bf4f09e29778f682551ab59662ab640c27fe2a67
+Author: Jamie-Proudfoot <jamieproudfoot1@gmail.com>
+Date:   Wed Nov 12 12:34:30 2025 +0000
+
+    Update repository
+
+commit 53fb17a51193b2adc24008d97e680dbe268fc0c7
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Thu Sep 4 16:04:37 2025 +0100
+
+    Update default config list to include B2 configs
+
+commit b52eba42dbd4fa313ac2cc02a19549bb1eb2300d
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Thu Aug 28 13:08:24 2025 +0100
+
+    Update LICENSE
+
+commit 06ede5b1918d4b0e780a229f561c507f8d185772
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Wed Aug 13 18:58:07 2025 +0100
+
+    Add files via upload
+
+commit 7b4d4e78aeebd084d7739bb32de14bf3bfb4b029
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Wed Aug 13 18:55:13 2025 +0100
+
+    Add files via upload
+
+commit 63daa11178b0551f2ffcbab3a1eae490c77c078c
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Wed Aug 13 18:48:55 2025 +0100
+
+    Update README.md
+
+commit 68f85150b3b8b995f9a50a0873a0b7ccf6a6ecc0
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Wed Aug 13 18:48:00 2025 +0100
+
+    Update README.md
+
+commit d26b98d99e8b46886c8707aa743a0c1a6d774233
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Wed Aug 13 17:38:30 2025 +0100
+
+    Update README.md
+
+commit 69e66eeffa600f51faf5ac70ae1a3d63648018ec
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Wed Aug 13 13:43:57 2025 +0100
+
+    Update py3env.yml
+
+commit ad0b0abbfd115425b62d6503d2774bf34dbd5121
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Wed Aug 13 13:43:44 2025 +0100
+
+    Update DXGB.yml
+
+commit b2cd43c5514cc7d92942988d674308520085ae31
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Tue Aug 12 18:00:57 2025 +0100
+
+    Add files via upload
+
+commit 0091fcd5651ed3869ef0aff979bd16f0b9c12822
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Tue Aug 12 17:59:38 2025 +0100
+
+    Create folder
+
+commit 467e015e1be99f4b4aad311a9c77a07f625712a2
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Tue Aug 12 17:59:06 2025 +0100
+
+    Add files via upload
+
+commit 5c21d786a2f2a3f636bb991a26de8047c5e880d1
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Tue Aug 12 17:58:02 2025 +0100
+
+    Create folder
+
+commit f4100b344e4ea78b04fb352f73c6c20fac4650be
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Tue Aug 12 17:57:17 2025 +0100
+
+    Add files via upload
+
+commit 40e9975a85cd0e7bafda5eeddbb4f5818d9f81a3
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Tue Aug 12 17:56:07 2025 +0100
+
+    Create folder
+
+commit 755490a26ac74c14afcbfc4baf97dc3d65947278
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Tue Aug 12 17:55:32 2025 +0100
+
+    Add files via upload
+
+commit f69b0bfb1658e952f8bb8f3e6af94e2fc8d04743
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Tue Aug 12 17:54:50 2025 +0100
+
+    Create folder
+
+commit a4538f17c5d2d16afbd20f5d749cc7aaceb07ccb
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Tue Aug 12 17:54:21 2025 +0100
+
+    Delete dir
+
+commit fd7991938c3ae3c41415e064a580f40c03b5bbae
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Tue Aug 12 17:53:29 2025 +0100
+
+    Create folder
+
+commit cc49ecb0a2c820e429157adb40f570ba69796b14
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Tue Aug 12 17:52:51 2025 +0100
+
+    Add files via upload
+
+commit d1805a3ba747dd2ba4407c9af135adf0b9c13e91
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Tue Aug 12 17:51:08 2025 +0100
+
+    Create folder
+
+commit 2038701eb3e80b5083f009a83c11766fc8f43df8
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Tue Aug 12 17:50:12 2025 +0100
+
+    Add files via upload
+
+commit 831cb51a7d250de6d255223b229a7ce015cd2d31
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Tue Aug 12 17:48:38 2025 +0100
+
+    Add files via upload
+
+commit b4e5a2c02987728967bcaff4fbe72892a1474796
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Tue Aug 12 17:47:01 2025 +0100
+
+    Create folder
+
+commit b49975bfd060a11975c828f91e04b9b8499784a5
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Tue Aug 12 17:35:20 2025 +0100
+
+    Update README.md
+
+commit 319f9a3ec884495502cc00a206261cb1e8c7887e
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Tue Aug 12 17:34:59 2025 +0100
+
+    Update README.md
+
+commit 520ffbc0c613a34f9925c394de962902a03e0c73
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Tue Aug 12 17:34:18 2025 +0100
+
+    Update README.md
+
+commit 3143db6a32985591e7cb50483635d23334b1ed7a
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Tue Aug 12 17:32:12 2025 +0100
+
+    Add files via upload
+
+commit 446497b4f41b258658f8f33f34c50de07251e4f8
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Sun Aug 10 14:07:46 2025 +0100
+
+    Update README.md
+
+commit 7c9774bfcf6c619521329ca02036379b618855fd
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Sun Aug 10 14:06:48 2025 +0100
+
+    Update README.md
+
+commit f8419587a1971658586742f82a8ec0eb0623da26
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Sun Aug 10 14:06:25 2025 +0100
+
+    Update README.md
+
+commit 002e4701c6ac4839e953e1d72e39135f7ea05fa0
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Sun Aug 10 14:03:40 2025 +0100
+
+    Add files via upload
+
+commit d0fc4dc84aaba716a02b54faf3055c7611d8a42b
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Sun Aug 10 13:59:55 2025 +0100
+
+    Update README.md
+
+commit 3943843f87447d42c8acab69a6711b17132a5446
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Sun Aug 10 13:58:59 2025 +0100
+
+    Update README.md
+
+commit fbda5003af174c64a396c9fad4b634c65fcae550
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Sun Aug 10 13:56:24 2025 +0100
+
+    Update README.md
+
+commit 9efe85afd526dce7f7a04a1bc808f0edd6a521dd
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Sun Aug 10 13:54:49 2025 +0100
+
+    Add files via upload
+
+commit 27cbe38bf5443326eb1a55475be9daa26a08a657
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Sun Aug 10 13:51:09 2025 +0100
+
+    Update README.md
+
+commit 9e9158bdf20724ce6d87c047692757748d7f564d
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Tue Jul 8 14:45:02 2025 +0100
+
+    Add files via upload
+
+commit c5c771554bba9955e0e9ac1bc89c8c5558496f26
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Tue Jul 8 13:02:48 2025 +0100
+
+    Add files via upload
+
+commit 01cf3ebc2e911d98a93d692a892a6b774fe890be
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Tue Jul 1 10:46:32 2025 +0100
+
+    Add files via upload
+
+commit 8084e269d319ec9076b85d0d7f07569a465d9def
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Tue Jul 1 10:46:08 2025 +0100
+
+    Add files via upload
+
+commit 030ba4a17f4190efebd51fe90e1a6e40180c7b3b
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Tue Jul 1 10:45:13 2025 +0100
+
+    Add files via upload
+
+commit bd799822fbef1cbe45bc68b33b0fa6a6da7a007c
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Tue Jun 24 20:57:06 2025 +0100
+
+    Add files via upload
+
+commit 9d7a5e34aa9979127aec11a3da6868420c57aa97
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Tue Jun 24 12:57:11 2025 +0100
+
+    Add files via upload
+
+commit 5110595ecb378c87e0f2238f5ee92b559f25c1a8
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Thu Jun 19 12:38:37 2025 +0100
+
+    Add files via upload
+
+commit 910afbf2ad6948519dc054666f318a162399a560
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Thu Jun 19 12:18:28 2025 +0100
+
+    Add files via upload
+
+commit e1103df85d32ebf3c229a05b35109b3fe9a4b082
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Thu Jun 5 15:00:27 2025 +0100
+
+    Update README.md
+
+commit 50e4413ac4b1a2e3fb2978c8ef58bb8bf51484bd
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Thu Jun 5 14:58:56 2025 +0100
+
+    Add files via upload
+
+commit f3b7becf720eeb8c722b93c34b553745ee2ef40e
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Thu Jun 5 14:58:39 2025 +0100
+
+    Delete plot_results.py
+
+commit 38f5de81de4e092e0bdfc99cacf3a7e0e9443762
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Thu Jun 5 14:58:23 2025 +0100
+
+    Delete plot_results.ipynb
+
+commit a5cac30a3b8ecac3fc4db73cf73163632df7dfe6
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Thu Jun 5 14:57:52 2025 +0100
+
+    Add files via upload
+
+commit e764ad8cc7742d3488d014aac34ab792366a862b
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Thu Jun 5 14:57:38 2025 +0100
+
+    Delete submit_AL_litpcba.sh
+
+commit c28ef5b1d555633f83b2ae43b5f5dead4fb896b6
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Thu Jun 5 14:57:26 2025 +0100
+
+    Delete submit_AL.sh
+
+commit 2e4d597819f09df1bebd46eca4373ec7613c2e16
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Thu Jun 5 14:56:59 2025 +0100
+
+    Add files via upload
+
+commit 63a1a22ff68a816495c765424c3b1d7f44a97c93
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Thu Jun 5 14:55:50 2025 +0100
+
+    Delete active_learning_litpcba.py
+
+commit 3d79c7b5ee628cf249e1ef901a7c06ade74f8b08
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Thu Jun 5 14:55:33 2025 +0100
+
+    Delete active_learning_litpcba.ipynb
+
+commit cf3e978e6a8c326a0bce17e261d56127ffaa070c
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Thu Jun 5 14:55:14 2025 +0100
+
+    Delete active_learning.py
+
+commit b2142a135e72bb4a0150203782e2563cac61fc0d
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Thu Jun 5 14:55:00 2025 +0100
+
+    Delete active_learning.ipynb
+
+commit 778a450f993ec1308a6b480acd5c953b2e7c5c94
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Thu Jun 5 14:53:55 2025 +0100
+
+    Update README.md
+
+commit f1609918ec241410147395cd5561fe70aa8dc143
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Thu Jun 5 14:52:49 2025 +0100
+
+    Update README.md
+
+commit 7dafd9dbb9b99da1187322e205b9f79e0f9c5834
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Thu Apr 24 15:36:54 2025 +0100
+
+    Update README.md
+
+commit 8eec90f2364f22d8992adac9095d7c6dfe42903e
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Thu Apr 24 15:36:21 2025 +0100
+
+    Add files via upload
+
+commit 2260f752a6437a895900d589c7816b56c0b0e6ce
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Thu Apr 24 15:35:23 2025 +0100
+
+    Add files via upload
+
+commit bf27e204b6ef3cdfe2e31e56b7552cf2edc8e999
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Fri Apr 18 15:54:12 2025 +0100
+
+    Update README.md
+
+commit 373fe1b2ee327547738e04842aa85dfce4a1b7bd
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Fri Apr 18 15:53:03 2025 +0100
+
+    Update README.md
+
+commit a0a8f823a7a267a8591d4edbf9668f528b913c51
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Fri Apr 18 15:51:35 2025 +0100
+
+    Update README.md
+
+commit 360d5052751ae8c4dbcdc2ee09ebebb67342ab23
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Fri Apr 18 15:50:12 2025 +0100
+
+    Update README.md
+
+commit c4f6a9d14a1d091728112cd47a387640ef619a35
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Fri Apr 18 15:49:04 2025 +0100
+
+    Update README.md
+
+commit 838c15629f828d1b0f6336de896888892c9878ee
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Fri Apr 18 15:47:14 2025 +0100
+
+    Add files via upload
+
+commit 264eb4abc47107661ecf93d4ee041a7e1d50e7d2
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Mon Apr 14 17:07:29 2025 +0100
+
+    Add files via upload
+
+commit b506f62b038f3fc2f79339ece28347f4796facdc
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Wed Apr 9 14:38:00 2025 +0100
+
+    Add files via upload
+
+commit e5edbbfc7196f1c144c465696650d7364154018c
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Wed Apr 2 15:49:25 2025 +0100
+
+    Add files via upload
+
+commit 61994eba779b7180c66d5311591340b1d29ce24b
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Fri Feb 28 13:45:00 2025 +0000
+
+    Update README.md
+
+commit 7c7b42e63bc6524ecf72d559801946c10db73d7a
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Fri Feb 28 13:44:25 2025 +0000
+
+    Update README.md
+
+commit 22c9493e24de5192b5774394d3370ff0c04e1b4d
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Fri Feb 28 13:05:27 2025 +0000
+
+    Update README.md
+
+commit ce168e7c436ccee19ea720fe56a4c28ae7f0a02b
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Fri Feb 28 11:25:38 2025 +0000
+
+    Add files via upload
+
+commit 1d9beef669e49a07be4c73e09bff57b5b6acaf64
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Fri Feb 28 11:25:26 2025 +0000
+
+    Update repository
+
+commit 31970b6a5fe71abd26aaae37e76133941e9bbf0a
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Fri Feb 28 11:25:13 2025 +0000
+
+    Update repository
+
+commit 3bd86598ffa87fdff5563c31d95f5d9ba5b2216f
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Thu Feb 27 19:00:34 2025 +0000
+
+    Add files via upload
+
+commit 7bc4e78407cc7a719e9211d15ca1175fd10d7901
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Mon Feb 24 08:48:59 2025 +0000
+
+    Update README.md
+
+commit f5224ed35188fb45eefe544b81b06cb20a88f55a
+Author: J.Proudfoot <57542646+Jamie-Proudfoot@users.noreply.github.com>
+Date:   Sun Feb 23 20:55:53 2025 +0000
+
+    Update README.md
+
+commit cc9ca7491eb868879d1086141b1141443f8d866b
+Author: Jamie-Proudfoot <jamieproudfoot1@gmail.com>
+Date:   Sun Feb 23 20:53:29 2025 +0000
+
+    Update files
+
+commit 564cf21a34566fa9239cc2d9327fb718f38405ab
+Author: Jamie-Proudfoot <jamieproudfoot1@gmail.com>
+Date:   Sun Feb 23 20:40:49 2025 +0000
+
+    Update repo
