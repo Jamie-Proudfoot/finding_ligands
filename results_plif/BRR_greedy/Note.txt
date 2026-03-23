@@ -1,0 +1,1 @@
+This folder contains numerical results for BO experiments using the PLIF (protein-ligand interaction fingerprint) descriptors.
