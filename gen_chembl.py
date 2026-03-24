@@ -244,7 +244,7 @@ if __name__ == "__main__":
     request = IdMappingClient.submit(source="GeneCards",dest="UniProtKB",ids={target})
     time.sleep(2.0)
     uniprot_id = list(request.each_result())[0]["to"]
-    output_csv = os.path.join(target,f"{target}_data_p{Y}.csv")
+    output_csv = os.path.join(target,f"{target}-2048_data_p{Y}.csv")
     api_calls(uniprot_id, output_csv, Y)
 
 #%%

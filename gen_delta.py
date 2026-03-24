@@ -29,8 +29,8 @@ from runXGB_all import run_XGB # importing from local folder
 
 target_name = "EGFR"
 id_col = "molecule_chembl_id"
-filename = f"{target_name}_data_3d_pKi.csv"
-output_filename = f"{target_name}_data_3d_pKi.csv"
+filename = f"{target_name}-2048_data_3d_pKi.csv"
+output_filename = f"{target_name}-2048_data_3d_delta_pKi.csv"
 fpLen = 2048
 
 #%%
