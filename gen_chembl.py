@@ -207,7 +207,10 @@ def api_calls(uniprot_id, output_csv, Y):
             mol_df = mol_df[mol_df['relation'] == '=']
             id = mol_df.index[np.argmax(mol_df["p"+Y].values)]
         # If only ">" inequalities, take lowest pY (highest Y) value
-        else: id = mol_df.index[np.argmin(mol_df["p"+Y].values)]
+        # else: id = mol_df.index[np.argmin(mol_df["p"+Y].values)]
+        elif (mol_df['relation'] == '>').all(): 
+            id = mol_df.index[np.argmin(mol_df["p"+Y].values)]
+        else: id = mol_df.index[np.argmax(mol_df["p"+Y].values)]
         maxima.append(id)
     df = df.iloc[maxima]
     df.reset_index(drop=True, inplace=True)

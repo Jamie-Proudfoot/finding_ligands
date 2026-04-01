@@ -144,6 +144,7 @@ class Target:
             #'--log', log_path,
             '--out', out_path,
             '--seed', str(seed),
+            #'--exhaustiveness', '32',
         ]
         # yapf: enable
         if num_cpus is not None:

@@ -159,4 +159,4 @@ if __name__ == "__main__":
 	mol_desc = [morgan3_fp]
 	mol_data = cluster_pca(mol_data,mol_desc)
 	mol_data = cluster_tsne(mol_data,mol_desc)
-	mol_data.to_csv(os.path.join(target,f"{target}-{l}_data_3d_{mode}_pKi.csv",index=False))
+	mol_data.to_csv(os.path.join(target,f"{target}-{l}_data_3d_{mode}_pKi.csv"),index=False)
