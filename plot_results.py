@@ -18,8 +18,10 @@ target = "EGFR"
 
 CHEMBL = ["EGFR","JAK2","LCK","MAOB","NOS1","ACHE","PARP1","PTGS2","PDE5A","ESR1","NR3C1","AR","ADRB2","F10"]
 LITPCBA = ["ESR1ago","ESR1ant","PPARG","TP53"]
+BAL = ["DRD2","USP7","Mpro","TYK2"]
 if target in CHEMBL: mode = "delta"
 elif target in LITPCBA: mode = "litpcba"
+elif target in BAL: mode = "bal"
 config = "BRR_greedy"
 
 if mode == "delta":
@@ -50,6 +52,21 @@ elif mode == "litpcba":
     ticks = 200
     ylabel="\\text{p}EC_{50}"
     data = pd.read_csv(os.path.join("data",f"{target}_data_full.csv"))
+elif mode == "bal":
+    Nreps = 25
+    l = ""
+    lowlevel = "XGB"
+    if target in  ["USP7","Mpro"]: y, ylabel = "pIC50", "\\text{pIC}_{50}"
+    else: y, ylabel = "pKi", "\\text{p}K_i"
+    results = "results_bal"
+    hit = 9.0
+    eofs = ["random_10","tanimoto_morgan3_10","morgan3_rdkit2d_10","morgan3_rdkit2d_10_cpca",f"morgan3_rdkit2d_rdkit3d_delta_docking_10_top_{lowlevel}_P90"]
+    configs = ["baseline","baseline",config,config,config]
+    names = ["random", "similarity", "BO (B1)", "BO (B2)", "BO + docking (D)"]
+    pal = {"random": "r", "similarity": "brown", "BO (B1)": "orange","BO (B2)": "b", "D": "g"}
+    ticks = 100
+    data = pd.read_csv(os.path.join("data",f"{target}_data_3d_delta_{y}.csv"))
+
 
 #%%
 

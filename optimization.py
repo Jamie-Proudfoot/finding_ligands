@@ -75,6 +75,8 @@ def fit_model(model,Xtrain,Ytrain,parameter_ranges):
     )
     grid_search.fit(Xtrain, Ytrain)
     return grid_search.best_estimator_
+    # model.fit(Xtrain, Ytrain) # no hp tuning
+    # return model # use this instead to skip 5-fold CV
 
 def inference(model,X,sd=False):
     """

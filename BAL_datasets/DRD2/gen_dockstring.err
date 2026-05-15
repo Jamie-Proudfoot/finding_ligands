@@ -1,0 +1,78 @@
+ERROR:root:Conversion from MOL to PDBQT failed
+ERROR:root:NaN values in 3D features
+ERROR:root:NaN values in 3D features
+ERROR:root:NaN values in 3D features
+ERROR:root:NaN values in 3D features
+ERROR:root:NaN values in 3D features
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:NaN values in 3D features
+[11:25:49] UFFTYPER: Unrecognized charge state for atom: 15
+[11:25:49] UFFTYPER: Unrecognized charge state for atom: 15
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[11:25:50] UFFTYPER: Unrecognized charge state for atom: 9
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[11:25:55] UFFTYPER: Unrecognized charge state for atom: 9
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[11:38:36] UFFTYPER: Unrecognized charge state for atom: 25
+ERROR:root:MMFF optimization of ligand failed
+ERROR:root:MMFF optimization of ligand failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:MMFF optimization of ligand failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:MMFF optimization of ligand failed
+ERROR:root:MMFF optimization of ligand failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:MMFF optimization of ligand failed
+ERROR:root:Generation of ligand conformation failed
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[14:04:04] UFFTYPER: Unrecognized charge state for atom: 2
+ERROR:root:Cannot recover original ligand: CS/C(S)=N\[C@H]1[C@@H]2C[C@H]3C[C@@H](C2)C[C@@H]1C3 (original) != CS/C(S)=N\[C@H]1[C@H]2C[C@@H]3C[C@H](C2)C[C@H]1C3 (docked)
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+ERROR:root:Generation of ligand conformation failed
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[15:15:28] UFFTYPER: Unrecognized charge state for atom: 8
+ERROR:root:Generation of ligand conformation failed
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[15:21:56] UFFTYPER: Unrecognized charge state for atom: 8
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[15:22:17] UFFTYPER: Unrecognized charge state for atom: 25
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[15:22:22] UFFTYPER: Unrecognized charge state for atom: 25
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[15:22:25] UFFTYPER: Unrecognized charge state for atom: 25
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[15:32:56] UFFTYPER: Unrecognized charge state for atom: 8
+ERROR:root:MMFF optimization of ligand failed
+ERROR:root:NaN values in 3D features
+ERROR:root:Could not assign bond orders: No matching found
+ERROR:root:NaN values in 3D features
+ERROR:root:NaN values in 3D features
+ERROR:root:NaN values in 3D features
+ERROR:root:NaN values in 3D features
+ERROR:root:NaN values in 3D features
+ERROR:root:NaN values in 3D features
+ERROR:root:NaN values in 3D features
+ERROR:root:NaN values in 3D features
+[16:08:29] Explicit valence for atom # 1 N, 4, is greater than permitted
+ERROR:root:Cannot read protonated SMILES: [O-][N+](=O)=[O-]
+ERROR:root:MMFF optimization of ligand failed
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[17:29:55] UFFTYPER: Unrecognized charge state for atom: 25
+ERROR:root:MMFF optimization of ligand failed
+[17:36:42] UFFTYPER: Unrecognized charge state for atom: 1
+[17:36:42] UFFTYPER: Unrecognized charge state for atom: 1
+[17:36:42] UFFTYPER: Unrecognized charge state for atom: 1
+ERROR:root:Conversion from MOL to PDBQT failed
+WARNING:root:Molecule contains charged atom that is not N or O - careful!
+[17:37:53] UFFTYPER: Unrecognized charge state for atom: 25
+ERROR:root:MMFF optimization of ligand failed

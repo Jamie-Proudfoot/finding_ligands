@@ -1,3 +1,5 @@
+
+#%%
 import os
 import glob
 import math
@@ -6,16 +8,16 @@ import numpy as np
 import pandas as pd
 from tqdm import tqdm
 
-pred_target = "pKi" #"pEC50" for LIT-PCBA
-data_suffix = "data_3d_delta_pKi" #"data_full" for LIT-PCBA
+target = "pKi" #"pEC50" for LIT-PCBA
+suffix = "data_3d_delta_pKi" #"data_full" for LIT-PCBA
 w = 1   # batch size
 m = 10  # initial pool size
 M = 10_000 # budget, e.g. 10_000: arbitrarily high for target termination
 EF_target = 9.0 # 4.0 + 1e-3 for LIT-PCBA
-percentile = 99 # percentile for enrichment factor calculation (leave as None: use EF_target)
-dir = "results/BRR_greedy"
-suffix = "" # e.g "10%" or "100" for fixed budgets
+dir = "results/"
+endix = "" # e.g "10%" or "100" for fixed budgets
 p = None # % proportion of budget (M) to consider (leave as None: 100%)
+percentile = 99
 
 def random_analytic(D,v):
     """
@@ -34,6 +36,9 @@ def random_analytic(D,v):
     return (N + 1) / (H + 1)
 
 for file in tqdm(glob.glob(os.path.join(dir,"*ID.csv"))):
+    print(file)
+    pred_target, data_suffix = target, suffix
+    if "USP7" in file or "Mpro" in file: pred_target, data_suffix = "pIC50", "data_3d_delta_pIC50"
     filename = os.path.basename(os.path.normpath(file))
     job = filename[:-7]
     name = filename.split("_")[0]
@@ -44,7 +49,9 @@ for file in tqdm(glob.glob(os.path.join(dir,"*ID.csv"))):
 
     target_data = data_df[pred_target].values
     mol_target = np.max(target_data)
-    if percentile: EF_target = np.percentile(target_data,percentile)
+
+    if percentile: EF_target = np.percentile(target_data,percentile) # new (EF1%)
+    print(EF_target)
 
     steps_to_maximum = []
     recall = []
@@ -101,6 +108,8 @@ for file in tqdm(glob.glob(os.path.join(dir,"*ID.csv"))):
         "recall":mean_recall,
     }
     results_df = pd.DataFrame.from_dict(results,orient="index").transpose()
-    if suffix: name = f"{job}_{suffix}_SM.csv"
+    if endix: name = f"{job}_{endix}_SM.csv"
     else: name = f"{job}_SM.csv"
     results_df.to_csv(os.path.join(dir,name),index=False)
+
+#%%

@@ -1,0 +1,221 @@
+DataFrame shape: (665, 6)
+Computing RDKit 3D features and docking scores ...
+Chunk number: 0
+Docking failed for B1(OC(C(O1)(C)C)(C)C)c2cnc(nc2)C#N
+Docking failed for C([C@@H]1[C@H]([C@@H]([C@H]([C@H](O1)S[Au])O)O)O)O
+Time taken (s): 53.55533957481384
+Chunk number: 1
+Time taken (s): 37.62732720375061
+Chunk number: 2
+Time taken (s): 44.679975748062134
+Chunk number: 3
+Time taken (s): 29.458503484725952
+Chunk number: 4
+Docking failed for CC(C)(C)N1C=CN(C1[Au]Cl)C(C)(C)C
+Time taken (s): 41.32453489303589
+Chunk number: 5
+Time taken (s): 79.95352697372437
+Chunk number: 6
+Time taken (s): 89.15119123458862
+Chunk number: 7
+Time taken (s): 84.85680150985718
+Chunk number: 8
+Time taken (s): 95.65625357627869
+Chunk number: 9
+Time taken (s): 38.76612901687622
+Chunk number: 10
+Time taken (s): 43.21746063232422
+Chunk number: 11
+Time taken (s): 53.189807415008545
+Chunk number: 12
+Time taken (s): 30.442851305007935
+Chunk number: 13
+Time taken (s): 24.630513668060303
+Chunk number: 14
+Time taken (s): 47.89643740653992
+Chunk number: 15
+Time taken (s): 30.92054581642151
+Chunk number: 16
+Time taken (s): 37.16305661201477
+Chunk number: 17
+Time taken (s): 49.51066875457764
+Chunk number: 18
+Docking failed for CCP(=[Au]S[C@H]1[C@@H]([C@H]([C@@H]([C@H](O1)COC(=O)C)OC(=O)C)OC(=O)C)OC(=O)C)(CC)CC
+Time taken (s): 32.98395848274231
+Chunk number: 19
+Time taken (s): 43.30136036872864
+Chunk number: 20
+Time taken (s): 40.47990012168884
+Chunk number: 21
+Time taken (s): 32.26166272163391
+Chunk number: 22
+Time taken (s): 33.36835312843323
+Chunk number: 23
+Time taken (s): 29.10651969909668
+Chunk number: 24
+Time taken (s): 34.66511082649231
+Chunk number: 25
+Time taken (s): 27.300079584121704
+Chunk number: 26
+Time taken (s): 34.81640958786011
+Chunk number: 27
+Time taken (s): 30.719486951828003
+Chunk number: 28
+Time taken (s): 30.84172296524048
+Chunk number: 29
+Time taken (s): 30.320698499679565
+Chunk number: 30
+Time taken (s): 36.30795335769653
+Chunk number: 31
+Time taken (s): 33.15315771102905
+Chunk number: 32
+Time taken (s): 23.400686264038086
+Chunk number: 33
+Time taken (s): 26.67733407020569
+Chunk number: 34
+Time taken (s): 23.489726543426514
+Chunk number: 35
+Time taken (s): 27.81838583946228
+Chunk number: 36
+Time taken (s): 24.639441967010498
+Chunk number: 37
+Time taken (s): 24.592180252075195
+Chunk number: 38
+Time taken (s): 34.085328102111816
+Chunk number: 39
+Docking failed for Cc1cc(nc(n1)C#N)C
+Time taken (s): 34.52434802055359
+Chunk number: 40
+Time taken (s): 23.436757564544678
+Chunk number: 41
+Time taken (s): 37.789846658706665
+Chunk number: 42
+Time taken (s): 31.32047939300537
+Chunk number: 43
+Time taken (s): 24.273545503616333
+Chunk number: 44
+Time taken (s): 26.246885061264038
+Chunk number: 45
+Time taken (s): 25.916985511779785
+Chunk number: 46
+Time taken (s): 27.56220507621765
+Chunk number: 47
+Time taken (s): 24.868026971817017
+Chunk number: 48
+Time taken (s): 33.40812659263611
+Chunk number: 49
+Time taken (s): 30.72384285926819
+Chunk number: 50
+Time taken (s): 74.13971590995789
+Chunk number: 51
+Time taken (s): 41.61231994628906
+Chunk number: 52
+Time taken (s): 22.927950620651245
+Chunk number: 53
+Time taken (s): 22.103187322616577
+Chunk number: 54
+Time taken (s): 18.16343331336975
+Chunk number: 55
+Time taken (s): 42.28870701789856
+Chunk number: 56
+Time taken (s): 30.014503955841064
+Chunk number: 57
+Time taken (s): 39.733176469802856
+Chunk number: 58
+Docking failed for [2H]C([2H])([2H])O[C@]1(CCOc2c1cc(cc2)Cl)C(=O)Nc3cncc4c3cccc4
+Docking failed for c1c(cnc(n1)C#N)Br
+Docking failed for c1c(cnc(n1)C#N)Cl
+Docking failed for c1c(cnc(n1)C#N)F
+Time taken (s): 10.123098850250244
+Chunk number: 59
+Time taken (s): 27.852306127548218
+Chunk number: 60
+Time taken (s): 22.692713260650635
+Chunk number: 61
+Time taken (s): 18.586910486221313
+Chunk number: 62
+Time taken (s): 18.148035526275635
+Chunk number: 63
+Time taken (s): 20.671634435653687
+Chunk number: 64
+Time taken (s): 18.66022038459778
+Chunk number: 65
+Time taken (s): 21.651103496551514
+Chunk number: 66
+Time taken (s): 22.440747022628784
+Chunk number: 67
+Time taken (s): 28.116730213165283
+Chunk number: 68
+Time taken (s): 19.77084469795227
+Chunk number: 69
+Docking failed for c1cc2c(c(c1)Br)NC(=O)C2=O
+Docking failed for c1cc2c(cc1Br)C(=O)C(=O)N2
+Time taken (s): 15.711960077285767
+Chunk number: 70
+Time taken (s): 25.976906061172485
+Chunk number: 71
+Time taken (s): 20.77240300178528
+Chunk number: 72
+Time taken (s): 20.825140714645386
+Chunk number: 73
+Time taken (s): 30.631336450576782
+Chunk number: 74
+Time taken (s): 38.490659952163696
+Chunk number: 75
+Time taken (s): 35.69188046455383
+Chunk number: 76
+Time taken (s): 29.080981969833374
+Chunk number: 77
+Time taken (s): 28.39445996284485
+Chunk number: 78
+Time taken (s): 55.08739733695984
+Chunk number: 79
+Time taken (s): 20.05223250389099
+Chunk number: 80
+Time taken (s): 28.339962005615234
+Chunk number: 81
+Time taken (s): 32.81407856941223
+Chunk number: 82
+Time taken (s): 25.096874952316284
+Chunk number: 83
+Time taken (s): 31.156444549560547
+Chunk number: 84
+Time taken (s): 30.006953716278076
+Chunk number: 85
+Time taken (s): 27.03447723388672
+Chunk number: 86
+Time taken (s): 31.9494411945343
+Chunk number: 87
+Time taken (s): 23.74425768852234
+Chunk number: 88
+Time taken (s): 27.75764513015747
+Chunk number: 89
+Time taken (s): 28.100902557373047
+Chunk number: 90
+Time taken (s): 30.780409812927246
+Chunk number: 91
+Time taken (s): 44.08763575553894
+Chunk number: 92
+Time taken (s): 32.75612998008728
+Chunk number: 93
+Time taken (s): 45.91970419883728
+Chunk number: 94
+Docking failed for c1cnc(nc1Cl)C#N
+Time taken (s): 15.270261526107788
+Total time taken (s): 3181.639856338501
+    LigandId  ...  score
+0          0  ...    NaN
+1          1  ...    NaN
+2          2  ... -5.959
+3          3  ... -8.422
+4          4  ... -7.655
+..       ...  ...    ...
+2        660  ... -7.133
+3        661  ... -7.744
+4        662  ...    NaN
+5        663  ... -5.228
+6        664  ... -6.319
+
+[665 rows x 919 columns]
+Shape before filtering NaN values: (665, 919)
+Shape after filtering NaN values: (653, 919)
