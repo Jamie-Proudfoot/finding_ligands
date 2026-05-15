@@ -1,0 +1,4 @@
+https://www.sciencedirect.com/science/article/pii/S2667318522000204
+https://github.com/google-research/google-research/tree/master/al_for_fep
+(GitHub page has docking scores for each)
+Please download 10k_most_similar_tyk2_charged.sdf from the original Zenodo archive
