@@ -1,0 +1,11 @@
+D2R 0 0.0
+[]
+
+USP7 1 0.02205071664829107
+['c1ccc(cc1)CCC(=O)N2CCC(CC2)(Cn3cnc4cc(ccc4c3=O)Cl)O']
+
+Mpro 0 0.0
+[]
+
+TYK2 0 0.0
+[]
