@@ -34,11 +34,12 @@ seed=42
 random.seed(seed)
 os.environ["PYTHONHASHSEED"] = str(seed)
 np.random.seed(seed)
+np.set_printoptions(legacy='1.25')
 
 sns.set_theme()
 # plt.style.use("seaborn-v0_8")
 plt.rcParams.update({'font.size': 18})
-mpl.rcParams['figure.dpi'] = 600
+mpl.rcParams['figure.dpi'] = 300
 
 #%%
 
@@ -48,7 +49,8 @@ def np_to_bv(fp):
         if v: bitvector.SetBit(i)
     return bitvector
 
-def EF(ids,df,y="pKi",hit=9.0):
+def EF(ids,df,y="pKi",hit=9.0,percentile=None):
+    if percentile: hit = np.percentile(df[y],percentile)
     rand_hits = len(ids)/len(df) * np.sum(df[y]>=hit)
     hits = np.sum(df[y].iloc[ids]>=hit)
     enrichment = hits/rand_hits
@@ -59,6 +61,10 @@ def TS(ids,df,i=None,l=2048):
     if not i: i = len(ids)
     mat = GetTanimotoSimMat([np_to_bv(fp) for fp in df[fps].iloc[ids[:i]].values])
     return np.mean(mat)
+
+def round_sf(value, sig_figs):
+    if value == 0: return 0
+    else: return round(value, sig_figs - int(np.floor(np.log10(abs(value))))-1)
 
 #%%
 
@@ -77,51 +83,38 @@ if mode == "delta":
     results = "results"
     y = "pKi"
     hit = 9.0
+    percentile = 99
     eofs = ["random_10","tanimoto_morgan3_10","morgan3_rdkit2d_10","morgan3_rdkit2d_10_cpca",f"morgan3_rdkit2d_rdkit3d_delta_docking_10_top_{lowlevel}_P90"]
     configs = ["baseline","baseline",config,config,config]
     names = ["random", "similarity", "BO (B1)", "BO (B2)", "BO + docking (D)"]
     pal = {"random": "r", "similarity": "brown", "BO (B1)": "orange", "BO (B2)": "b", "BO + docking (D)": "g"}
     ticks = 50
-    ylabel="$pK_i$"
-elif mode == "gnina":
-    Nreps = 25
-    l = "-2048"
-    lowlevel = "CNNaffinity"
-    results = "results_gnina"
-    y = "pKi"
-    hit = 9.0
-    eofs = ["random_10","tanimoto_morgan3_10","morgan3_rdkit2d_10","morgan3_rdkit2d_10_cpca",f"morgan3_rdkit2d_rdkit3d_delta_docking_10_top_{lowlevel}_P90"]
-    configs = ["baseline","baseline",config,config,config]
-    names = ["random", "similarity", "BO (B1)", "morgan3_rdkit2d\n(diverse)", "BO + docking (D)"]
-    pal = {"random": "r", "similarity": "brown", "BO (B1)": "orange", "BO (B2)": "b", "BO + docking (D)": "g"}
-    ticks = 50
-    ylabel="$pK_i$"
+    ylabel="\\text{p}K_i"
+    data = pd.read_csv(os.path.join("data",f"{target}{l}_data_3d_{mode}_{y}.csv"))
+    mval = np.max(data[y])
 elif mode == "litpcba":
     Nreps = 25
     l = ""
     lowlevel = "CNN-Affinity"
     results = "results_litpcba"
     y = "pEC50"
-    hit = 4.0 + 1e-3 # > 4.0 instead of >= 4.0
+    hit = 4.0 + 1e-3
+    percentile = None
     eofs = ["random_10","tanimoto_morgan3_10","morgan3_rdkit2d_10","morgan3_rdkit2d_10_cpca",f"morgan3_rdkit2d_rdkit3d_docking_10_top_{lowlevel}_P90"]
     configs = ["baseline","baseline",config,config,config]
     names = ["random", "similarity", "BO (B1)", "BO (B2)", "BO + docking (D)"]
-    pal = {"random": "r", "similarity": "brown", "BO (B1)": "orange", "BO (B2)": "b", "BO + docking (D)": "g"}
+    pal = {"random": "r", "similarity": "brown", "BO (B1)": "orange","BO (B2)": "b", "BO + docking (D)": "g"}
     ticks = 200
-    ylabel="$pEC_{50}$"
-
-#%%
-
-if mode == "litpcba": data = pd.read_csv(os.path.join("data",f"{target}_data_full.csv"))
-else: data = pd.read_csv(os.path.join("data",f"{target}{l}_data_3d_{mode}_pKi.csv"))
-avg_tanimoto = TS(data.index,data)
+    ylabel="\\text{p}EC_{50}"
+    data = pd.read_csv(os.path.join("data",f"{target}_data_full.csv"))
+    mval = np.max(data[y])
 
 #%%
 
 # Data collection
 
 # NEW: hit = P99 (99th percentile of activities) i.e. EF_1%
-# hit = np.percentile(data[y].values,99) 
+if percentile: hit = np.percentile(data[y].values,percentile)
 
 y_EF = []
 y_EF_err = []
@@ -138,13 +131,19 @@ for eof,config in zip(eofs,configs):
     df = pd.read_csv(os.path.join(folder,file))
     all_ids = [df[column].values for column in df.columns]
     all_ids = [ids[~np.isnan(ids)].tolist() for ids in all_ids]
-    steps = [len(ids) for ids in all_ids]
+    # steps = [len(ids) for ids in all_ids]
+    steps = []
+    for ids in all_ids:
+        Ytrain = data[y].iloc[ids].values
+        is_greater = Ytrain.flatten() >= mval
+        if not np.any(is_greater): stps, found = len(Ytrain), 0
+        else: stps, found = np.argmax(is_greater)+1, 1
+        steps.append(stps)
     all_steps += steps
     EFs = [EF(ids,data,y=y,hit=hit) for ids in all_ids]
     all_EFs += EFs
     mean_EF = np.round(np.mean(EFs),3)
     std_EF = np.round(np.std(EFs),3)
-    print(f"EF: {mean_EF} +/- {std_EF}")
     if "random" not in eof:
         TS_start = [TS(ids,data,i=10) for ids in tqdm(all_ids)]
         mean_TS_start = np.round(np.mean(TS_start),3)
@@ -173,9 +172,18 @@ datadict = {"config": all_names, "steps_to_maximum": all_steps, "EF": all_EFs}
 df = pd.DataFrame({k:pd.Series(v) for k,v in datadict.items()})
 
 means  = [np.mean(df["steps_to_maximum"][df["config"]==name]) for name in names]
-print(means)
+print([round_sf(m,3) for m in means])
 stds = [np.std(df["steps_to_maximum"][df["config"]==name]) for name in names]
-print(stds)
+# print([round_sf(s,3) for s in stds])
+CIs = [1.96*s/np.sqrt(Nreps) for s in stds]
+print([round_sf(c,3) for c in CIs])
+pchange = 100*((means[-1]-means[-2])/means[-2])
+print(round_sf(pchange,3))
+std_pchange = 100*np.sqrt((stds[-1]*means[-2])**2 + (stds[-2]*means[-1])**2)/(means[-2]**2)
+# print(round_sf(std_pchange,3))
+CI_pchange = 1.96*std_pchange/np.sqrt(Nreps)
+print(round_sf(CI_pchange,3))
+
 ax = sns.boxplot(x="config", y="steps_to_maximum", data=df, palette=pal, hue="config", legend=legend, linewidth=1.2)
 plt.ylabel("Steps to maximum")
 if not legend:
@@ -193,9 +201,18 @@ plt.title(f"{target}")
 plt.show()
 
 means  = [np.mean(df["EF"][df["config"]==name]) for name in names]
-print(means)
+print([round_sf(m,3) for m in means])
 stds = [np.std(df["EF"][df["config"]==name]) for name in names]
-print(stds)
+# print([round_sf(s,3) for s in stds])
+CIs = [1.96*s/np.sqrt(Nreps) for s in stds]
+print([round_sf(c,3) for c in CIs])
+pchange = 100*((means[-1]-means[-2])/means[-2])
+print(round_sf(pchange,3))
+std_pchange = 100*np.sqrt((stds[-1]*means[-2])**2 + (stds[-2]*means[-1])**2)/(means[-2]**2)
+# print(round_sf(std_pchange,3))
+CI_pchange = 1.96*std_pchange/np.sqrt(Nreps)
+print(round_sf(CI_pchange,3))
+
 ax = sns.boxplot(x="config", y="EF", data=df, palette=pal, hue="config", legend=legend, linewidth=1.2)
 if not legend:
     ax.xaxis.tick_top()
@@ -259,6 +276,7 @@ print(wx)
 
 # Similarity plots
 
+avg_tanimoto = TS(data.index,data)
 plt.rcParams.update({'font.size': 18})
 y = [i for ij in zip(y_TS_start, y_TS_end) for i in ij]
 yerr = [i for ij in zip(y_TS_start_err, y_TS_end_err) for i in ij]
@@ -295,5 +313,20 @@ plt.yticks(0.1*np.arange(0, 11, 1), fontsize=16)
 plt.errorbar(x, y, yerr, fmt='.', color='Black', elinewidth=2, capthick=10, errorevery=1, alpha=0.5, ms=4, capsize=2)
 ax.set(xlabel=None,xticklabels=[])
 ax.tick_params(bottom=False)
+
+#%%
+
+
+# # Box plots (only B2 and D)
+
+# df = df[df["config"].isin(['BO (B2)', 'BO + docking (D)'])]
+
+# ax = sns.boxplot(x="config", y="steps_to_maximum", data=df, palette=pal, hue="config", linewidth=1.2, boxprops=dict(alpha=.3))
+# sns.stripplot(data=df, x="config", y="steps_to_maximum", palette=pal, hue="config", dodge=True, ax=ax)
+# plt.show()
+
+# ax = sns.boxplot(x="config", y="EF", data=df, palette=pal, hue="config", linewidth=1.2, boxprops=dict(alpha=.3))
+# sns.stripplot(data=df, x="config", y="EF", palette=pal, hue="config", dodge=True, ax=ax)
+# plt.show()
 
 #%%

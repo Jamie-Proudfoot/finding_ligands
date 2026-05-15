@@ -13,13 +13,19 @@ dependencies:
   - _openmp_mutex=5.1
   - _py-xgboost-mutex=2.0
   - astunparse=1.6.3
+  - backcall=0.2.0
+  - backports=1.0
+  - backports.functools_lru_cache=2.0.0
   - blosc=1.21.1
   - bottleneck=1.3.4
   - bzip2=1.0.8
-  - ca-certificates=2024.2.2
+  - ca-certificates=2026.2.25
   - cairo=1.16.0
-  - certifi=2024.2.2
+  - certifi=2024.8.30
   - colorama=0.4.6
+  - debugpy=1.6.0
+  - decorator=5.1.1
+  - entrypoints=0.4
   - expat=2.5.0
   - fontconfig=2.14.1
   - freetype=2.12.1
@@ -28,8 +34,13 @@ dependencies:
   - glib-tools=2.78.4
   - hdf5=1.10.5
   - icu=58.2
+  - ipykernel=6.16.2
+  - ipython=7.33.0
+  - jedi=0.19.1
   - joblib=1.3.2
   - jpeg=9e
+  - jupyter_client=7.3.4
+  - jupyter_core=4.11.1
   - lcms2=2.12
   - ld_impl_linux-64=2.38
   - lerc=3.0
@@ -47,6 +58,7 @@ dependencies:
   - liblapack=3.9.0
   - libopenblas=0.3.20
   - libpng=1.6.39
+  - libsodium=1.0.18
   - libstdcxx-ng=11.2.0
   - libtiff=4.5.1
   - libuuid=1.41.5
@@ -57,26 +69,37 @@ dependencies:
   - libxml2=2.9.14
   - lz4-c=1.9.4
   - lzo=2.10
+  - matplotlib-inline=0.1.7
   - mdtraj=1.9.6
   - mock=5.1.0
   - ncurses=6.4
+  - nest-asyncio=1.6.0
   - nomkl=1.0
   - numexpr=2.8.0
   - numpy=1.21.6
   - openbabel=2.4.1
   - openssl=1.1.1w
+  - packaging=23.2
   - pandas=1.3.5
+  - parso=0.8.4
   - pcre2=10.42
+  - pexpect=4.9.0
+  - pickleshare=0.7.5
   - pillow=9.4.0
   - pip=24.0
   - pixman=0.40.0
+  - prompt-toolkit=3.0.48
+  - psutil=5.9.1
+  - ptyprocess=0.7.0
   - py-boost=1.67.0
   - py-xgboost=1.2.0
+  - pygments=2.17.2
   - pyparsing=3.1.2
   - pytables=3.6.1
   - python=3.7.16
   - python_abi=3.7
   - pytz=2024.1
+  - pyzmq=23.0.0
   - rdkit=2019.03.1.0
   - readline=8.2
   - scikit-learn=1.0.2
@@ -86,10 +109,14 @@ dependencies:
   - sqlite=3.41.2
   - threadpoolctl=3.1.0
   - tk=8.6.12
+  - tornado=6.1
   - tqdm=4.66.2
+  - traitlets=5.9.0
+  - wcwidth=0.2.10
   - wheel=0.42.0
   - xgboost=1.2.0
   - xz=5.4.6
+  - zeromq=4.3.4
   - zlib=1.2.13
   - zstd=1.5.5
   - pip:
@@ -100,4 +127,3 @@ dependencies:
       - natsort==8.4.0
       - python-dateutil==2.9.0.post0
       - setuptools==68.0.0
-prefix: /home/jp2658/.conda/envs/DXGB

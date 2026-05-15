@@ -12,6 +12,7 @@ w = 1   # batch size
 m = 10  # initial pool size
 M = 10_000 # budget, e.g. 10_000: arbitrarily high for target termination
 EF_target = 9.0 # 4.0 + 1e-3 for LIT-PCBA
+percentile = 99 # percentile for enrichment factor calculation (leave as None: use EF_target)
 dir = "results/BRR_greedy"
 suffix = "" # e.g "10%" or "100" for fixed budgets
 p = None # % proportion of budget (M) to consider (leave as None: 100%)
@@ -36,13 +37,14 @@ for file in tqdm(glob.glob(os.path.join(dir,"*ID.csv"))):
     filename = os.path.basename(os.path.normpath(file))
     job = filename[:-7]
     name = filename.split("_")[0]
-    data_df = pd.read_csv(os.path.join("data",f"{name}_{data_suffix}.csv"))
+    data_df = pd.read_csv(os.path.join("data",f"{name}_{data_suffix}.csv.tar.gz"))
     id_df = pd.read_csv(file)
 
     if p: M = int(len(data_df) * p/100)
 
     target_data = data_df[pred_target].values
     mol_target = np.max(target_data)
+    if percentile: EF_target = np.percentile(target_data,percentile)
 
     steps_to_maximum = []
     recall = []

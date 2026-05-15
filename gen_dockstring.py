@@ -10,6 +10,11 @@ import pandas as pd
 from tqdm.auto import tqdm
 tqdm.pandas()
 
+import warnings
+with warnings.catch_warnings():
+    warnings.simplefilter("ignore", category=UserWarning)
+    import pkg_resources
+
 #from dockstring import load_target # (unmodified dockstring)
 
 # Load local version of dockstring (modified from original)
@@ -31,6 +36,7 @@ from rdkit.Chem.rdMolDescriptors import CalcEccentricity, CalcAsphericity, CalcS
 from rdkit.Chem.rdMolDescriptors import CalcAUTOCORR3D, CalcRDF, CalcMORSE, CalcWHIM, CalcGETAWAY
 
 import warnings
+warnings.filterwarnings("ignore", category=UserWarning, message="pkg_resources is deprecated")
 
 descList = ['PMI1','PMI2','PMI3','NPR1', 'NPR2',
             'RadiusOfGyration','InertialShapeFactor',

@@ -80,7 +80,7 @@ fsets = {
 # Plot correlation heatmaps of different variables
 
 outdir = os.path.join(target,"features")
-if not os.path.exists(outdir): os.mkdir(outdir)
+if not os.path.exists(outdir): os.makedirs(outdir)
 for (name, varlist) in tqdm(fsets.items()):
     Y = "pKi"
     N = len(varlist)

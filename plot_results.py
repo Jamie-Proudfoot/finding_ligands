@@ -2,7 +2,6 @@
 import os
 import numpy as np
 import seaborn as sns
-
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import cm
@@ -11,7 +10,7 @@ import pandas as pd
 from scipy import stats
 from scipy.stats import pearsonr, gaussian_kde
 
-mpl.rcParams['figure.dpi'] = 600
+mpl.rcParams['figure.dpi'] = 300
 
 #%%
 
@@ -36,19 +35,21 @@ if mode == "delta":
     pal = {"random": "r", "similarity": "brown", "BO (B1)": "orange","BO (B2)": "b", "D": "g"}
     ticks = 50
     ylabel="\\text{p}K_i"
+    data = pd.read_csv(os.path.join("data",f"{target}{l}_data_3d_{mode}_{y}.csv"))
 elif mode == "litpcba":
     Nreps = 25
     l = ""
     lowlevel = "CNN-Affinity"
     results = "results_litpcba"
     y = "pEC50"
-    hit = 7.0
+    hit = 4.0 + 1e-3
     eofs = ["random_10","tanimoto_morgan3_10","morgan3_rdkit2d_10","morgan3_rdkit2d_10_cpca",f"morgan3_rdkit2d_rdkit3d_docking_10_top_{lowlevel}_P90"]
     configs = ["baseline","baseline",config,config,config]
     names = ["random", "similarity", "BO (B1)", "BO (B2)", "morgan3_rdkit2d_rdkit3d_docking // docking"]
     pal = {"random": "r", "similarity": "brown", "BO (B1)": "orange","BO (B2)": "b", "morgan3_rdkit2d_rdkit3d_docking // docking": "g"}
     ticks = 200
     ylabel="\\text{p}EC_{50}"
+    data = pd.read_csv(os.path.join("data",f"{target}_data_full.csv"))
 
 #%%
 
@@ -95,8 +96,8 @@ for eof,config in zip(eofs,configs):
     else: file = f"{target}{l}_{eof}.csv"
     df = pd.read_csv(os.path.join(folder,file))
     dfs.append(df)
-    if mode == "litpcba": data = pd.read_csv(os.path.join("data",f"{target}_data_full.csv"))
-    else: data = pd.read_csv(os.path.join("data",f"{target}{l}_data_3d_{mode}_pKi.csv"))
+    if mode == "delta": data = pd.read_csv(os.path.join("data",f"{target}{l}_data_3d_{mode}_pKi.csv"))
+    elif mode == "litpcba": data = pd.read_csv(os.path.join("data",f"{target}_data_full.csv"))
 
 #%%
 
@@ -104,23 +105,31 @@ Y = data[y].values
 targets = dfs[0]["targets"].values
 random = dfs[0]["mean_queries"].values
 random_std = dfs[0]["std_queries"].values
+random_CI = random_std * (1.96/np.sqrt(Nreps))
 nodocking = dfs[-2]["mean_queries"].values
 nodocking_std = dfs[-2]["std_queries"].values
+nodocking_CI = nodocking_std * (1.96/np.sqrt(Nreps))
 docking = dfs[-1]["mean_queries"].values
 docking_std = dfs[-1]["std_queries"].values
+docking_CI = docking_std * (1.96/np.sqrt(Nreps))
 
 #%%
 
 plt.plot(random,targets,c="y",marker=".",label="random")
-plt.fill_betweenx(y=targets,x1=random-random_std,x2=random+random_std,color="y",alpha=0.2)
+# plt.fill_betweenx(y=targets,x1=random-random_std,x2=random+random_std,color="y",alpha=0.2)
+plt.fill_betweenx(y=targets,x1=random-random_CI,x2=random+random_CI,color="y",alpha=0.2)
 plt.plot(nodocking,targets,c="m",marker=".",label="BO (B2)")
-plt.fill_betweenx(y=targets,x1=nodocking-nodocking_std,x2=nodocking+nodocking_std,color="m",alpha=0.1)
+# plt.fill_betweenx(y=targets,x1=nodocking-nodocking_std,x2=nodocking+nodocking_std,color="m",alpha=0.1)
+plt.fill_betweenx(y=targets,x1=nodocking-nodocking_CI,x2=nodocking+nodocking_CI,color="m",alpha=0.1)
 plt.plot(docking,targets,c="c",marker=".",label="BO + docking (D)")
-plt.fill_betweenx(y=targets,x1=docking-docking_std,x2=docking+docking_std,color="c",alpha=0.1)
+# plt.fill_betweenx(y=targets,x1=docking-docking_std,x2=docking+docking_std,color="c",alpha=0.1)
+plt.fill_betweenx(y=targets,x1=docking-docking_CI,x2=docking+docking_CI,color="c",alpha=0.1)
 plt.xticks(np.arange(0,max(random[-1],nodocking[-1])+1.5*ticks,ticks),rotation=65)
 plt.yticks(np.arange(min(targets)-0.2,max(targets)+0.2,0.2)+0.2)
-plt.xlim(0,max(random[-1],nodocking[-1])+1.5*ticks)
-plt.ylim(bottom=min(targets)-0.1,top=max(targets)+0.2)
+plt.xlim(-10,max(random[-1],nodocking[-1])+1.5*ticks)
+# plt.xlim(-50,2500)
+miny = min(targets)
+plt.ylim(bottom=miny-0.1,top=max(targets)+0.2)
 plt.ylabel("$"+ylabel+"$",fontsize=14)
 plt.xlabel("Mean steps",fontsize=14)
 plt.legend(loc="lower right",fontsize=14)
@@ -164,14 +173,17 @@ for eof,config in zip(eofs,configs):
 
 best_random = best_means[0]
 best_random_std = best_stds[0]
+best_random_CI = best_random_std * (1.96/np.sqrt(Nreps))
 best_random_q1 = best_q1s[0]
 best_random_q3 = best_q3s[0]
 best_nodocking = best_means[-2]
 best_nodocking_std = best_stds[-2]
+best_nodocking_CI = best_nodocking_std * (1.96/np.sqrt(Nreps))
 best_nodocking_q1 = best_q1s[-2]
 best_nodocking_q3 = best_q3s[-2]
 best_docking = best_means[-1]
 best_docking_std = best_stds[-1]
+best_docking_CI = best_docking_std * (1.96/np.sqrt(Nreps))
 best_docking_q1 = best_q1s[-1]
 best_docking_q3 = best_q3s[-1]
 
@@ -181,17 +193,21 @@ minval = min(Y)
 maxval = max(Y)
 # plt.figure(figsize=(4,4.5)) 
 plt.plot(np.arange(1,best_random.shape[-1]+1,1),best_random,c="y",label="random")
-plt.fill_between(x=np.arange(1,best_random.shape[-1]+1,1),y1=np.clip(best_random-best_random_std,minval,maxval),y2=np.clip(best_random+best_random_std,minval,maxval),color="y",alpha=0.2)
+# plt.fill_between(x=np.arange(1,best_random.shape[-1]+1,1),y1=np.clip(best_random-best_random_std,minval,maxval),y2=np.clip(best_random+best_random_std,minval,maxval),color="y",alpha=0.2)
+plt.fill_between(x=np.arange(1,best_random.shape[-1]+1,1),y1=np.clip(best_random-best_random_CI,minval,maxval),y2=np.clip(best_random+best_random_CI,minval,maxval),color="y",alpha=0.2)
 plt.plot(np.arange(1,best_nodocking.shape[-1]+1,1),best_nodocking,c="m",label="BO (B2)")
-plt.fill_between(x=np.arange(1,best_nodocking.shape[-1]+1,1),y1=np.clip(best_nodocking-best_nodocking_std,minval,maxval),y2=np.clip(best_nodocking+best_nodocking_std,minval,maxval),color="m",alpha=0.1)
+# plt.fill_between(x=np.arange(1,best_nodocking.shape[-1]+1,1),y1=np.clip(best_nodocking-best_nodocking_std,minval,maxval),y2=np.clip(best_nodocking+best_nodocking_std,minval,maxval),color="m",alpha=0.1)
+plt.fill_between(x=np.arange(1,best_nodocking.shape[-1]+1,1),y1=np.clip(best_nodocking-best_nodocking_CI,minval,maxval),y2=np.clip(best_nodocking+best_nodocking_CI,minval,maxval),color="m",alpha=0.1)
 plt.plot(np.arange(1,best_docking.shape[-1]+1,1),best_docking,c="c",label="BO + docking (D)")
-plt.fill_between(x=np.arange(1,best_docking.shape[-1]+1,1),y1=np.clip(best_docking-best_docking_std,minval,maxval),y2=np.clip(best_docking+best_docking_std,minval,maxval),color="c",alpha=0.1)
+# plt.fill_between(x=np.arange(1,best_docking.shape[-1]+1,1),y1=np.clip(best_docking-best_docking_std,minval,maxval),y2=np.clip(best_docking+best_docking_std,minval,maxval),color="c",alpha=0.1)
+plt.fill_between(x=np.arange(1,best_docking.shape[-1]+1,1),y1=np.clip(best_docking-best_docking_CI,minval,maxval),y2=np.clip(best_docking+best_docking_CI,minval,maxval),color="c",alpha=0.1)
 plt.ylabel(f"Mean of best ${ylabel}$", fontsize=14)
 if mode == "litpcba": yscale = 2 
 else: yscale = 4
-plt.xlim(-10,max(200,len(Y)/yscale))
-plt.ylim(np.mean(Y),np.max(Y)+0.2)
-plt.xlabel("Compounds Sampled", fontsize=14)
+plt.xlim(-10,max(1000,len(Y)/yscale))
+miny = np.mean(Y)
+plt.ylim(miny,np.max(Y)+0.2)
+plt.xlabel("Steps", fontsize=14)
 plt.legend(loc="lower right", fontsize=14)
 plt.grid(True)
 plt.title(target, fontsize=16)
@@ -201,8 +217,8 @@ plt.show()
 #%%
 
 # TOC-style diagram -- mean of best activity
-mpl.rcParams['axes.spines.right'] = False
-mpl.rcParams['axes.spines.top'] = False
+# mpl.rcParams['axes.spines.right'] = False
+# mpl.rcParams['axes.spines.top'] = False
 plt.figure(figsize=(5.4,6)) 
 minval = min(Y)
 maxval = max(Y)
@@ -229,8 +245,8 @@ plt.show()
 #%%
 
 # TOC-style diagram -- steps-to-target
-mpl.rcParams['axes.spines.right'] = False
-mpl.rcParams['axes.spines.top'] = False
+# mpl.rcParams['axes.spines.right'] = False
+# mpl.rcParams['axes.spines.top'] = False
 plt.figure(figsize=(4,5)) 
 plt.plot(nodocking,targets,c="m",marker=".",label="ML")
 plt.plot(docking,targets,c="c",marker=".",label="ML + docking")
