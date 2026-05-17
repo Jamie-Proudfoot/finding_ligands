@@ -152,7 +152,7 @@ def cluster_tsne(data,desc,n=2,label="ctsne"):
 #%%
 
 if __name__ == "__main__":
-	target = "DRD2"
+	target = "TYK2"
 	label = "pKi"
 	mode = "delta" # default (delta_LinF9_XGB)
 	mol_data = pd.read_csv(os.path.join(target,f"{target}_data_3d_{mode}_{label}.csv"))

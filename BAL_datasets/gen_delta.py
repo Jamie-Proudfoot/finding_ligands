@@ -28,7 +28,7 @@ from runXGB_all import run_XGB # importing from local folder
 #%%
 
 Y = "pKi"
-target_name = "DRD2"
+target_name = "TYK2"
 id_col = "LigandId"
 filename = f"{target_name}_data_3d_{Y}.csv"
 output_filename = f"{target_name}_data_3d_delta_{Y}.csv"

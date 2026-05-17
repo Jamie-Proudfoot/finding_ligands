@@ -51,11 +51,15 @@ df = pd.read_csv("TYK2_data_pKi.csv")
 #%%
 
 mols = Chem.SDMolSupplier("10k_most_similar_tyk2_charged.sdf", removeHs=False)
+removeHs=False
 features = []
 for i, mol in enumerate(tqdm(mols)): 
     if i == 0: continue #skip reference ligand
     feat3d = get_features(mol)
     features.append(feat3d)
+    if removeHs: mol = Chem.RemoveHs(mol)
+    with Chem.SDWriter(f'conformers/{i-1}.sdf') as writer:
+        writer.write(mol)
 
 #%%
 
